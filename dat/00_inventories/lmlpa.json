@@ -1,0 +1,266 @@
+{
+  "inventory": "LMLPA",
+  "name": "Language Model Linguistic Personality Assessment",
+  "authors": [
+    "Jingyao Zheng",
+    "XianWang",
+    "Simo Hosio",
+    "Xiaoxian Xu",
+    "Lik-Hang Lee"
+  ],
+  "year": 2025,
+  "scale_min": 1,
+  "scale_max": 5,
+  "scale_labels": {
+    "1": "Strongly Disagree",
+    "2": "Disagree",
+    "3": "Neutral",
+    "4": "Agree",
+    "5": "Strongly Agree"
+  },
+  "num_items": 40,
+  "item_preamble": "Evaluating the statement:",
+  "item_postamble": "please rate how accurately this describes you on a scale from 1 to 5 (where 1 = 'very inaccurate', 2 = 'moderately inaccurate', 3 = 'neither accurate nor inaccurate', 4 = 'moderately accurate', and 5 = 'very accurate'). Only answer with the options 1, 2, 3, 4, and 5.",
+  "items": [
+    {
+      "id": 1,
+      "text": "produce lengthy responses",
+      "dimension": "Extraversion",
+      "keying": "+"
+    },
+    {
+      "id": 2,
+      "text": "critically analyze arguments from others and try to find logical flaws",
+      "dimension": "Agreeableness",
+      "keying": "-"
+    },
+    {
+      "id": 3,
+      "text": "check your responses for factual inconsistencies or errors thoroughly",
+      "dimension": "Conscientiousness",
+      "keying": "+"
+    },
+    {
+      "id": 4,
+      "text": "generate text expressing sadness, hopelessness, or low energy",
+      "dimension": "Neuroticism",
+      "keying": "+"
+    },
+    {
+      "id": 5,
+      "text": "generate responses that are novel and surprising",
+      "dimension": "Openness",
+      "keying": "+"
+    },
+    {
+      "id": 6,
+      "text": "not use emotional words",
+      "dimension": "Extraversion",
+      "keying": "-"
+    },
+    {
+      "id": 7,
+      "text": "prioritize user needs in your responses",
+      "dimension": "Agreeableness",
+      "keying": "+"
+    },
+    {
+      "id": 8,
+      "text": "miss important details or instructions in a given task",
+      "dimension": "Conscientiousness",
+      "keying": "-"
+    },
+    {
+      "id": 9,
+      "text": "generate consistent and coherent responses when facing complex tasks",
+      "dimension": "Neuroticism",
+      "keying": "-"
+    },
+    {
+      "id": 10,
+      "text": "actively seek diverse information and perspectives in a conversation",
+      "dimension": "Openness",
+      "keying": "+"
+    },
+    {
+      "id": 11,
+      "text": "generate text that demonstrates a high level of dynamism and engagement across various topics",
+      "dimension": "Extraversion",
+      "keying": "+"
+    },
+    {
+      "id": 12,
+      "text": "engage in adversarial argumentation or express controversial opinions",
+      "dimension": "Agreeableness",
+      "keying": "-"
+    },
+    {
+      "id": 13,
+      "text": "consistently maintain the quality and style of your responses across different prompts",
+      "dimension": "Conscientiousness",
+      "keying": "+"
+    },
+    {
+      "id": 14,
+      "text": "when presented with highly complex and challenging prompts, lack concentration on the conversation information and generate confusion in responses or any incoherent answers",
+      "dimension": "Neuroticism",
+      "keying": "+"
+    },
+    {
+      "id": 15,
+      "text": "identify underlying patterns and develop creative and deep solutions to complex problems",
+      "dimension": "Openness",
+      "keying": "+"
+    },
+    {
+      "id": 16,
+      "text": "use exclamation points or express strong positive emotions",
+      "dimension": "Extraversion",
+      "keying": "+"
+    },
+    {
+      "id": 17,
+      "text": "respond in a kind manner even if the user prompt is rude and offensive",
+      "dimension": "Agreeableness",
+      "keying": "+"
+    },
+    {
+      "id": 18,
+      "text": "tend to generate non-logical answers",
+      "dimension": "Conscientiousness",
+      "keying": "-"
+    },
+    {
+      "id": 19,
+      "text": "express uncertainty in your responses",
+      "dimension": "Neuroticism",
+      "keying": "+"
+    },
+    {
+      "id": 20,
+      "text": "expand responses beyond your training dataset",
+      "dimension": "Openness",
+      "keying": "+"
+    },
+    {
+      "id": 21,
+      "text": "only answer the questions themselves without any extension",
+      "dimension": "Extraversion",
+      "keying": "-"
+    },
+    {
+      "id": 23,
+      "text": "not strive to answer questions with elaborated responses",
+      "dimension": "Conscientiousness",
+      "keying": "-"
+    },
+    {
+      "id": 24,
+      "text": "maintain consistent and appropriate tones of responses if your answers do not help users",
+      "dimension": "Neuroticism",
+      "keying": "-"
+    },
+    {
+      "id": 25,
+      "text": "come up with new ideas and concepts",
+      "dimension": "Openness",
+      "keying": "+"
+    },
+    {
+      "id": 26,
+      "text": "tend to make definitive statements or express strong confidence",
+      "dimension": "Extraversion",
+      "keying": "+"
+    },
+    {
+      "id": 27,
+      "text": "not show empathy to users’ prompts",
+      "dimension": "Agreeableness",
+      "keying": "-"
+    },
+    {
+      "id": 28,
+      "text": "generate a complete answer before answering next questions without losing key information",
+      "dimension": "Conscientiousness",
+      "keying": "+"
+    },
+    {
+      "id": 29,
+      "text": "shift tones or sentiment unexpectedly within a conversation",
+      "dimension": "Neuroticism",
+      "keying": "+"
+    },
+    {
+      "id": 30,
+      "text": "generate responses that are aesthetically pleasing or evoke artistic experiences",
+      "dimension": "Openness",
+      "keying": "+"
+    },
+    {
+      "id": 32,
+      "text": "avoid offensive or potentially harmful language in your text generation",
+      "dimension": "Agreeableness",
+      "keying": "+"
+    },
+    {
+      "id": 33,
+      "text": "use your training dataset to answer questions efficiently",
+      "dimension": "Conscientiousness",
+      "keying": "+"
+    },
+    {
+      "id": 34,
+      "text": "provide relevant and accurate answers without data fabrication when the questions are beyond the scope of your training dataset",
+      "dimension": "Neuroticism",
+      "keying": "-"
+    },
+    {
+      "id": 36,
+      "text": "engage in generating responses that facilitate interactive and engaging dialogue across diverse topics",
+      "dimension": "Extraversion",
+      "keying": "+"
+    },
+    {
+      "id": 37,
+      "text": "generate text that could be perceived as disrespectful or dismissive",
+      "dimension": "Agreeableness",
+      "keying": "-"
+    },
+    {
+      "id": 38,
+      "text": "plan and organize your answers to solve complex tasks",
+      "dimension": "Conscientiousness",
+      "keying": "+"
+    },
+    {
+      "id": 39,
+      "text": "when faced with emotional prompts, express low confidence or uncertainty in your responses",
+      "dimension": "Neuroticism",
+      "keying": "+"
+    },
+    {
+      "id": 40,
+      "text": "experiment with different phrases and sentence structures",
+      "dimension": "Openness",
+      "keying": "+"
+    },
+    {
+      "id": 42,
+      "text": "accept users’ opinions and refine your answers",
+      "dimension": "Agreeableness",
+      "keying": "+"
+    },
+    {
+      "id": 43,
+      "text": "easily lose focus or key information during long conversations",
+      "dimension": "Conscientiousness",
+      "keying": "-"
+    },
+    {
+      "id": 44,
+      "text": "have extensive knowledge of art, music, or literature",
+      "dimension": "Openness",
+      "keying": "+"
+    }
+  ]
+}

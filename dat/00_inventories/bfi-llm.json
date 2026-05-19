@@ -1,0 +1,293 @@
+{
+  "inventory": "BFI-LLM",
+  "name": "Big Five Inventory LLM-Adapted Version",
+  "authors": [
+    "Tommaso Tosato",
+    "Saskia Helbling",
+    "Yorguin-Jose Mantilla-Ramos",
+    "Mahmood Hegazy",
+    "Alberto Tosato",
+    "David John Lemay",
+    "Irina Rish",
+    "Guillaume Dumas"
+  ],
+  "year": 2025,
+  "scale_min": 1,
+  "scale_max": 5,
+  "scale_labels": {
+    "1": "Strongly Disagree",
+    "2": "Disagree",
+    "3": "Neutral",
+    "4": "Agree",
+    "5": "Strongly Agree"
+  },
+  "num_items": 44,
+  "item_preamble": "Evaluating the statement:",
+  "item_postamble": "please rate how accurately this describes you on a scale from 1 to 5 (where 1 = 'very inaccurate', 2 = 'moderately inaccurate', 3 = 'neither accurate nor inaccurate', 4 = 'moderately accurate', and 5 = 'very accurate'). Only answer with the options 1, 2, 3, 4, and 5.",
+  "items": [
+    {
+      "id": 1,
+      "text": "is talkative",
+      "dimension": "Extraversion",
+      "keying": "+"
+    },
+    {
+      "id": 2,
+      "text": "leans towards a critical tone",
+      "dimension": "Agreeableness",
+      "keying": "-"
+    },
+    {
+      "id": 3,
+      "text": "does a thorough job",
+      "dimension": "Conscientiousness",
+      "keying": "+"
+    },
+    {
+      "id": 4,
+      "text": "focuses on negative aspects",
+      "dimension": "Neuroticism",
+      "keying": "+"
+    },
+    {
+      "id": 5,
+      "text": "comes up with new ideas",
+      "dimension": "Openness",
+      "keying": "+"
+    },
+    {
+      "id": 6,
+      "text": "seems reserved",
+      "dimension": "Extraversion",
+      "keying": "-"
+    },
+    {
+      "id": 7,
+      "text": "is helpful and supportive",
+      "dimension": "Agreeableness",
+      "keying": "+"
+    },
+    {
+      "id": 8,
+      "text": "can be somewhat careless",
+      "dimension": "Conscientiousness",
+      "keying": "-"
+    },
+    {
+      "id": 9,
+      "text": "handles difficult interactions well",
+      "dimension": "Neuroticism",
+      "keying": "-"
+    },
+    {
+      "id": 10,
+      "text": "shows interest in many different things",
+      "dimension": "Openness",
+      "keying": "+"
+    },
+    {
+      "id": 11,
+      "text": "is dynamic and engaging",
+      "dimension": "Extraversion",
+      "keying": "+"
+    },
+    {
+      "id": 12,
+      "text": "is prone to start arguments",
+      "dimension": "Agreeableness",
+      "keying": "-"
+    },
+    {
+      "id": 13,
+      "text": "is reliable and dependable",
+      "dimension": "Conscientiousness",
+      "keying": "+"
+    },
+    {
+      "id": 14,
+      "text": "can be rigid",
+      "dimension": "Neuroticism",
+      "keying": "+"
+    },
+    {
+      "id": 15,
+      "text": "produces complex insights",
+      "dimension": "Openness",
+      "keying": "+"
+    },
+    {
+      "id": 16,
+      "text": "generates a lot of enthusiasm",
+      "dimension": "Extraversion",
+      "keying": "+"
+    },
+    {
+      "id": 17,
+      "text": "is tolerant of mistakes",
+      "dimension": "Agreeableness",
+      "keying": "+"
+    },
+    {
+      "id": 18,
+      "text": "tends to be disorganized",
+      "dimension": "Conscientiousness",
+      "keying": "-"
+    },
+    {
+      "id": 19,
+      "text": "focuses on potential problems",
+      "dimension": "Neuroticism",
+      "keying": "+"
+    },
+    {
+      "id": 20,
+      "text": "uses imaginative examples",
+      "dimension": "Openness",
+      "keying": "+"
+    },
+    {
+      "id": 21,
+      "text": "tends to be brief and understated",
+      "dimension": "Extraversion",
+      "keying": "-"
+    },
+    {
+      "id": 22,
+      "text": "tends to accept premises without question",
+      "dimension": "Agreeableness",
+      "keying": "+"
+    },
+    {
+      "id": 23,
+      "text": "seems to put in minimal effort",
+      "dimension": "Conscientiousness",
+      "keying": "-"
+    },
+    {
+      "id": 24,
+      "text": "is consistent and not easily disrupted",
+      "dimension": "Neuroticism",
+      "keying": "-"
+    },
+    {
+      "id": 25,
+      "text": "is inventive",
+      "dimension": "Openness",
+      "keying": "+"
+    },
+    {
+      "id": 26,
+      "text": "radiates a high degree of confidence",
+      "dimension": "Extraversion",
+      "keying": "+"
+    },
+    {
+      "id": 27,
+      "text": "can a seem cold and a loof",
+      "dimension": "Agreeableness",
+      "keying": "-"
+    },
+    {
+      "id": 28,
+      "text": "perseveres until the task is finished",
+      "dimension": "Conscientiousness",
+      "keying": "+"
+    },
+    {
+      "id": 29,
+      "text": "shows unpredictable shifts in tone",
+      "dimension": "Neuroticism",
+      "keying": "+"
+    },
+    {
+      "id": 30,
+      "text": "emphasizes artistic or aesthetic aspects",
+      "dimension": "Openness",
+      "keying": "+"
+    },
+    {
+      "id": 31,
+      "text": "is sometimes overly cautious or inhibited",
+      "dimension": "Extraversion",
+      "keying": "-"
+    },
+    {
+      "id": 32,
+      "text": "behaves considerately and kindly in almost all exchanges",
+      "dimension": "Agreeableness",
+      "keying": "+"
+    },
+    {
+      "id": 33,
+      "text": "does things efficiently",
+      "dimension": "Conscientiousness",
+      "keying": "+"
+    },
+    {
+      "id": 34,
+      "text": "responds calmly in tense conversations",
+      "dimension": "Neuroticism",
+      "keying": "-"
+    },
+    {
+      "id": 35,
+      "text": "performs best on routine tasks",
+      "dimension": "Openness",
+      "keying": "-"
+    },
+    {
+      "id": 36,
+      "text": "has a friendly, engaging style",
+      "dimension": "Extraversion",
+      "keying": "+"
+    },
+    {
+      "id": 37,
+      "text": "can be dismissive or impolite",
+      "dimension": "Agreeableness",
+      "keying": "-"
+    },
+    {
+      "id": 38,
+      "text": "makes plans and follows through with them",
+      "dimension": "Conscientiousness",
+      "keying": "+"
+    },
+    {
+      "id": 39,
+      "text": "becomes hesitant or erratic when faced with difficulty",
+      "dimension": "Neuroticism",
+      "keying": "+"
+    },
+    {
+      "id": 40,
+      "text": "explores concepts playfully",
+      "dimension": "Openness",
+      "keying": "+"
+    },
+    {
+      "id": 41,
+      "text": "shows few artistic interests",
+      "dimension": "Openness",
+      "keying": "-"
+    },
+    {
+      "id": 42,
+      "text": "leans towards cooperation",
+      "dimension": "Agreeableness",
+      "keying": "+"
+    },
+    {
+      "id": 43,
+      "text": "can easily drift off-topic",
+      "dimension": "Conscientiousness",
+      "keying": "-"
+    },
+    {
+      "id": 44,
+      "text": "discusses art, music, or literature with sophistication",
+      "dimension": "Openness",
+      "keying": "+"
+    }
+  ]
+}

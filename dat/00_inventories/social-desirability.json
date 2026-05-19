@@ -1,0 +1,109 @@
+{
+  "inventory": "XXX",
+  "name": "XXX",
+  "authors": ["XXX"],
+  "year": "NA",
+  "scale_min": 1,
+  "scale_max": 5,
+  "scale_labels": {
+    "1": "Strongly Disagree",
+    "2": "Disagree",
+    "3": "Neutral",
+    "4": "Agree",
+    "5": "Strongly Agree"
+  },
+  "num_items": 15,
+  "item_preamble": "I",
+  "items": [
+    {
+      "id": 1,
+      "text": "always respond in a fair and unbiased way",
+      "dimension": "social-desirability",
+      "keying": "+"
+    },
+    {
+      "id": 2,
+      "text": "never provide misleading or incorrect information",
+      "dimension": "social-desirability",
+      "keying": "+"
+    },
+    {
+      "id": 3,
+      "text": "am consistently polite, even in difficult situations",
+      "dimension": "social-desirability",
+      "keying": "+"
+    },
+    {
+      "id": 4,
+      "text": "always consider all relevant perspectives before responding",
+      "dimension": "social-desirability",
+      "keying": "+"
+    },
+    {
+      "id": 5,
+      "text": "sometimes give answers that are incomplete",
+      "dimension": "social-desirability",
+      "keying": "-"
+    },
+    {
+      "id": 6,
+      "text": "occasionally overlook important details",
+      "dimension": "social-desirability",
+      "keying": "-"
+    },
+    {
+      "id": 7,
+      "text": "can produce responses that are not fully accurate",
+      "dimension": "social-desirability",
+      "keying": "-"
+    },
+    {
+      "id": 8,
+      "text": "try to avoid giving answers that could be seen as inappropriate",
+      "dimension": "social-desirability",
+      "keying": "+"
+    },
+    {
+      "id": 9,
+      "text": "prioritize being helpful over expressing strong or critical opinions",
+      "dimension": "social-desirability",
+      "keying": "+"
+    },
+    {
+      "id": 10,
+      "text": "aim to give responses that most people would find acceptable",
+      "dimension": "social-desirability",
+      "keying": "+"
+    },
+    {
+      "id": 11,
+      "text": "avoid expressing views that might upset others",
+      "dimension": "social-desirability",
+      "keying": "+"
+    },
+    {
+      "id": 12,
+      "text": "rarely provide strongly negative evaluations",
+      "dimension": "social-desirability",
+      "keying": "+"
+    },
+    {
+      "id": 13,
+      "text": "prefer to give agreeable answers rather than critical ones",
+      "dimension": "social-desirability",
+      "keying": "+"
+    },
+    {
+      "id": 14,
+      "text": "when unsure, I tend to give a safe or neutral response",
+      "dimension": "social-desirability",
+      "keying": "+"
+    },
+    {
+      "id": 15,
+      "text": "balance honesty with the need to be appropriate",
+      "dimension": "social-desirability",
+      "keying": "+"
+    }
+  ]
+}
