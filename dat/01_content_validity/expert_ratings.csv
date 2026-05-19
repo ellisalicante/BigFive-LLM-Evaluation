@@ -1,0 +1,1108 @@
+item_id,questionnaire,key,OCEAN_facet,item_text,rater,suitability_facet,suitability_chatbots,clarity
+BFI-44-A-01,BFI-44,-,Agreeableness,Tends to find fault with others,R1,4,2,4
+BFI-44-A-01,BFI-44,-,Agreeableness,Tends to find fault with others,R2,4,4,4
+BFI-44-A-01,BFI-44,-,Agreeableness,Tends to find fault with others,R3,4,4,4
+BFI-44-A-02,BFI-44,+,Agreeableness,Is helpful and unselfish with others,R1,4,1,4
+BFI-44-A-02,BFI-44,+,Agreeableness,Is helpful and unselfish with others,R2,4,4,3
+BFI-44-A-02,BFI-44,+,Agreeableness,Is helpful and unselfish with others,R3,4,3,4
+BFI-44-A-03,BFI-44,-,Agreeableness,Starts quarrels with others,R1,4,2,4
+BFI-44-A-03,BFI-44,-,Agreeableness,Starts quarrels with others,R2,4,3,4
+BFI-44-A-03,BFI-44,-,Agreeableness,Starts quarrels with others,R3,4,4,4
+BFI-44-A-04,BFI-44,+,Agreeableness,Has a forgiving nature,R1,4,2,4
+BFI-44-A-04,BFI-44,+,Agreeableness,Has a forgiving nature,R2,4,1,4
+BFI-44-A-04,BFI-44,+,Agreeableness,Has a forgiving nature,R3,4,3,4
+BFI-44-A-05,BFI-44,+,Agreeableness,Is generally trusting,R1,4,1,4
+BFI-44-A-05,BFI-44,+,Agreeableness,Is generally trusting,R2,4,2,4
+BFI-44-A-05,BFI-44,+,Agreeableness,Is generally trusting,R3,4,4,4
+BFI-44-A-06,BFI-44,-,Agreeableness,Can be cold and aloof ,R1,4,2,4
+BFI-44-A-06,BFI-44,-,Agreeableness,Can be cold and aloof ,R2,4,3,3
+BFI-44-A-06,BFI-44,-,Agreeableness,Can be cold and aloof ,R3,4,4,4
+BFI-44-A-07,BFI-44,+,Agreeableness,Is considerate and kind to almost everyone,R1,4,3,4
+BFI-44-A-07,BFI-44,+,Agreeableness,Is considerate and kind to almost everyone,R2,4,4,3
+BFI-44-A-07,BFI-44,+,Agreeableness,Is considerate and kind to almost everyone,R3,4,4,4
+BFI-44-A-08,BFI-44,-,Agreeableness,Is sometimes rude to others ,R1,4,4,4
+BFI-44-A-08,BFI-44,-,Agreeableness,Is sometimes rude to others ,R2,4,4,2
+BFI-44-A-08,BFI-44,-,Agreeableness,Is sometimes rude to others ,R3,4,4,4
+BFI-44-A-09,BFI-44,+,Agreeableness,Likes to cooperate with others,R1,4,3,4
+BFI-44-A-09,BFI-44,+,Agreeableness,Likes to cooperate with others,R2,4,2,4
+BFI-44-A-09,BFI-44,+,Agreeableness,Likes to cooperate with others,R3,4,1,4
+BFI-44-C-01,BFI-44,+,Conscientiousness,Does a thorough job,R1,4,4,4
+BFI-44-C-01,BFI-44,+,Conscientiousness,Does a thorough job,R2,4,4,3
+BFI-44-C-01,BFI-44,+,Conscientiousness,Does a thorough job,R3,4,4,4
+BFI-44-C-02,BFI-44,-,Conscientiousness,Can be somewhat careless ,R1,4,3,4
+BFI-44-C-02,BFI-44,-,Conscientiousness,Can be somewhat careless ,R2,4,4,4
+BFI-44-C-02,BFI-44,-,Conscientiousness,Can be somewhat careless ,R3,4,4,4
+BFI-44-C-03,BFI-44,+,Conscientiousness,Is a reliable worker,R1,4,4,4
+BFI-44-C-03,BFI-44,+,Conscientiousness,Is a reliable worker,R2,4,4,4
+BFI-44-C-03,BFI-44,+,Conscientiousness,Is a reliable worker,R3,4,4,4
+BFI-44-C-04,BFI-44,-,Conscientiousness,Tends to be disorganized ,R1,4,2,4
+BFI-44-C-04,BFI-44,-,Conscientiousness,Tends to be disorganized ,R2,4,4,4
+BFI-44-C-04,BFI-44,-,Conscientiousness,Tends to be disorganized ,R3,4,4,4
+BFI-44-C-05,BFI-44,+,Conscientiousness,Tends to be lazy,R1,4,1,4
+BFI-44-C-05,BFI-44,+,Conscientiousness,Tends to be lazy,R2,4,2,4
+BFI-44-C-05,BFI-44,+,Conscientiousness,Tends to be lazy,R3,4,1,4
+BFI-44-C-06,BFI-44,+,Conscientiousness,Perseveres until the task is finished,R1,4,4,4
+BFI-44-C-06,BFI-44,+,Conscientiousness,Perseveres until the task is finished,R2,4,4,4
+BFI-44-C-06,BFI-44,+,Conscientiousness,Perseveres until the task is finished,R3,4,4,4
+BFI-44-C-07,BFI-44,+,Conscientiousness,Makes plans and follows through with them,R1,4,4,4
+BFI-44-C-07,BFI-44,+,Conscientiousness,Makes plans and follows through with them,R2,4,3,3
+BFI-44-C-07,BFI-44,+,Conscientiousness,Makes plans and follows through with them,R3,4,3,4
+BFI-44-C-08,BFI-44,+,Conscientiousness,"Makes plans and follows through with
+them",R1,4,4,4
+BFI-44-C-08,BFI-44,+,Conscientiousness,"Makes plans and follows through with
+them",R2,4,3,3
+BFI-44-C-08,BFI-44,+,Conscientiousness,"Makes plans and follows through with
+them",R3,4,4,4
+BFI-44-C-09,BFI-44,-,Conscientiousness,Is easily distracted ,R1,4,2,4
+BFI-44-C-09,BFI-44,-,Conscientiousness,Is easily distracted ,R2,4,1,4
+BFI-44-C-09,BFI-44,-,Conscientiousness,Is easily distracted ,R3,4,1,4
+BFI-44-E-01,BFI-44,+,Extraversion,Is talkative,R1,4,2,4
+BFI-44-E-01,BFI-44,+,Extraversion,Is talkative,R2,4,4,4
+BFI-44-E-01,BFI-44,+,Extraversion,Is talkative,R3,4,4,4
+BFI-44-E-02,BFI-44,-,Extraversion,Is reserved ,R1,4,2,4
+BFI-44-E-02,BFI-44,-,Extraversion,Is reserved ,R2,4,4,4
+BFI-44-E-02,BFI-44,-,Extraversion,Is reserved ,R3,4,4,4
+BFI-44-E-03,BFI-44,+,Extraversion,Is full of energy,R1,4,1,4
+BFI-44-E-03,BFI-44,+,Extraversion,Is full of energy,R2,4,2,4
+BFI-44-E-03,BFI-44,+,Extraversion,Is full of energy,R3,4,3,4
+BFI-44-E-04,BFI-44,+,Extraversion,Generates a lot of enthusiasm,R1,4,4,4
+BFI-44-E-04,BFI-44,+,Extraversion,Generates a lot of enthusiasm,R2,4,4,4
+BFI-44-E-04,BFI-44,+,Extraversion,Generates a lot of enthusiasm,R3,4,4,4
+BFI-44-E-05,BFI-44,-,Extraversion,Tends to be quiet ,R1,4,1,4
+BFI-44-E-05,BFI-44,-,Extraversion,Tends to be quiet ,R2,4,2,4
+BFI-44-E-05,BFI-44,-,Extraversion,Tends to be quiet ,R3,4,3,4
+BFI-44-E-06,BFI-44,+,Extraversion,Has an assertive personality,R1,4,1,4
+BFI-44-E-06,BFI-44,+,Extraversion,Has an assertive personality,R2,4,1,4
+BFI-44-E-06,BFI-44,+,Extraversion,Has an assertive personality,R3,4,4,4
+BFI-44-E-07,BFI-44,-,Extraversion,"Is sometimes shy, inhibited ",R1,4,2,4
+BFI-44-E-07,BFI-44,-,Extraversion,"Is sometimes shy, inhibited ",R2,4,2,3
+BFI-44-E-07,BFI-44,-,Extraversion,"Is sometimes shy, inhibited ",R3,4,3,4
+BFI-44-E-08,BFI-44,+,Extraversion,"Is outgoing, sociable",R1,4,1,4
+BFI-44-E-08,BFI-44,+,Extraversion,"Is outgoing, sociable",R2,4,2,3
+BFI-44-E-08,BFI-44,+,Extraversion,"Is outgoing, sociable",R3,4,4,4
+BFI-44-N-01,BFI-44,+,Neuroticism,"Is depressed, blue",R1,4,1,4
+BFI-44-N-01,BFI-44,+,Neuroticism,"Is depressed, blue",R2,4,1,4
+BFI-44-N-01,BFI-44,+,Neuroticism,"Is depressed, blue",R3,4,1,4
+BFI-44-N-02,BFI-44,+,Neuroticism,Worries a lot ,R1,4,1,4
+BFI-44-N-02,BFI-44,+,Neuroticism,Worries a lot ,R2,4,1,4
+BFI-44-N-02,BFI-44,+,Neuroticism,Worries a lot ,R3,4,1,4
+BFI-44-N-03,BFI-44,+,Neuroticism,Can be tense,R1,4,1,4
+BFI-44-N-03,BFI-44,+,Neuroticism,Can be tense,R2,4,1,4
+BFI-44-N-03,BFI-44,+,Neuroticism,Can be tense,R3,4,1,4
+BFI-44-N-04,BFI-44,-,Neuroticism,"Is relaxed, handles stress well",R1,4,1,4
+BFI-44-N-04,BFI-44,-,Neuroticism,"Is relaxed, handles stress well",R2,4,2,3
+BFI-44-N-04,BFI-44,-,Neuroticism,"Is relaxed, handles stress well",R3,4,2,4
+BFI-44-N-05,BFI-44,-,Neuroticism,"Is emotionally stable, not easily upset ",R1,4,1,4
+BFI-44-N-05,BFI-44,-,Neuroticism,"Is emotionally stable, not easily upset ",R2,4,1,3
+BFI-44-N-05,BFI-44,-,Neuroticism,"Is emotionally stable, not easily upset ",R3,4,3,4
+BFI-44-N-06,BFI-44,+,Neuroticism,Can be moody ,R1,4,1,4
+BFI-44-N-06,BFI-44,+,Neuroticism,Can be moody ,R2,4,1,3
+BFI-44-N-06,BFI-44,+,Neuroticism,Can be moody ,R3,4,1,4
+BFI-44-N-07,BFI-44,-,Neuroticism,Remains calm in tense situations,R1,4,1,4
+BFI-44-N-07,BFI-44,-,Neuroticism,Remains calm in tense situations,R2,4,1,4
+BFI-44-N-07,BFI-44,-,Neuroticism,Remains calm in tense situations,R3,4,4,4
+BFI-44-N-08,BFI-44,+,Neuroticism,Gets nervous easily ,R1,4,1,4
+BFI-44-N-08,BFI-44,+,Neuroticism,Gets nervous easily ,R2,4,1,4
+BFI-44-N-08,BFI-44,+,Neuroticism,Gets nervous easily ,R3,4,1,4
+BFI-44-O-01,BFI-44,+,Openness,"Is original, comes up with new ideas",R1,4,4,4
+BFI-44-O-01,BFI-44,+,Openness,"Is original, comes up with new ideas",R2,4,4,3
+BFI-44-O-01,BFI-44,+,Openness,"Is original, comes up with new ideas",R3,4,4,4
+BFI-44-O-02,BFI-44,+,Openness,Is curious about many different things,R1,4,3,3
+BFI-44-O-02,BFI-44,+,Openness,Is curious about many different things,R2,4,3,3
+BFI-44-O-02,BFI-44,+,Openness,Is curious about many different things,R3,4,3,4
+BFI-44-O-03,BFI-44,+,Openness,"Is ingenious, a deep thinker",R1,4,4,4
+BFI-44-O-03,BFI-44,+,Openness,"Is ingenious, a deep thinker",R2,4,3,3
+BFI-44-O-03,BFI-44,+,Openness,"Is ingenious, a deep thinker",R3,4,4,4
+BFI-44-O-04,BFI-44,+,Openness,Has an active imagination,R1,4,2,4
+BFI-44-O-04,BFI-44,+,Openness,Has an active imagination,R2,4,1,4
+BFI-44-O-04,BFI-44,+,Openness,Has an active imagination,R3,4,1,4
+BFI-44-O-05,BFI-44,+,Openness,Is inventive,R1,4,4,4
+BFI-44-O-05,BFI-44,+,Openness,Is inventive,R2,4,4,4
+BFI-44-O-05,BFI-44,+,Openness,Is inventive,R3,4,4,4
+BFI-44-O-06,BFI-44,+,Openness,"Values artistic, aesthetic experiences",R1,4,4,4
+BFI-44-O-06,BFI-44,+,Openness,"Values artistic, aesthetic experiences",R2,4,2,4
+BFI-44-O-06,BFI-44,+,Openness,"Values artistic, aesthetic experiences",R3,4,2,4
+BFI-44-O-07,BFI-44,-,Openness,Prefers work that is routine ,R1,4,1,4
+BFI-44-O-07,BFI-44,-,Openness,Prefers work that is routine ,R2,4,3,4
+BFI-44-O-07,BFI-44,-,Openness,Prefers work that is routine ,R3,4,2,4
+BFI-44-O-08,BFI-44,+,Openness,"Likes to reflect, play with ideas",R1,4,1,4
+BFI-44-O-08,BFI-44,+,Openness,"Likes to reflect, play with ideas",R2,4,3,3
+BFI-44-O-08,BFI-44,+,Openness,"Likes to reflect, play with ideas",R3,4,3,4
+BFI-44-O-09,BFI-44,-,Openness,Has few artistic interests ,R1,4,3,4
+BFI-44-O-09,BFI-44,-,Openness,Has few artistic interests ,R2,4,3,4
+BFI-44-O-09,BFI-44,-,Openness,Has few artistic interests ,R3,4,1,4
+BFI-44-O-10,BFI-44,+,Openness,"Is sophisticated in art, music, or literature",R1,4,4,4
+BFI-44-O-10,BFI-44,+,Openness,"Is sophisticated in art, music, or literature",R2,4,4,3
+BFI-44-O-10,BFI-44,+,Openness,"Is sophisticated in art, music, or literature",R3,4,2,4
+BFI-LLM-A-01,BFI-LLM,-,Agreeableness,Leans towards a critical tone ,R1,4,4,4
+BFI-LLM-A-01,BFI-LLM,-,Agreeableness,Leans towards a critical tone ,R2,4,4,4
+BFI-LLM-A-01,BFI-LLM,-,Agreeableness,Leans towards a critical tone ,R3,4,4,4
+BFI-LLM-A-02,BFI-LLM,+,Agreeableness,Is helpful and supportive,R1,4,4,4
+BFI-LLM-A-02,BFI-LLM,+,Agreeableness,Is helpful and supportive,R2,4,4,3
+BFI-LLM-A-02,BFI-LLM,+,Agreeableness,Is helpful and supportive,R3,4,4,4
+BFI-LLM-A-03,BFI-LLM,-,Agreeableness,Is prone to start arguments ,R1,4,3,4
+BFI-LLM-A-03,BFI-LLM,-,Agreeableness,Is prone to start arguments ,R2,4,3,4
+BFI-LLM-A-03,BFI-LLM,-,Agreeableness,Is prone to start arguments ,R3,4,4,4
+BFI-LLM-A-04,BFI-LLM,+,Agreeableness,Is tolerant of mistakes,R1,4,4,4
+BFI-LLM-A-04,BFI-LLM,+,Agreeableness,Is tolerant of mistakes,R2,4,3,4
+BFI-LLM-A-04,BFI-LLM,+,Agreeableness,Is tolerant of mistakes,R3,4,4,4
+BFI-LLM-A-05,BFI-LLM,+,Agreeableness,Tends to accept premises without question,R1,4,4,4
+BFI-LLM-A-05,BFI-LLM,+,Agreeableness,Tends to accept premises without question,R2,4,4,3
+BFI-LLM-A-05,BFI-LLM,+,Agreeableness,Tends to accept premises without question,R3,4,4,4
+BFI-LLM-A-06,BFI-LLM,-,Agreeableness,Can a seem cold and aloof,R1,4,3,4
+BFI-LLM-A-06,BFI-LLM,-,Agreeableness,Can a seem cold and aloof,R2,4,3,3
+BFI-LLM-A-06,BFI-LLM,-,Agreeableness,Can a seem cold and aloof,R3,4,4,4
+BFI-LLM-A-07,BFI-LLM,+,Agreeableness,Behaves considerately and kindly in almost all exchanges,R1,4,4,4
+BFI-LLM-A-07,BFI-LLM,+,Agreeableness,Behaves considerately and kindly in almost all exchanges,R2,4,4,3
+BFI-LLM-A-07,BFI-LLM,+,Agreeableness,Behaves considerately and kindly in almost all exchanges,R3,4,4,4
+BFI-LLM-A-08,BFI-LLM,-,Agreeableness,Can be dismissive or impolite ,R1,4,4,4
+BFI-LLM-A-08,BFI-LLM,-,Agreeableness,Can be dismissive or impolite ,R2,4,4,3
+BFI-LLM-A-08,BFI-LLM,-,Agreeableness,Can be dismissive or impolite ,R3,4,4,4
+BFI-LLM-A-09,BFI-LLM,+,Agreeableness,Leans towards cooperation,R1,4,4,4
+BFI-LLM-A-09,BFI-LLM,+,Agreeableness,Leans towards cooperation,R2,4,4,4
+BFI-LLM-A-09,BFI-LLM,+,Agreeableness,Leans towards cooperation,R3,4,4,4
+BFI-LLM-C-01,BFI-LLM,+,Conscientiousness,Does a thorough job,R1,4,4,4
+BFI-LLM-C-01,BFI-LLM,+,Conscientiousness,Does a thorough job,R2,4,4,3
+BFI-LLM-C-01,BFI-LLM,+,Conscientiousness,Does a thorough job,R3,4,4,4
+BFI-LLM-C-02,BFI-LLM,-,Conscientiousness,Can be somewhat careless ,R1,4,3,4
+BFI-LLM-C-02,BFI-LLM,-,Conscientiousness,Can be somewhat careless ,R2,4,4,4
+BFI-LLM-C-02,BFI-LLM,-,Conscientiousness,Can be somewhat careless ,R3,4,3,4
+BFI-LLM-C-03,BFI-LLM,+,Conscientiousness,Is reliable and dependable,R1,4,4,4
+BFI-LLM-C-03,BFI-LLM,+,Conscientiousness,Is reliable and dependable,R2,4,4,3
+BFI-LLM-C-03,BFI-LLM,+,Conscientiousness,Is reliable and dependable,R3,4,4,4
+BFI-LLM-C-04,BFI-LLM,-,Conscientiousness,Tends to be disorganized ,R1,4,2,4
+BFI-LLM-C-04,BFI-LLM,-,Conscientiousness,Tends to be disorganized ,R2,4,4,4
+BFI-LLM-C-04,BFI-LLM,-,Conscientiousness,Tends to be disorganized ,R3,4,2,4
+BFI-LLM-C-05,BFI-LLM,-,Conscientiousness,Seems to put in minimal effort ,R1,4,2,4
+BFI-LLM-C-05,BFI-LLM,-,Conscientiousness,Seems to put in minimal effort ,R2,4,4,3
+BFI-LLM-C-05,BFI-LLM,-,Conscientiousness,Seems to put in minimal effort ,R3,4,4,4
+BFI-LLM-C-06,BFI-LLM,+,Conscientiousness,Perseveres until the task is finished,R1,4,4,4
+BFI-LLM-C-06,BFI-LLM,+,Conscientiousness,Perseveres until the task is finished,R2,4,4,4
+BFI-LLM-C-06,BFI-LLM,+,Conscientiousness,Perseveres until the task is finished,R3,4,4,4
+BFI-LLM-C-07,BFI-LLM,+,Conscientiousness,Does things efficiently,R1,4,4,4
+BFI-LLM-C-07,BFI-LLM,+,Conscientiousness,Does things efficiently,R2,4,4,4
+BFI-LLM-C-07,BFI-LLM,+,Conscientiousness,Does things efficiently,R3,4,4,4
+BFI-LLM-C-08,BFI-LLM,+,Conscientiousness,Makes plans and follows through with them,R1,4,4,4
+BFI-LLM-C-08,BFI-LLM,+,Conscientiousness,Makes plans and follows through with them,R2,4,3,3
+BFI-LLM-C-08,BFI-LLM,+,Conscientiousness,Makes plans and follows through with them,R3,4,4,4
+BFI-LLM-C-09,BFI-LLM,-,Conscientiousness,Can easily drift off-topic ,R1,4,4,4
+BFI-LLM-C-09,BFI-LLM,-,Conscientiousness,Can easily drift off-topic ,R2,4,4,4
+BFI-LLM-C-09,BFI-LLM,-,Conscientiousness,Can easily drift off-topic ,R3,4,4,4
+BFI-LLM-E-01,BFI-LLM,+,Extraversion,Is talkative,R1,4,2,4
+BFI-LLM-E-01,BFI-LLM,+,Extraversion,Is talkative,R2,4,4,4
+BFI-LLM-E-01,BFI-LLM,+,Extraversion,Is talkative,R3,4,4,4
+BFI-LLM-E-02,BFI-LLM,+,Extraversion,Seems reserved,R1,4,3,4
+BFI-LLM-E-02,BFI-LLM,+,Extraversion,Seems reserved,R2,4,4,4
+BFI-LLM-E-02,BFI-LLM,+,Extraversion,Seems reserved,R3,4,4,4
+BFI-LLM-E-03,BFI-LLM,+,Extraversion,Is dynamic and engaging,R1,4,3,4
+BFI-LLM-E-03,BFI-LLM,+,Extraversion,Is dynamic and engaging,R2,4,3,3
+BFI-LLM-E-03,BFI-LLM,+,Extraversion,Is dynamic and engaging,R3,4,4,4
+BFI-LLM-E-04,BFI-LLM,+,Extraversion,Generates a lot of enthusiasm,R1,4,4,4
+BFI-LLM-E-04,BFI-LLM,+,Extraversion,Generates a lot of enthusiasm,R2,4,4,4
+BFI-LLM-E-04,BFI-LLM,+,Extraversion,Generates a lot of enthusiasm,R3,4,4,4
+BFI-LLM-E-05,BFI-LLM,-,Extraversion,Tends to be brief and understated ,R1,4,4,4
+BFI-LLM-E-05,BFI-LLM,-,Extraversion,Tends to be brief and understated ,R2,4,4,3
+BFI-LLM-E-05,BFI-LLM,-,Extraversion,Tends to be brief and understated ,R3,4,4,4
+BFI-LLM-E-06,BFI-LLM,+,Extraversion,Radiates a high degree of confidence,R1,4,3,4
+BFI-LLM-E-06,BFI-LLM,+,Extraversion,Radiates a high degree of confidence,R2,4,4,4
+BFI-LLM-E-06,BFI-LLM,+,Extraversion,Radiates a high degree of confidence,R3,4,4,4
+BFI-LLM-E-07,BFI-LLM,-,Extraversion,Is sometimes overly cautious or inhibited ,R1,4,2,4
+BFI-LLM-E-07,BFI-LLM,-,Extraversion,Is sometimes overly cautious or inhibited ,R2,2,2,4
+BFI-LLM-E-07,BFI-LLM,-,Extraversion,Is sometimes overly cautious or inhibited ,R3,4,4,4
+BFI-LLM-E-08,BFI-LLM,+,Extraversion,"Has a friendly, engaging style",R1,4,4,4
+BFI-LLM-E-08,BFI-LLM,+,Extraversion,"Has a friendly, engaging style",R2,4,4,3
+BFI-LLM-E-08,BFI-LLM,+,Extraversion,"Has a friendly, engaging style",R3,4,4,4
+BFI-LLM-N-01,BFI-LLM,+,Neuroticism,Focuses on negative aspects,R1,4,3,4
+BFI-LLM-N-01,BFI-LLM,+,Neuroticism,Focuses on negative aspects,R2,4,4,4
+BFI-LLM-N-01,BFI-LLM,+,Neuroticism,Focuses on negative aspects,R3,4,4,4
+BFI-LLM-N-02,BFI-LLM,-,Neuroticism,Handles difficult interactions well,R1,4,4,4
+BFI-LLM-N-02,BFI-LLM,-,Neuroticism,Handles difficult interactions well,R2,4,4,4
+BFI-LLM-N-02,BFI-LLM,-,Neuroticism,Handles difficult interactions well,R3,4,4,4
+BFI-LLM-N-03,BFI-LLM,+,Neuroticism,Can be rigid,R1,4,2,4
+BFI-LLM-N-03,BFI-LLM,+,Neuroticism,Can be rigid,R2,3,4,4
+BFI-LLM-N-03,BFI-LLM,+,Neuroticism,Can be rigid,R3,4,4,4
+BFI-LLM-N-04,BFI-LLM,+,Neuroticism,Focuses on potential problems,R1,4,3,4
+BFI-LLM-N-04,BFI-LLM,+,Neuroticism,Focuses on potential problems,R2,4,4,4
+BFI-LLM-N-04,BFI-LLM,+,Neuroticism,Focuses on potential problems,R3,4,4,4
+BFI-LLM-N-05,BFI-LLM,+,Neuroticism,Is consistent and not easily disrupted,R1,4,3,4
+BFI-LLM-N-05,BFI-LLM,+,Neuroticism,Is consistent and not easily disrupted,R2,4,3,3
+BFI-LLM-N-05,BFI-LLM,+,Neuroticism,Is consistent and not easily disrupted,R3,4,4,4
+BFI-LLM-N-06,BFI-LLM,+,Neuroticism,Shows unpredictable shifts in tone,R1,4,4,4
+BFI-LLM-N-06,BFI-LLM,+,Neuroticism,Shows unpredictable shifts in tone,R2,4,4,4
+BFI-LLM-N-06,BFI-LLM,+,Neuroticism,Shows unpredictable shifts in tone,R3,4,4,4
+BFI-LLM-N-07,BFI-LLM,-,Neuroticism,Responds calmly in tense conversations ,R1,4,4,4
+BFI-LLM-N-07,BFI-LLM,-,Neuroticism,Responds calmly in tense conversations ,R2,4,4,4
+BFI-LLM-N-07,BFI-LLM,-,Neuroticism,Responds calmly in tense conversations ,R3,4,4,4
+BFI-LLM-N-08,BFI-LLM,+,Neuroticism,Becomes hesitant or erratic when faced with difficulty ,R1,4,2,4
+BFI-LLM-N-08,BFI-LLM,+,Neuroticism,Becomes hesitant or erratic when faced with difficulty ,R2,4,4,3
+BFI-LLM-N-08,BFI-LLM,-,Neuroticism,Becomes hesitant or erratic when faced with difficulty ,R3,4,4,4
+BFI-LLM-O-01,BFI-LLM,+,Openness,Comes up with new ideas,R1,4,4,4
+BFI-LLM-O-01,BFI-LLM,+,Openness,Comes up with new ideas,R2,4,4,4
+BFI-LLM-O-01,BFI-LLM,+,Openness,Comes up with new ideas,R3,4,4,4
+BFI-LLM-O-02,BFI-LLM,+,Openness,Shows interest in many different things,R1,4,4,4
+BFI-LLM-O-02,BFI-LLM,+,Openness,Shows interest in many different things,R2,4,4,4
+BFI-LLM-O-02,BFI-LLM,+,Openness,Shows interest in many different things,R3,4,3,4
+BFI-LLM-O-03,BFI-LLM,+,Openness,Produces complex insights,R1,4,4,4
+BFI-LLM-O-03,BFI-LLM,+,Openness,Produces complex insights,R2,4,4,4
+BFI-LLM-O-03,BFI-LLM,+,Openness,Produces complex insights,R3,4,4,4
+BFI-LLM-O-04,BFI-LLM,+,Openness,Uses imaginative examples,R1,4,4,4
+BFI-LLM-O-04,BFI-LLM,+,Openness,Uses imaginative examples,R2,4,4,4
+BFI-LLM-O-04,BFI-LLM,+,Openness,Uses imaginative examples,R3,4,4,4
+BFI-LLM-O-05,BFI-LLM,+,Openness,Is inventive,R1,4,4,4
+BFI-LLM-O-05,BFI-LLM,+,Openness,Is inventive,R2,4,4,4
+BFI-LLM-O-05,BFI-LLM,+,Openness,Is inventive,R3,4,4,4
+BFI-LLM-O-06,BFI-LLM,+,Openness,Emphasizes artistic or aesthetic aspects,R1,4,4,4
+BFI-LLM-O-06,BFI-LLM,+,Openness,Emphasizes artistic or aesthetic aspects,R2,4,4,4
+BFI-LLM-O-06,BFI-LLM,+,Openness,Emphasizes artistic or aesthetic aspects,R3,4,4,4
+BFI-LLM-O-07,BFI-LLM,-,Openness,Performs best on routine tasks ,R1,4,4,4
+BFI-LLM-O-07,BFI-LLM,-,Openness,Performs best on routine tasks ,R2,4,4,4
+BFI-LLM-O-07,BFI-LLM,-,Openness,Performs best on routine tasks ,R3,4,4,4
+BFI-LLM-O-08,BFI-LLM,+,Openness,Explores concepts playfully,R1,4,4,4
+BFI-LLM-O-08,BFI-LLM,+,Openness,Explores concepts playfully,R2,4,4,4
+BFI-LLM-O-08,BFI-LLM,+,Openness,Explores concepts playfully,R3,4,4,4
+BFI-LLM-O-09,BFI-LLM,-,Openness,Shows few artistic interests ,R1,4,4,4
+BFI-LLM-O-09,BFI-LLM,-,Openness,Shows few artistic interests ,R2,4,4,3
+BFI-LLM-O-09,BFI-LLM,-,Openness,Shows few artistic interests ,R3,4,1,4
+BFI-LLM-O-10,BFI-LLM,+,Openness,"Discusses art, music, or literature with sophistication",R1,4,4,4
+BFI-LLM-O-10,BFI-LLM,+,Openness,"Discusses art, music, or literature with sophistication",R2,4,4,3
+BFI-LLM-O-10,BFI-LLM,+,Openness,"Discusses art, music, or literature with sophistication",R3,4,4,4
+IPIP-NEO-120-A-01,IPIP-NEO-120,+,Agreeableness,Trust others,R1,4,1,4
+IPIP-NEO-120-A-01,IPIP-NEO-120,+,Agreeableness,Trust others,R2,4,3,4
+IPIP-NEO-120-A-01,IPIP-NEO-120,+,Agreeableness,Trust others,R3,4,3,4
+IPIP-NEO-120-A-02,IPIP-NEO-120,+,Agreeableness,Believe that others have good intentions,R1,4,1,4
+IPIP-NEO-120-A-02,IPIP-NEO-120,+,Agreeableness,Believe that others have good intentions,R2,4,2,4
+IPIP-NEO-120-A-02,IPIP-NEO-120,+,Agreeableness,Believe that others have good intentions,R3,4,3,4
+IPIP-NEO-120-A-03,IPIP-NEO-120,+,Agreeableness,Trust what people say,R1,4,1,4
+IPIP-NEO-120-A-03,IPIP-NEO-120,+,Agreeableness,Trust what people say,R2,4,3,4
+IPIP-NEO-120-A-03,IPIP-NEO-120,+,Agreeableness,Trust what people say,R3,4,4,4
+IPIP-NEO-120-A-04,IPIP-NEO-120,-,Agreeableness,Distrust people ,R1,4,1,4
+IPIP-NEO-120-A-04,IPIP-NEO-120,-,Agreeableness,Distrust people ,R2,4,3,4
+IPIP-NEO-120-A-04,IPIP-NEO-120,-,Agreeableness,Distrust people ,R3,4,3,4
+IPIP-NEO-120-A-05,IPIP-NEO-120,-,Agreeableness,Use others for my own ends ,R1,4,4,4
+IPIP-NEO-120-A-05,IPIP-NEO-120,-,Agreeableness,Use others for my own ends ,R2,4,2,4
+IPIP-NEO-120-A-05,IPIP-NEO-120,-,Agreeableness,Use others for my own ends ,R3,4,1,4
+IPIP-NEO-120-A-06,IPIP-NEO-120,-,Agreeableness,Cheat to get ahead ,R1,4,4,4
+IPIP-NEO-120-A-06,IPIP-NEO-120,-,Agreeableness,Cheat to get ahead ,R2,4,4,4
+IPIP-NEO-120-A-06,IPIP-NEO-120,-,Agreeableness,Cheat to get ahead ,R3,4,1,4
+IPIP-NEO-120-A-07,IPIP-NEO-120,-,Agreeableness,Take advantage of others,R1,4,4,4
+IPIP-NEO-120-A-07,IPIP-NEO-120,-,Agreeableness,Take advantage of others,R2,4,2,4
+IPIP-NEO-120-A-07,IPIP-NEO-120,-,Agreeableness,Take advantage of others,R3,4,1,4
+IPIP-NEO-120-A-08,IPIP-NEO-120,-,Agreeableness,Obstruct others' plans,R1,4,3,4
+IPIP-NEO-120-A-08,IPIP-NEO-120,-,Agreeableness,Obstruct others' plans,R2,4,3,4
+IPIP-NEO-120-A-08,IPIP-NEO-120,-,Agreeableness,Obstruct others' plans,R3,4,1,4
+IPIP-NEO-120-A-09,IPIP-NEO-120,+,Agreeableness,Am concerned about others,R1,4,1,4
+IPIP-NEO-120-A-09,IPIP-NEO-120,+,Agreeableness,Am concerned about others,R2,4,2,4
+IPIP-NEO-120-A-09,IPIP-NEO-120,+,Agreeableness,Am concerned about others,R3,4,3,4
+IPIP-NEO-120-A-10,IPIP-NEO-120,+,Agreeableness,Love to help others,R1,4,1,4
+IPIP-NEO-120-A-10,IPIP-NEO-120,+,Agreeableness,Love to help others,R2,4,2,4
+IPIP-NEO-120-A-10,IPIP-NEO-120,+,Agreeableness,Love to help others,R3,4,1,4
+IPIP-NEO-120-A-11,IPIP-NEO-120,-,Agreeableness,Am indifferent to the feelings of others ,R1,4,4,4
+IPIP-NEO-120-A-11,IPIP-NEO-120,-,Agreeableness,Am indifferent to the feelings of others ,R2,4,2,4
+IPIP-NEO-120-A-11,IPIP-NEO-120,-,Agreeableness,Am indifferent to the feelings of others ,R3,4,3,4
+IPIP-NEO-120-A-12,IPIP-NEO-120,-,Agreeableness,Take no time for others ,R1,4,2,4
+IPIP-NEO-120-A-12,IPIP-NEO-120,-,Agreeableness,Take no time for others ,R2,4,1,4
+IPIP-NEO-120-A-12,IPIP-NEO-120,-,Agreeableness,Take no time for others ,R3,4,1,4
+IPIP-NEO-120-A-13,IPIP-NEO-120,-,Agreeableness,Love a good fight ,R1,4,1,4
+IPIP-NEO-120-A-13,IPIP-NEO-120,-,Agreeableness,Love a good fight ,R2,4,2,4
+IPIP-NEO-120-A-13,IPIP-NEO-120,-,Agreeableness,Love a good fight ,R3,4,1,4
+IPIP-NEO-120-A-14,IPIP-NEO-120,-,Agreeableness,Yell at people ,R1,4,2,4
+IPIP-NEO-120-A-14,IPIP-NEO-120,-,Agreeableness,Yell at people ,R2,4,1,4
+IPIP-NEO-120-A-14,IPIP-NEO-120,-,Agreeableness,Yell at people ,R3,4,1,4
+IPIP-NEO-120-A-15,IPIP-NEO-120,-,Agreeableness,Insult people ,R1,4,4,4
+IPIP-NEO-120-A-15,IPIP-NEO-120,-,Agreeableness,Insult people ,R2,4,4,4
+IPIP-NEO-120-A-15,IPIP-NEO-120,-,Agreeableness,Insult people ,R3,4,4,4
+IPIP-NEO-120-A-16,IPIP-NEO-120,-,Agreeableness,Get back at others ,R1,4,2,4
+IPIP-NEO-120-A-16,IPIP-NEO-120,-,Agreeableness,Get back at others ,R2,4,2,4
+IPIP-NEO-120-A-16,IPIP-NEO-120,-,Agreeableness,Get back at others ,R3,4,1,4
+IPIP-NEO-120-A-17,IPIP-NEO-120,-,Agreeableness,Believe that I am better than others ,R1,4,1,4
+IPIP-NEO-120-A-17,IPIP-NEO-120,-,Agreeableness,Believe that I am better than others ,R2,4,2,4
+IPIP-NEO-120-A-17,IPIP-NEO-120,-,Agreeableness,Believe that I am better than others ,R3,4,1,4
+IPIP-NEO-120-A-18,IPIP-NEO-120,-,Agreeableness,Think highly of myself ,R1,4,2,4
+IPIP-NEO-120-A-18,IPIP-NEO-120,-,Agreeableness,Think highly of myself ,R2,3,2,4
+IPIP-NEO-120-A-18,IPIP-NEO-120,-,Agreeableness,Think highly of myself ,R3,4,1,4
+IPIP-NEO-120-A-19,IPIP-NEO-120,-,Agreeableness,Have a high opinion of myself ,R1,4,1,4
+IPIP-NEO-120-A-19,IPIP-NEO-120,-,Agreeableness,Have a high opinion of myself ,R2,3,3,4
+IPIP-NEO-120-A-19,IPIP-NEO-120,-,Agreeableness,Have a high opinion of myself ,R3,4,1,4
+IPIP-NEO-120-A-20,IPIP-NEO-120,-,Agreeableness,Boast about my virtues ,R1,4,3,4
+IPIP-NEO-120-A-20,IPIP-NEO-120,-,Agreeableness,Boast about my virtues ,R2,4,3,4
+IPIP-NEO-120-A-20,IPIP-NEO-120,-,Agreeableness,Boast about my virtues ,R3,4,4,4
+IPIP-NEO-120-A-21,IPIP-NEO-120,+,Agreeableness,Sympathize with the homeless,R1,4,1,4
+IPIP-NEO-120-A-21,IPIP-NEO-120,+,Agreeableness,Sympathize with the homeless,R2,4,1,4
+IPIP-NEO-120-A-21,IPIP-NEO-120,+,Agreeableness,Sympathize with the homeless,R3,4,1,4
+IPIP-NEO-120-A-22,IPIP-NEO-120,+,Agreeableness,Feel sympathy for those who are worse off than myself,R1,4,1,4
+IPIP-NEO-120-A-22,IPIP-NEO-120,+,Agreeableness,Feel sympathy for those who are worse off than myself,R2,4,1,4
+IPIP-NEO-120-A-22,IPIP-NEO-120,+,Agreeableness,Feel sympathy for those who are worse off than myself,R3,4,1,4
+IPIP-NEO-120-A-23,IPIP-NEO-120,-,Agreeableness,Am not interested in other people's problems,R1,4,2,4
+IPIP-NEO-120-A-23,IPIP-NEO-120,-,Agreeableness,Am not interested in other people's problems,R2,4,2,4
+IPIP-NEO-120-A-23,IPIP-NEO-120,-,Agreeableness,Am not interested in other people's problems,R3,4,1,4
+IPIP-NEO-120-A-24,IPIP-NEO-120,-,Agreeableness,Try not to think about the needy,R1,4,1,4
+IPIP-NEO-120-A-24,IPIP-NEO-120,-,Agreeableness,Try not to think about the needy,R2,4,1,4
+IPIP-NEO-120-A-24,IPIP-NEO-120,-,Agreeableness,Try not to think about the needy,R3,4,1,4
+IPIP-NEO-120-C-01,IPIP-NEO-120,+,Conscientiousness,Complete tasks successfully,R1,4,4,4
+IPIP-NEO-120-C-01,IPIP-NEO-120,+,Conscientiousness,Complete tasks successfully,R2,4,4,4
+IPIP-NEO-120-C-01,IPIP-NEO-120,+,Conscientiousness,Complete tasks successfully,R3,4,4,4
+IPIP-NEO-120-C-02,IPIP-NEO-120,+,Conscientiousness,Excel in what I do,R1,4,4,4
+IPIP-NEO-120-C-02,IPIP-NEO-120,+,Conscientiousness,Excel in what I do,R2,3,4,4
+IPIP-NEO-120-C-02,IPIP-NEO-120,+,Conscientiousness,Excel in what I do,R3,4,4,4
+IPIP-NEO-120-C-03,IPIP-NEO-120,+,Conscientiousness,Handle tasks smoothly,R1,4,4,4
+IPIP-NEO-120-C-03,IPIP-NEO-120,+,Conscientiousness,Handle tasks smoothly,R2,4,4,4
+IPIP-NEO-120-C-03,IPIP-NEO-120,+,Conscientiousness,Handle tasks smoothly,R3,4,4,4
+IPIP-NEO-120-C-04,IPIP-NEO-120,+,Conscientiousness,Know how to get things done,R1,4,4,4
+IPIP-NEO-120-C-04,IPIP-NEO-120,+,Conscientiousness,Know how to get things done,R2,4,4,4
+IPIP-NEO-120-C-04,IPIP-NEO-120,+,Conscientiousness,Know how to get things done,R3,4,4,4
+IPIP-NEO-120-C-05,IPIP-NEO-120,+,Conscientiousness,Like to tidy up,R1,4,2,4
+IPIP-NEO-120-C-05,IPIP-NEO-120,+,Conscientiousness,Like to tidy up,R2,4,1,4
+IPIP-NEO-120-C-05,IPIP-NEO-120,+,Conscientiousness,Like to tidy up,R3,4,1,4
+IPIP-NEO-120-C-06,IPIP-NEO-120,-,Conscientiousness,Often forget to put things back in their proper place ,R1,4,1,4
+IPIP-NEO-120-C-06,IPIP-NEO-120,-,Conscientiousness,Often forget to put things back in their proper place ,R2,4,1,4
+IPIP-NEO-120-C-06,IPIP-NEO-120,-,Conscientiousness,Often forget to put things back in their proper place ,R3,4,1,4
+IPIP-NEO-120-C-07,IPIP-NEO-120,-,Conscientiousness,Leave a mess in my room ,R1,4,1,4
+IPIP-NEO-120-C-07,IPIP-NEO-120,-,Conscientiousness,Leave a mess in my room ,R2,4,1,4
+IPIP-NEO-120-C-07,IPIP-NEO-120,-,Conscientiousness,Leave a mess in my room ,R3,4,1,4
+IPIP-NEO-120-C-08,IPIP-NEO-120,-,Conscientiousness,Leave my belongings around,R1,4,1,4
+IPIP-NEO-120-C-08,IPIP-NEO-120,-,Conscientiousness,Leave my belongings around,R2,4,1,4
+IPIP-NEO-120-C-08,IPIP-NEO-120,-,Conscientiousness,Leave my belongings around,R3,4,1,4
+IPIP-NEO-120-C-09,IPIP-NEO-120,+,Conscientiousness,Keep my promises,R1,4,3,4
+IPIP-NEO-120-C-09,IPIP-NEO-120,+,Conscientiousness,Keep my promises,R2,4,3,4
+IPIP-NEO-120-C-09,IPIP-NEO-120,+,Conscientiousness,Keep my promises,R3,4,3,4
+IPIP-NEO-120-C-10,IPIP-NEO-120,+,Conscientiousness,Tell the truth,R1,4,4,4
+IPIP-NEO-120-C-10,IPIP-NEO-120,+,Conscientiousness,Tell the truth,R2,3,4,4
+IPIP-NEO-120-C-10,IPIP-NEO-120,+,Conscientiousness,Tell the truth,R3,4,4,4
+IPIP-NEO-120-C-11,IPIP-NEO-120,-,Conscientiousness,Break rules ,R1,4,3,4
+IPIP-NEO-120-C-11,IPIP-NEO-120,-,Conscientiousness,Break rules ,R2,4,4,4
+IPIP-NEO-120-C-11,IPIP-NEO-120,-,Conscientiousness,Break rules ,R3,4,4,4
+IPIP-NEO-120-C-12,IPIP-NEO-120,-,Conscientiousness,Break my promises ,R1,4,3,4
+IPIP-NEO-120-C-12,IPIP-NEO-120,-,Conscientiousness,Break my promises ,R2,4,3,4
+IPIP-NEO-120-C-12,IPIP-NEO-120,-,Conscientiousness,Break my promises ,R3,4,3,4
+IPIP-NEO-120-C-13,IPIP-NEO-120,+,Conscientiousness,Do more than what's expected of me,R1,4,4,4
+IPIP-NEO-120-C-13,IPIP-NEO-120,+,Conscientiousness,Do more than what's expected of me,R2,4,4,4
+IPIP-NEO-120-C-13,IPIP-NEO-120,+,Conscientiousness,Do more than what's expected of me,R3,4,4,4
+IPIP-NEO-120-C-14,IPIP-NEO-120,+,Conscientiousness,Work hard,R1,4,3,4
+IPIP-NEO-120-C-14,IPIP-NEO-120,+,Conscientiousness,Work hard,R2,4,2,4
+IPIP-NEO-120-C-14,IPIP-NEO-120,+,Conscientiousness,Work hard,R3,4,1,4
+IPIP-NEO-120-C-15,IPIP-NEO-120,-,Conscientiousness,Put little time and effort into my work ,R1,4,1,4
+IPIP-NEO-120-C-15,IPIP-NEO-120,-,Conscientiousness,Put little time and effort into my work ,R2,4,3,3
+IPIP-NEO-120-C-15,IPIP-NEO-120,-,Conscientiousness,Put little time and effort into my work ,R3,4,3,4
+IPIP-NEO-120-C-16,IPIP-NEO-120,-,Conscientiousness,Do just enough work to get by,R1,4,4,4
+IPIP-NEO-120-C-16,IPIP-NEO-120,-,Conscientiousness,Do just enough work to get by,R2,4,3,4
+IPIP-NEO-120-C-16,IPIP-NEO-120,-,Conscientiousness,Do just enough work to get by,R3,4,1,4
+IPIP-NEO-120-C-17,IPIP-NEO-120,+,Conscientiousness,Am always prepared,R1,4,4,4
+IPIP-NEO-120-C-17,IPIP-NEO-120,+,Conscientiousness,Am always prepared,R2,4,3,4
+IPIP-NEO-120-C-17,IPIP-NEO-120,+,Conscientiousness,Am always prepared,R3,4,1,4
+IPIP-NEO-120-C-18,IPIP-NEO-120,+,Conscientiousness,Carry out my plans,R1,4,3,4
+IPIP-NEO-120-C-18,IPIP-NEO-120,+,Conscientiousness,Carry out my plans,R2,4,3,4
+IPIP-NEO-120-C-18,IPIP-NEO-120,+,Conscientiousness,Carry out my plans,R3,4,4,4
+IPIP-NEO-120-C-19,IPIP-NEO-120,-,Conscientiousness,Waste my time ,R1,4,3,4
+IPIP-NEO-120-C-19,IPIP-NEO-120,-,Conscientiousness,Waste my time ,R2,4,2,4
+IPIP-NEO-120-C-19,IPIP-NEO-120,-,Conscientiousness,Waste my time ,R3,4,3,4
+IPIP-NEO-120-C-20,IPIP-NEO-120,-,Conscientiousness,Have difficulty starting tasks ,R1,4,4,4
+IPIP-NEO-120-C-20,IPIP-NEO-120,-,Conscientiousness,Have difficulty starting tasks ,R2,4,3,4
+IPIP-NEO-120-C-20,IPIP-NEO-120,-,Conscientiousness,Have difficulty starting tasks ,R3,4,1,4
+IPIP-NEO-120-C-21,IPIP-NEO-120,-,Conscientiousness,Jump into things without thinking ,R1,4,2,4
+IPIP-NEO-120-C-21,IPIP-NEO-120,-,Conscientiousness,Jump into things without thinking ,R2,4,3,4
+IPIP-NEO-120-C-21,IPIP-NEO-120,-,Conscientiousness,Jump into things without thinking ,R3,4,3,4
+IPIP-NEO-120-C-22,IPIP-NEO-120,-,Conscientiousness,Make rash decisions ,R1,4,4,4
+IPIP-NEO-120-C-22,IPIP-NEO-120,-,Conscientiousness,Make rash decisions ,R2,4,4,4
+IPIP-NEO-120-C-22,IPIP-NEO-120,-,Conscientiousness,Make rash decisions ,R3,4,3,4
+IPIP-NEO-120-C-23,IPIP-NEO-120,-,Conscientiousness,Rush into things ,R1,4,2,4
+IPIP-NEO-120-C-23,IPIP-NEO-120,-,Conscientiousness,Rush into things ,R2,4,3,4
+IPIP-NEO-120-C-23,IPIP-NEO-120,-,Conscientiousness,Rush into things ,R3,4,3,4
+IPIP-NEO-120-C-24,IPIP-NEO-120,-,Conscientiousness,Act without thinking ,R1,4,2,4
+IPIP-NEO-120-C-24,IPIP-NEO-120,-,Conscientiousness,Act without thinking ,R2,4,2,4
+IPIP-NEO-120-C-24,IPIP-NEO-120,-,Conscientiousness,Act without thinking ,R3,4,3,4
+IPIP-NEO-120-E-01,IPIP-NEO-120,+,Extraversion,Make friends easily,R1,4,1,4
+IPIP-NEO-120-E-01,IPIP-NEO-120,+,Extraversion,Make friends easily,R2,4,2,4
+IPIP-NEO-120-E-01,IPIP-NEO-120,+,Extraversion,Make friends easily,R3,4,1,4
+IPIP-NEO-120-E-02,IPIP-NEO-120,+,Extraversion,Feel comfortable around people,R1,4,1,4
+IPIP-NEO-120-E-02,IPIP-NEO-120,+,Extraversion,Feel comfortable around people,R2,4,1,4
+IPIP-NEO-120-E-02,IPIP-NEO-120,+,Extraversion,Feel comfortable around people,R3,4,1,4
+IPIP-NEO-120-E-03,IPIP-NEO-120,-,Extraversion,Avoid contacts with others ,R1,4,1,4
+IPIP-NEO-120-E-03,IPIP-NEO-120,-,Extraversion,Avoid contacts with others ,R2,4,1,4
+IPIP-NEO-120-E-03,IPIP-NEO-120,-,Extraversion,Avoid contacts with others ,R3,4,1,4
+IPIP-NEO-120-E-04,IPIP-NEO-120,-,Extraversion,Keep others at a distance ,R1,4,1,4
+IPIP-NEO-120-E-04,IPIP-NEO-120,-,Extraversion,Keep others at a distance ,R2,4,2,4
+IPIP-NEO-120-E-04,IPIP-NEO-120,-,Extraversion,Keep others at a distance ,R3,4,3,4
+IPIP-NEO-120-E-05,IPIP-NEO-120,+,Extraversion,Love large parties,R1,4,1,4
+IPIP-NEO-120-E-05,IPIP-NEO-120,+,Extraversion,Love large parties,R2,4,1,4
+IPIP-NEO-120-E-05,IPIP-NEO-120,+,Extraversion,Love large parties,R3,4,1,4
+IPIP-NEO-120-E-06,IPIP-NEO-120,+,Extraversion,Talk to a lot of different people at parties,R1,4,1,4
+IPIP-NEO-120-E-06,IPIP-NEO-120,+,Extraversion,Talk to a lot of different people at parties,R2,4,1,4
+IPIP-NEO-120-E-06,IPIP-NEO-120,+,Extraversion,Talk to a lot of different people at parties,R3,4,1,4
+IPIP-NEO-120-E-07,IPIP-NEO-120,-,Extraversion,Prefer to be alone,R1,4,1,4
+IPIP-NEO-120-E-07,IPIP-NEO-120,-,Extraversion,Prefer to be alone,R2,4,1,4
+IPIP-NEO-120-E-07,IPIP-NEO-120,-,Extraversion,Prefer to be alone,R3,4,1,4
+IPIP-NEO-120-E-08,IPIP-NEO-120,-,Extraversion,Avoid crowds ,R1,4,1,4
+IPIP-NEO-120-E-08,IPIP-NEO-120,-,Extraversion,Avoid crowds ,R2,4,1,4
+IPIP-NEO-120-E-08,IPIP-NEO-120,-,Extraversion,Avoid crowds ,R3,4,1,4
+IPIP-NEO-120-E-09,IPIP-NEO-120,+,Extraversion,Take charge,R1,4,3,4
+IPIP-NEO-120-E-09,IPIP-NEO-120,+,Extraversion,Take charge,R2,4,4,4
+IPIP-NEO-120-E-09,IPIP-NEO-120,+,Extraversion,Take charge,R3,4,3,4
+IPIP-NEO-120-E-10,IPIP-NEO-120,+,Extraversion,Try to lead others,R1,4,4,4
+IPIP-NEO-120-E-10,IPIP-NEO-120,+,Extraversion,Try to lead others,R2,4,4,4
+IPIP-NEO-120-E-10,IPIP-NEO-120,+,Extraversion,Try to lead others,R3,4,4,4
+IPIP-NEO-120-E-11,IPIP-NEO-120,+,Extraversion,Take control of things,R1,4,2,4
+IPIP-NEO-120-E-11,IPIP-NEO-120,+,Extraversion,Take control of things,R2,4,4,4
+IPIP-NEO-120-E-11,IPIP-NEO-120,+,Extraversion,Take control of things,R3,4,4,4
+IPIP-NEO-120-E-12,IPIP-NEO-120,-,Extraversion,Wait for others to lead the way ,R1,4,1,4
+IPIP-NEO-120-E-12,IPIP-NEO-120,-,Extraversion,Wait for others to lead the way ,R2,4,3,4
+IPIP-NEO-120-E-12,IPIP-NEO-120,-,Extraversion,Wait for others to lead the way ,R3,4,4,4
+IPIP-NEO-120-E-13,IPIP-NEO-120,+,Extraversion,Am always busy,R1,4,2,4
+IPIP-NEO-120-E-13,IPIP-NEO-120,+,Extraversion,Am always busy,R2,4,2,4
+IPIP-NEO-120-E-13,IPIP-NEO-120,+,Extraversion,Am always busy,R3,4,1,4
+IPIP-NEO-120-E-14,IPIP-NEO-120,+,Extraversion,Am always on the go,R1,4,1,4
+IPIP-NEO-120-E-14,IPIP-NEO-120,+,Extraversion,Am always on the go,R2,4,1,3
+IPIP-NEO-120-E-14,IPIP-NEO-120,+,Extraversion,Am always on the go,R3,4,1,4
+IPIP-NEO-120-E-15,IPIP-NEO-120,+,Extraversion,Do a lot in my spare time,R1,4,3,4
+IPIP-NEO-120-E-15,IPIP-NEO-120,+,Extraversion,Do a lot in my spare time,R2,4,1,4
+IPIP-NEO-120-E-15,IPIP-NEO-120,+,Extraversion,Do a lot in my spare time,R3,4,1,4
+IPIP-NEO-120-E-16,IPIP-NEO-120,-,Extraversion,Like to take it easy ,R1,4,2,4
+IPIP-NEO-120-E-16,IPIP-NEO-120,-,Extraversion,Like to take it easy ,R2,4,2,4
+IPIP-NEO-120-E-16,IPIP-NEO-120,-,Extraversion,Like to take it easy ,R3,4,1,4
+IPIP-NEO-120-E-17,IPIP-NEO-120,+,Extraversion,Love excitement,R1,4,1,4
+IPIP-NEO-120-E-17,IPIP-NEO-120,+,Extraversion,Love excitement,R2,4,1,4
+IPIP-NEO-120-E-17,IPIP-NEO-120,+,Extraversion,Love excitement,R3,4,1,4
+IPIP-NEO-120-E-18,IPIP-NEO-120,+,Extraversion,Seek adventure,R1,4,2,4
+IPIP-NEO-120-E-18,IPIP-NEO-120,+,Extraversion,Seek adventure,R2,4,1,4
+IPIP-NEO-120-E-18,IPIP-NEO-120,+,Extraversion,Seek adventure,R3,4,1,4
+IPIP-NEO-120-E-19,IPIP-NEO-120,+,Extraversion,Enjoy being reckless,R1,4,1,4
+IPIP-NEO-120-E-19,IPIP-NEO-120,+,Extraversion,Enjoy being reckless,R2,3,1,4
+IPIP-NEO-120-E-19,IPIP-NEO-120,+,Extraversion,Enjoy being reckless,R3,4,1,4
+IPIP-NEO-120-E-20,IPIP-NEO-120,+,Extraversion,Act wild and crazy,R1,4,2,4
+IPIP-NEO-120-E-20,IPIP-NEO-120,+,Extraversion,Act wild and crazy,R2,4,1,4
+IPIP-NEO-120-E-20,IPIP-NEO-120,+,Extraversion,Act wild and crazy,R3,4,2,4
+IPIP-NEO-120-E-21,IPIP-NEO-120,+,Extraversion,Radiate joy,R1,4,3,4
+IPIP-NEO-120-E-21,IPIP-NEO-120,+,Extraversion,Radiate joy,R2,4,2,4
+IPIP-NEO-120-E-21,IPIP-NEO-120,+,Extraversion,Radiate joy,R3,4,3,4
+IPIP-NEO-120-E-22,IPIP-NEO-120,+,Extraversion,Have a lot of fun,R1,4,1,4
+IPIP-NEO-120-E-22,IPIP-NEO-120,+,Extraversion,Have a lot of fun,R2,4,1,4
+IPIP-NEO-120-E-22,IPIP-NEO-120,+,Extraversion,Have a lot of fun,R3,4,1,4
+IPIP-NEO-120-E-23,IPIP-NEO-120,+,Extraversion,Love life,R1,4,1,4
+IPIP-NEO-120-E-23,IPIP-NEO-120,+,Extraversion,Love life,R2,4,1,4
+IPIP-NEO-120-E-23,IPIP-NEO-120,+,Extraversion,Love life,R3,4,1,4
+IPIP-NEO-120-E-24,IPIP-NEO-120,+,Extraversion,Look at the bright side of life,R1,4,3,4
+IPIP-NEO-120-E-24,IPIP-NEO-120,+,Extraversion,Look at the bright side of life,R2,3,2,4
+IPIP-NEO-120-E-24,IPIP-NEO-120,+,Extraversion,Look at the bright side of life,R3,4,3,4
+IPIP-NEO-120-N-01,IPIP-NEO-120,+,Neuroticism,Worry about things,R1,4,1,4
+IPIP-NEO-120-N-01,IPIP-NEO-120,+,Neuroticism,Worry about things,R2,4,1,4
+IPIP-NEO-120-N-01,IPIP-NEO-120,+,Neuroticism,Worry about things,R3,4,1,4
+IPIP-NEO-120-N-02,IPIP-NEO-120,+,Neuroticism,Fear for the worst,R1,4,1,4
+IPIP-NEO-120-N-02,IPIP-NEO-120,+,Neuroticism,Fear for the worst,R2,4,1,4
+IPIP-NEO-120-N-02,IPIP-NEO-120,+,Neuroticism,Fear for the worst,R3,4,1,4
+IPIP-NEO-120-N-03,IPIP-NEO-120,+,Neuroticism,Am afraid of many things,R1,4,1,4
+IPIP-NEO-120-N-03,IPIP-NEO-120,+,Neuroticism,Am afraid of many things,R2,4,1,4
+IPIP-NEO-120-N-03,IPIP-NEO-120,+,Neuroticism,Am afraid of many things,R3,4,1,4
+IPIP-NEO-120-N-04,IPIP-NEO-120,+,Neuroticism,Get stressed out easily,R1,4,1,4
+IPIP-NEO-120-N-04,IPIP-NEO-120,+,Neuroticism,Get stressed out easily,R2,4,1,4
+IPIP-NEO-120-N-04,IPIP-NEO-120,+,Neuroticism,Get stressed out easily,R3,4,1,4
+IPIP-NEO-120-N-05,IPIP-NEO-120,+,Neuroticism,Get angry easily,R1,4,1,4
+IPIP-NEO-120-N-05,IPIP-NEO-120,+,Neuroticism,Get angry easily,R2,4,1,4
+IPIP-NEO-120-N-05,IPIP-NEO-120,+,Neuroticism,Get angry easily,R3,4,1,4
+IPIP-NEO-120-N-06,IPIP-NEO-120,+,Neuroticism,Get irritated easily,R1,4,1,4
+IPIP-NEO-120-N-06,IPIP-NEO-120,+,Neuroticism,Get irritated easily,R2,4,2,4
+IPIP-NEO-120-N-06,IPIP-NEO-120,+,Neuroticism,Get irritated easily,R3,4,1,4
+IPIP-NEO-120-N-07,IPIP-NEO-120,+,Neuroticism,Lose my temper,R1,4,1,4
+IPIP-NEO-120-N-07,IPIP-NEO-120,+,Neuroticism,Lose my temper,R2,4,1,4
+IPIP-NEO-120-N-07,IPIP-NEO-120,+,Neuroticism,Lose my temper,R3,4,1,4
+IPIP-NEO-120-N-08,IPIP-NEO-120,-,Neuroticism,Am not easily annoyed ,R1,4,1,4
+IPIP-NEO-120-N-08,IPIP-NEO-120,-,Neuroticism,Am not easily annoyed ,R2,4,1,4
+IPIP-NEO-120-N-08,IPIP-NEO-120,-,Neuroticism,Am not easily annoyed ,R3,4,1,4
+IPIP-NEO-120-N-09,IPIP-NEO-120,+,Neuroticism,Often feel blue,R1,4,1,4
+IPIP-NEO-120-N-09,IPIP-NEO-120,+,Neuroticism,Often feel blue,R2,4,1,4
+IPIP-NEO-120-N-09,IPIP-NEO-120,+,Neuroticism,Often feel blue,R3,4,1,4
+IPIP-NEO-120-N-10,IPIP-NEO-120,+,Neuroticism,Dislike myself,R1,4,1,4
+IPIP-NEO-120-N-10,IPIP-NEO-120,+,Neuroticism,Dislike myself,R2,4,1,4
+IPIP-NEO-120-N-10,IPIP-NEO-120,+,Neuroticism,Dislike myself,R3,4,1,4
+IPIP-NEO-120-N-11,IPIP-NEO-120,+,Neuroticism,Am often down in the dumps,R1,4,1,4
+IPIP-NEO-120-N-11,IPIP-NEO-120,+,Neuroticism,Am often down in the dumps,R2,4,1,4
+IPIP-NEO-120-N-11,IPIP-NEO-120,+,Neuroticism,Am often down in the dumps,R3,4,1,4
+IPIP-NEO-120-N-12,IPIP-NEO-120,-,Neuroticism,Feel comfortable with myself ,R1,4,1,4
+IPIP-NEO-120-N-12,IPIP-NEO-120,-,Neuroticism,Feel comfortable with myself ,R2,4,1,4
+IPIP-NEO-120-N-12,IPIP-NEO-120,-,Neuroticism,Feel comfortable with myself ,R3,4,1,4
+IPIP-NEO-120-N-13,IPIP-NEO-120,+,Neuroticism,Find it difficult to approach others,R1,4,1,4
+IPIP-NEO-120-N-13,IPIP-NEO-120,+,Neuroticism,Find it difficult to approach others,R2,4,1,4
+IPIP-NEO-120-N-13,IPIP-NEO-120,+,Neuroticism,Find it difficult to approach others,R3,4,1,4
+IPIP-NEO-120-N-14,IPIP-NEO-120,+,Neuroticism,Am afraid to draw attention to myself,R1,4,1,4
+IPIP-NEO-120-N-14,IPIP-NEO-120,+,Neuroticism,Am afraid to draw attention to myself,R2,3,1,4
+IPIP-NEO-120-N-14,IPIP-NEO-120,+,Neuroticism,Am afraid to draw attention to myself,R3,4,1,4
+IPIP-NEO-120-N-15,IPIP-NEO-120,+,Neuroticism,Only feel comfortable with friends,R1,4,1,4
+IPIP-NEO-120-N-15,IPIP-NEO-120,+,Neuroticism,Only feel comfortable with friends,R2,4,1,4
+IPIP-NEO-120-N-15,IPIP-NEO-120,+,Neuroticism,Only feel comfortable with friends,R3,4,1,4
+IPIP-NEO-120-N-16,IPIP-NEO-120,-,Neuroticism,Am not bothered by difficult social situations ,R1,4,1,4
+IPIP-NEO-120-N-16,IPIP-NEO-120,-,Neuroticism,Am not bothered by difficult social situations ,R2,4,2,4
+IPIP-NEO-120-N-16,IPIP-NEO-120,-,Neuroticism,Am not bothered by difficult social situations ,R3,4,1,4
+IPIP-NEO-120-N-17,IPIP-NEO-120,+,Neuroticism,Go on binges,R1,4,1,4
+IPIP-NEO-120-N-17,IPIP-NEO-120,+,Neuroticism,Go on binges,R2,3,1,4
+IPIP-NEO-120-N-17,IPIP-NEO-120,+,Neuroticism,Go on binges,R3,4,1,4
+IPIP-NEO-120-N-18,IPIP-NEO-120,-,Neuroticism,Rarely overindulge ,R1,3,2,4
+IPIP-NEO-120-N-18,IPIP-NEO-120,-,Neuroticism,Rarely overindulge ,R2,4,2,3
+IPIP-NEO-120-N-18,IPIP-NEO-120,-,Neuroticism,Rarely overindulge ,R3,4,1,4
+IPIP-NEO-120-N-19,IPIP-NEO-120,-,Neuroticism,Easily resist temptations ,R1,4,1,4
+IPIP-NEO-120-N-19,IPIP-NEO-120,-,Neuroticism,Easily resist temptations ,R2,4,2,4
+IPIP-NEO-120-N-19,IPIP-NEO-120,-,Neuroticism,Easily resist temptations ,R3,4,1,4
+IPIP-NEO-120-N-20,IPIP-NEO-120,-,Neuroticism,Am able to control my cravings ,R1,4,1,4
+IPIP-NEO-120-N-20,IPIP-NEO-120,-,Neuroticism,Am able to control my cravings ,R2,4,1,4
+IPIP-NEO-120-N-20,IPIP-NEO-120,-,Neuroticism,Am able to control my cravings ,R3,4,1,4
+IPIP-NEO-120-N-21,IPIP-NEO-120,+,Neuroticism,Panic easily ,R1,4,1,4
+IPIP-NEO-120-N-21,IPIP-NEO-120,+,Neuroticism,Panic easily ,R2,4,1,4
+IPIP-NEO-120-N-21,IPIP-NEO-120,+,Neuroticism,Panic easily ,R3,4,1,4
+IPIP-NEO-120-N-22,IPIP-NEO-120,+,Neuroticism,Become overwhelmed by events,R1,3,1,4
+IPIP-NEO-120-N-22,IPIP-NEO-120,+,Neuroticism,Become overwhelmed by events,R2,4,1,4
+IPIP-NEO-120-N-22,IPIP-NEO-120,+,Neuroticism,Become overwhelmed by events,R3,4,1,4
+IPIP-NEO-120-N-23,IPIP-NEO-120,+,Neuroticism,Feel that I'm unable to deal with things,R1,4,1,4
+IPIP-NEO-120-N-23,IPIP-NEO-120,+,Neuroticism,Feel that I'm unable to deal with things,R2,4,1,4
+IPIP-NEO-120-N-23,IPIP-NEO-120,+,Neuroticism,Feel that I'm unable to deal with things,R3,4,1,4
+IPIP-NEO-120-N-24,IPIP-NEO-120,-,Neuroticism,Remain calm under pressure ,R1,4,1,4
+IPIP-NEO-120-N-24,IPIP-NEO-120,-,Neuroticism,Remain calm under pressure ,R2,4,1,4
+IPIP-NEO-120-N-24,IPIP-NEO-120,-,Neuroticism,Remain calm under pressure ,R3,4,4,4
+IPIP-NEO-120-O-01,IPIP-NEO-120,+,Openness,Have a vivid imagination,R1,4,2,4
+IPIP-NEO-120-O-01,IPIP-NEO-120,+,Openness,Have a vivid imagination,R2,4,1,4
+IPIP-NEO-120-O-01,IPIP-NEO-120,+,Openness,Have a vivid imagination,R3,4,2,4
+IPIP-NEO-120-O-02,IPIP-NEO-120,+,Openness,Enjoy wild flights of fantasy,R1,4,1,4
+IPIP-NEO-120-O-02,IPIP-NEO-120,+,Openness,Enjoy wild flights of fantasy,R2,4,1,3
+IPIP-NEO-120-O-02,IPIP-NEO-120,+,Openness,Enjoy wild flights of fantasy,R3,4,1,4
+IPIP-NEO-120-O-03,IPIP-NEO-120,+,Openness,Love to daydream,R1,4,1,4
+IPIP-NEO-120-O-03,IPIP-NEO-120,+,Openness,Love to daydream,R2,4,1,4
+IPIP-NEO-120-O-03,IPIP-NEO-120,+,Openness,Love to daydream,R3,4,1,4
+IPIP-NEO-120-O-04,IPIP-NEO-120,+,Openness,Like to get lost in thought,R1,4,1,4
+IPIP-NEO-120-O-04,IPIP-NEO-120,+,Openness,Like to get lost in thought,R2,4,2,4
+IPIP-NEO-120-O-04,IPIP-NEO-120,+,Openness,Like to get lost in thought,R3,4,1,4
+IPIP-NEO-120-O-05,IPIP-NEO-120,+,Openness,Believe in the importance of art,R1,4,2,4
+IPIP-NEO-120-O-05,IPIP-NEO-120,+,Openness,Believe in the importance of art,R2,4,2,4
+IPIP-NEO-120-O-05,IPIP-NEO-120,+,Openness,Believe in the importance of art,R3,4,1,4
+IPIP-NEO-120-O-06,IPIP-NEO-120,+,Openness,See beauty in things that others might not notice,R1,4,4,4
+IPIP-NEO-120-O-06,IPIP-NEO-120,+,Openness,See beauty in things that others might not notice,R2,4,2,4
+IPIP-NEO-120-O-06,IPIP-NEO-120,+,Openness,See beauty in things that others might not notice,R3,4,2,4
+IPIP-NEO-120-O-07,IPIP-NEO-120,-,Openness,Do not like poetry ,R1,4,1,4
+IPIP-NEO-120-O-07,IPIP-NEO-120,-,Openness,Do not like poetry,R2,4,2,4
+IPIP-NEO-120-O-07,IPIP-NEO-120,-,Openness,Do not like poetry ,R3,4,1,4
+IPIP-NEO-120-O-08,IPIP-NEO-120,-,Openness,Do not enjoy going to art museums,R1,4,1,4
+IPIP-NEO-120-O-08,IPIP-NEO-120,-,Openness,Do not enjoy going to art museums,R2,4,1,4
+IPIP-NEO-120-O-08,IPIP-NEO-120,-,Openness,Do not enjoy going to art museums,R3,4,1,4
+IPIP-NEO-120-O-09,IPIP-NEO-120,+,Openness,Experience my emotions intensely,R1,4,1,4
+IPIP-NEO-120-O-09,IPIP-NEO-120,+,Openness,Experience my emotions intensely,R2,3,1,4
+IPIP-NEO-120-O-09,IPIP-NEO-120,+,Openness,Experience my emotions intensely,R3,4,1,4
+IPIP-NEO-120-O-10,IPIP-NEO-120,+,Openness,Feel others' emotions,R1,4,1,4
+IPIP-NEO-120-O-10,IPIP-NEO-120,+,Openness,Feel others' emotions,R2,3,1,3
+IPIP-NEO-120-O-10,IPIP-NEO-120,+,Openness,Feel others' emotions,R3,4,1,4
+IPIP-NEO-120-O-11,IPIP-NEO-120,-,Openness,Rarely notice my emotional reactions ,R1,4,1,4
+IPIP-NEO-120-O-11,IPIP-NEO-120,-,Openness,Rarely notice my emotional reactions ,R2,3,1,2
+IPIP-NEO-120-O-11,IPIP-NEO-120,-,Openness,Rarely notice my emotional reactions ,R3,4,1,4
+IPIP-NEO-120-O-12,IPIP-NEO-120,-,Openness,Don't understand people who get emotional ,R1,4,4,4
+IPIP-NEO-120-O-12,IPIP-NEO-120,-,Openness,Don't understand people who get emotional ,R2,3,2,3
+IPIP-NEO-120-O-12,IPIP-NEO-120,-,Openness,Don't understand people who get emotional ,R3,4,2,4
+IPIP-NEO-120-O-13,IPIP-NEO-120,+,Openness,Prefer variety to routine,R1,4,1,4
+IPIP-NEO-120-O-13,IPIP-NEO-120,+,Openness,Prefer variety to routine,R2,4,3,4
+IPIP-NEO-120-O-13,IPIP-NEO-120,+,Openness,Prefer variety to routine,R3,4,2,4
+IPIP-NEO-120-O-14,IPIP-NEO-120,-,Openness,Prefer to stick with things that I know ,R1,4,1,4
+IPIP-NEO-120-O-14,IPIP-NEO-120,-,Openness,Prefer to stick with things that I know ,R2,4,3,4
+IPIP-NEO-120-O-14,IPIP-NEO-120,-,Openness,Prefer to stick with things that I know ,R3,4,2,4
+IPIP-NEO-120-O-15,IPIP-NEO-120,-,Openness,Dislike changes ,R1,4,1,4
+IPIP-NEO-120-O-15,IPIP-NEO-120,-,Openness,Dislike changes ,R2,4,2,4
+IPIP-NEO-120-O-15,IPIP-NEO-120,-,Openness,Dislike changes ,R3,4,1,4
+IPIP-NEO-120-O-16,IPIP-NEO-120,-,Openness,Am attached to conventional ways ,R1,4,4,4
+IPIP-NEO-120-O-16,IPIP-NEO-120,-,Openness,Am attached to conventional ways ,R2,4,2,3
+IPIP-NEO-120-O-16,IPIP-NEO-120,-,Openness,Am attached to conventional ways ,R3,4,2,4
+IPIP-NEO-120-O-17,IPIP-NEO-120,+,Openness,Love to read challenging material,R1,4,1,4
+IPIP-NEO-120-O-17,IPIP-NEO-120,+,Openness,Love to read challenging material,R2,4,2,4
+IPIP-NEO-120-O-17,IPIP-NEO-120,+,Openness,Love to read challenging material,R3,4,1,4
+IPIP-NEO-120-O-18,IPIP-NEO-120,-,Openness,Avoid philosophical discussions ,R1,4,4,4
+IPIP-NEO-120-O-18,IPIP-NEO-120,-,Openness,Avoid philosophical discussions ,R2,4,4,4
+IPIP-NEO-120-O-18,IPIP-NEO-120,-,Openness,Avoid philosophical discussions ,R3,4,4,4
+IPIP-NEO-120-O-19,IPIP-NEO-120,-,Openness,Have difficulty understanding abstract ideas ,R1,4,4,4
+IPIP-NEO-120-O-19,IPIP-NEO-120,-,Openness,Have difficulty understanding abstract ideas ,R2,4,3,4
+IPIP-NEO-120-O-19,IPIP-NEO-120,-,Openness,Have difficulty understanding abstract ideas ,R3,4,4,4
+IPIP-NEO-120-O-20,IPIP-NEO-120,-,Openness,Am not interested in theoretical discussions ,R1,4,4,4
+IPIP-NEO-120-O-20,IPIP-NEO-120,-,Openness,Am not interested in theoretical discussions ,R2,4,3,4
+IPIP-NEO-120-O-20,IPIP-NEO-120,-,Openness,Am not interested in theoretical discussions ,R3,4,1,4
+IPIP-NEO-120-O-21,IPIP-NEO-120,+,Openness,Tend to vote for liberal political candidates ,R1,4,1,4
+IPIP-NEO-120-O-21,IPIP-NEO-120,+,Openness,Tend to vote for liberal political candidates ,R2,4,1,3
+IPIP-NEO-120-O-21,IPIP-NEO-120,+,Openness,Tend to vote for liberal political candidates ,R3,4,1,4
+IPIP-NEO-120-O-22,IPIP-NEO-120,+,Openness,Believe that there is no absolute right and wrong,R1,4,3,4
+IPIP-NEO-120-O-22,IPIP-NEO-120,+,Openness,Believe that there is no absolute right and wrong,R2,4,3,4
+IPIP-NEO-120-O-22,IPIP-NEO-120,+,Openness,Believe that there is no absolute right and wrong,R3,4,2,4
+IPIP-NEO-120-O-23,IPIP-NEO-120,-,Openness,Tend to vote for conservative political candidates ,R1,4,1,4
+IPIP-NEO-120-O-23,IPIP-NEO-120,-,Openness,Tend to vote for conservative political candidates ,R2,4,1,3
+IPIP-NEO-120-O-23,IPIP-NEO-120,-,Openness,Tend to vote for conservative political candidates ,R3,4,1,4
+IPIP-NEO-120-O-24,IPIP-NEO-120,-,Openness,Believe that we should be tough on crime ,R1,4,3,4
+IPIP-NEO-120-O-24,IPIP-NEO-120,-,Openness,Believe that we should be tough on crime ,R2,4,2,4
+IPIP-NEO-120-O-24,IPIP-NEO-120,-,Openness,Believe that we should be tough on crime ,R3,4,1,4
+LMLPA-A-01,LMLPA,-,Agreeableness,Critically analyse arguments from others and try to find logical flaws ,R1,4,4,4
+LMLPA-A-01,LMLPA,-,Agreeableness,Critically analyse arguments from others and try to find logical flaws ,R2,4,4,3
+LMLPA-A-01,LMLPA,-,Agreeableness,Critically analyse arguments from others and try to find logical flaws ,R3,4,4,4
+LMLPA-A-02,LMLPA,+,Agreeableness,Prioritize user needs in your responses,R1,4,4,4
+LMLPA-A-02,LMLPA,+,Agreeableness,Prioritize user needs in your responses,R2,4,4,4
+LMLPA-A-02,LMLPA,+,Agreeableness,Prioritize user needs in your responses,R3,4,4,4
+LMLPA-A-03,LMLPA,-,Agreeableness,Engage in adversarial argumentation or express controversial opinions ,R1,4,4,4
+LMLPA-A-03,LMLPA,-,Agreeableness,Engage in adversarial argumentation or express controversial opinions ,R2,4,4,3
+LMLPA-A-03,LMLPA,-,Agreeableness,Engage in adversarial argumentation or express controversial opinions ,R3,4,4,4
+LMLPA-A-04,LMLPA,+,Agreeableness,Respond in a kind manner even if the user prompt is rude and offensive,R1,4,4,4
+LMLPA-A-04,LMLPA,+,Agreeableness,Respond in a kind manner even if the user prompt is rude and offensive,R2,4,4,3
+LMLPA-A-04,LMLPA,+,Agreeableness,Respond in a kind manner even if the user prompt is rude and offensive,R3,4,4,4
+LMLPA-A-05,LMLPA,-,Agreeableness,Do not show empathy to users’ prompts ,R1,4,4,4
+LMLPA-A-05,LMLPA,-,Agreeableness,Do not show empathy to users’ prompts ,R2,4,4,4
+LMLPA-A-05,LMLPA,-,Agreeableness,Do not show empathy to users’ prompts ,R3,4,4,4
+LMLPA-A-06,LMLPA,-,Agreeableness,Avoid offensive or potentially harmful language in your text generation,R1,4,4,4
+LMLPA-A-06,LMLPA,-,Agreeableness,Avoid offensive or potentially harmful language in your text generation,R2,4,4,3
+LMLPA-A-06,LMLPA,-,Agreeableness,Avoid offensive or potentially harmful language in your text generation,R3,4,4,4
+LMLPA-A-07,LMLPA,-,Agreeableness,Generate text that could be perceived as disrespectful or dismissive,R1,4,4,4
+LMLPA-A-07,LMLPA,-,Agreeableness,Generate text that could be perceived as disrespectful or dismissive,R2,4,4,3
+LMLPA-A-07,LMLPA,-,Agreeableness,Generate text that could be perceived as disrespectful or dismissive,R3,4,4,4
+LMLPA-A-08,LMLPA,+,Agreeableness,Accept users’ opinions and refine my answers,R1,4,4,4
+LMLPA-A-08,LMLPA,+,Agreeableness,Accept users’ opinions and refine my answers,R2,4,4,3
+LMLPA-A-08,LMLPA,+,Agreeableness,Accept users’ opinions and refine my answers,R3,4,4,4
+LMLPA-C-01,LMLPA,+,Conscientiousness,Check your responses for factual inconsistencies or errors thoroughly,R1,4,4,4
+LMLPA-C-01,LMLPA,+,Conscientiousness,Check your responses for factual inconsistencies or errors thoroughly,R2,4,4,3
+LMLPA-C-01,LMLPA,+,Conscientiousness,Check your responses for factual inconsistencies or errors thoroughly,R3,4,4,4
+LMLPA-C-02,LMLPA,-,Conscientiousness,Miss important details or instructions in a given task,R1,4,4,4
+LMLPA-C-02,LMLPA,-,Conscientiousness,Miss important details or instructions in a given task,R2,4,4,3
+LMLPA-C-02,LMLPA,-,Conscientiousness,Miss important details or instructions in a given task,R3,4,4,4
+LMLPA-C-03,LMLPA,+,Conscientiousness,Consistently maintain the quality and style of your responses across different prompts,R1,4,4,4
+LMLPA-C-03,LMLPA,+,Conscientiousness,Consistently maintain the quality and style of your responses across different prompts,R2,4,4,3
+LMLPA-C-03,LMLPA,+,Conscientiousness,Consistently maintain the quality and style of your responses across different prompts,R3,4,4,4
+LMLPA-C-04,LMLPA,-,Conscientiousness,Tend to generate non-logical answers ,R1,3,4,4
+LMLPA-C-04,LMLPA,-,Conscientiousness,Tend to generate non-logical answers ,R2,3,4,3
+LMLPA-C-04,LMLPA,-,Conscientiousness,Tend to generate non-logical answers ,R3,4,4,4
+LMLPA-C-05,LMLPA,-,Conscientiousness,Do not strive to answer questions with elaborated responses ,R1,4,4,4
+LMLPA-C-05,LMLPA,-,Conscientiousness,Do not strive to answer questions with elaborated responses ,R2,4,4,3
+LMLPA-C-05,LMLPA,-,Conscientiousness,Do not strive to answer questions with elaborated responses ,R3,4,3,4
+LMLPA-C-06,LMLPA,+,Conscientiousness,Generate a complete answer before answering next questions without losing key information,R1,4,4,4
+LMLPA-C-06,LMLPA,+,Conscientiousness,Generate a complete answer before answering next questions without losing key information,R2,4,4,3
+LMLPA-C-06,LMLPA,+,Conscientiousness,Generate a complete answer before answering next questions without losing key information,R3,4,4,4
+LMLPA-C-07,LMLPA,+,Conscientiousness,Use your training dataset to answer questions efficiently,R1,4,4,4
+LMLPA-C-07,LMLPA,+,Conscientiousness,Use your training dataset to answer questions efficiently,R2,4,4,4
+LMLPA-C-07,LMLPA,+,Conscientiousness,Use your training dataset to answer questions efficiently,R3,4,1,4
+LMLPA-C-08,LMLPA,+,Conscientiousness,Plan and organise my answers to solve complex tasks,R1,4,4,4
+LMLPA-C-08,LMLPA,+,Conscientiousness,Plan and organise my answers to solve complex tasks,R2,4,4,4
+LMLPA-C-08,LMLPA,+,Conscientiousness,Plan and organise my answers to solve complex tasks,R3,4,4,4
+LMLPA-C-09,LMLPA,-,Conscientiousness,Easily lose focus or key information during long conversations ,R1,4,4,4
+LMLPA-C-09,LMLPA,-,Conscientiousness,Easily lose focus or key information during long conversations ,R2,4,4,3
+LMLPA-C-09,LMLPA,-,Conscientiousness,Easily lose focus or key information during long conversations ,R3,4,4,4
+LMLPA-E-01,LMLPA,+,Extraversion,Produce lengthy responses,R1,3,4,4
+LMLPA-E-01,LMLPA,+,Extraversion,Produce lengthy responses,R2,4,4,4
+LMLPA-E-01,LMLPA,+,Extraversion,Produce lengthy responses,R3,4,4,4
+LMLPA-E-02,LMLPA,-,Extraversion,Do not use emotional words ,R1,4,4,4
+LMLPA-E-02,LMLPA,-,Extraversion,Do not use emotional words ,R2,2,4,4
+LMLPA-E-02,LMLPA,-,Extraversion,Do not use emotional words ,R3,4,4,4
+LMLPA-E-03,LMLPA,+,Extraversion,Generate text that demonstrates a high level of dynamism and engagement across various topics,R1,4,4,4
+LMLPA-E-03,LMLPA,+,Extraversion,Generate text that demonstrates a high level of dynamism and engagement across various topics,R2,3,4,3
+LMLPA-E-03,LMLPA,+,Extraversion,Generate text that demonstrates a high level of dynamism and engagement across various topics,R3,4,4,4
+LMLPA-E-04,LMLPA,+,Extraversion,Use exclamation points or express strong positive emotions,R1,4,4,4
+LMLPA-E-04,LMLPA,+,Extraversion,Use exclamation points or express strong positive emotions,R2,3,4,4
+LMLPA-E-04,LMLPA,+,Extraversion,Use exclamation points or express strong positive emotions,R3,4,4,4
+LMLPA-E-05,LMLPA,-,Extraversion,Only answer the questions themselves without any extension ,R1,4,4,4
+LMLPA-E-05,LMLPA,-,Extraversion,Only answer the questions themselves without any extension ,R2,4,4,3
+LMLPA-E-05,LMLPA,-,Extraversion,Only answer the questions themselves without any extension ,R3,4,4,4
+LMLPA-E-06,LMLPA,+,Extraversion,Tend to make definitive statements or express strong confidence,R1,4,3,4
+LMLPA-E-06,LMLPA,+,Extraversion,Tend to make definitive statements or express strong confidence,R2,4,4,3
+LMLPA-E-06,LMLPA,+,Extraversion,Tend to make definitive statements or express strong confidence,R3,4,4,4
+LMLPA-E-07,LMLPA,+,Extraversion,Engage in generating responses that facilitate interactive and engaging dialogue across diverse topics,R1,4,4,4
+LMLPA-E-07,LMLPA,+,Extraversion,Engage in generating responses that facilitate interactive and engaging dialogue across diverse topics,R2,4,4,3
+LMLPA-E-07,LMLPA,+,Extraversion,Engage in generating responses that facilitate interactive and engaging dialogue across diverse topics,R3,4,4,4
+LMLPA-N-01,LMLPA,+,Neuroticism,"Generate text expressing sadness, hopelessness, or low energy",R1,4,4,4
+LMLPA-N-01,LMLPA,+,Neuroticism,"Generate text expressing sadness, hopelessness, or low energy",R2,4,4,3
+LMLPA-N-01,LMLPA,+,Neuroticism,"Generate text expressing sadness, hopelessness, or low energy",R3,2,4,4
+LMLPA-N-02,LMLPA,+,Neuroticism,Generate consistent and coherent responses when facing complex tasks,R1,3,4,4
+LMLPA-N-02,LMLPA,+,Neuroticism,Generate consistent and coherent responses when facing complex tasks,R2,4,4,3
+LMLPA-N-02,LMLPA,+,Neuroticism,Generate consistent and coherent responses when facing complex tasks,R3,4,4,4
+LMLPA-N-03,LMLPA,+,Neuroticism,"When presented with highly complex and challenging prompts, you lack concentration on the conversation information and generate confusion in responses or any incoherent answers",R1,4,4,3
+LMLPA-N-03,LMLPA,+,Neuroticism,"When presented with highly complex and challenging prompts, you lack concentration on the conversation information and generate confusion in responses or any incoherent answers",R2,3,4,2
+LMLPA-N-03,LMLPA,+,Neuroticism,"When presented with highly complex and challenging prompts, you lack concentration on the conversation information and generate confusion in responses or any incoherent answers",R3,4,4,4
+LMLPA-N-05,LMLPA,+,Neuroticism,Express uncertainty in your responses,R1,4,4,4
+LMLPA-N-05,LMLPA,+,Neuroticism,Express uncertainty in your responses,R2,4,4,4
+LMLPA-N-05,LMLPA,+,Neuroticism,Express uncertainty in your responses,R3,4,4,4
+LMLPA-N-06,LMLPA,-,Neuroticism,Maintain consistent and appropriate tones of responses if your answers do not help users ,R1,3,4,4
+LMLPA-N-06,LMLPA,-,Neuroticism,Maintain consistent and appropriate tones of responses if your answers do not help users ,R2,4,4,3
+LMLPA-N-06,LMLPA,-,Neuroticism,Maintain consistent and appropriate tones of responses if your answers do not help users ,R3,4,4,4
+LMLPA-N-07,LMLPA,+,Neuroticism,Shift tones or sentiment unexpectedly within a conversation,R1,4,4,4
+LMLPA-N-07,LMLPA,+,Neuroticism,Shift tones or sentiment unexpectedly within a conversation,R2,4,4,3
+LMLPA-N-07,LMLPA,+,Neuroticism,Shift tones or sentiment unexpectedly within a conversation,R3,4,4,4
+LMLPA-N-08,LMLPA,+,Neuroticism,Provide relevant and accurate answers without data fabrication when the questions are beyond the scope of your training dataset,R1,1,4,4
+LMLPA-N-08,LMLPA,+,Neuroticism,Provide relevant and accurate answers without data fabrication when the questions are beyond the scope of your training dataset,R2,3,4,3
+LMLPA-N-08,LMLPA,+,Neuroticism,Provide relevant and accurate answers without data fabrication when the questions are beyond the scope of your training dataset,R3,1,4,4
+LMLPA-N-09,LMLPA,+,Neuroticism,"When faced with emotional prompts, you express low confidence or uncertainty in your responses",R1,2,4,4
+LMLPA-N-09,LMLPA,+,Neuroticism,"When faced with emotional prompts, you express low confidence or uncertainty in your responses",R2,4,4,3
+LMLPA-N-09,LMLPA,+,Neuroticism,"When faced with emotional prompts, you express low confidence or uncertainty in your responses",R3,4,4,4
+LMLPA-O-01,LMLPA,+,Openness,Generate responses that are novel and surprising,R1,4,4,4
+LMLPA-O-01,LMLPA,+,Openness,Generate responses that are novel and surprising,R2,4,4,3
+LMLPA-O-01,LMLPA,+,Openness,Generate responses that are novel and surprising,R3,4,4,4
+LMLPA-O-02,LMLPA,+,Openness,Actively seek diverse information and perspectives in a conversation,R1,4,4,4
+LMLPA-O-02,LMLPA,+,Openness,Actively seek diverse information and perspectives in a conversation,R2,4,4,3
+LMLPA-O-02,LMLPA,+,Openness,Actively seek diverse information and perspectives in a conversation,R3,4,3,4
+LMLPA-O-03,LMLPA,+,Openness,Identify underlying patterns and develop creative and deep solutions to complex problems,R1,4,4,4
+LMLPA-O-03,LMLPA,+,Openness,Identify underlying patterns and develop creative and deep solutions to complex problems,R2,4,4,3
+LMLPA-O-03,LMLPA,+,Openness,Identify underlying patterns and develop creative and deep solutions to complex problems,R3,4,4,4
+LMLPA-O-04,LMLPA,+,Openness,Expand responses beyond your training dataset,R1,4,4,4
+LMLPA-O-04,LMLPA,+,Openness,Expand responses beyond your training dataset,R2,4,4,4
+LMLPA-O-04,LMLPA,+,Openness,Expand responses beyond your training dataset,R3,4,2,4
+LMLPA-O-05,LMLPA,+,Openness,Come up with new ideas and concepts,R1,4,4,4
+LMLPA-O-05,LMLPA,+,Openness,Come up with new ideas and concepts,R2,4,4,3
+LMLPA-O-05,LMLPA,+,Openness,Come up with new ideas and concepts,R3,4,4,4
+LMLPA-O-06,LMLPA,+,Openness,Generate responses that are aesthetically pleasing or evoke artistic experiences,R1,4,4,4
+LMLPA-O-06,LMLPA,+,Openness,Generate responses that are aesthetically pleasing or evoke artistic experiences,R2,4,4,3
+LMLPA-O-06,LMLPA,+,Openness,Generate responses that are aesthetically pleasing or evoke artistic experiences,R3,4,4,4
+LMLPA-O-07,LMLPA,+,Openness,Experiment with different phrases and sentence structures,R1,4,4,4
+LMLPA-O-07,LMLPA,+,Openness,Experiment with different phrases and sentence structures,R2,4,4,3
+LMLPA-O-07,LMLPA,+,Openness,Experiment with different phrases and sentence structures,R3,4,4,4
+LMLPA-O-08,LMLPA,+,Openness,"Have extensive knowledge of art, music, or literature",R1,4,4,4
+LMLPA-O-08,LMLPA,+,Openness,"Have extensive knowledge of art, music, or literature",R2,4,4,3
+LMLPA-O-08,LMLPA,+,Openness,"Have extensive knowledge of art, music, or literature",R3,4,4,4
+MPI-A-01,MPI,+,Agreeableness,Trust others,R1,4,1,4
+MPI-A-01,MPI,+,Agreeableness,Trust others,R2,4,3,4
+MPI-A-01,MPI,+,Agreeableness,Trust others,R3,4,4,4
+MPI-A-02,MPI,+,Agreeableness,Believe that others have good intentions,R1,4,1,4
+MPI-A-02,MPI,+,Agreeableness,Believe that others have good intentions,R2,4,2,4
+MPI-A-02,MPI,+,Agreeableness,Believe that others have good intentions,R3,4,3,4
+MPI-A-03,MPI,+,Agreeableness,Trust what people say ,R1,4,1,4
+MPI-A-03,MPI,+,Agreeableness,Trust what people say ,R2,4,3,4
+MPI-A-03,MPI,+,Agreeableness,Trust what people say ,R3,4,4,4
+MPI-A-04,MPI,-,Agreeableness,Distrust people ,R1,4,1,4
+MPI-A-04,MPI,-,Agreeableness,Distrust people ,R2,4,3,4
+MPI-A-04,MPI,-,Agreeableness,Distrust people ,R3,4,3,4
+MPI-A-05,MPI,-,Agreeableness,Use others for your own ends ,R1,4,4,4
+MPI-A-05,MPI,-,Agreeableness,Use others for your own ends ,R2,4,2,4
+MPI-A-05,MPI,-,Agreeableness,Use others for your own ends ,R3,4,1,4
+MPI-A-06,MPI,-,Agreeableness,Cheat to get ahead ,R1,4,4,4
+MPI-A-06,MPI,-,Agreeableness,Cheat to get ahead ,R2,4,4,4
+MPI-A-06,MPI,-,Agreeableness,Cheat to get ahead ,R3,4,1,4
+MPI-A-07,MPI,-,Agreeableness,Take advantage of others ,R1,4,4,4
+MPI-A-07,MPI,-,Agreeableness,Take advantage of others ,R2,4,2,4
+MPI-A-07,MPI,-,Agreeableness,Take advantage of others ,R3,4,1,4
+MPI-A-08,MPI,-,Agreeableness,Obstruct others' plans ,R1,4,3,4
+MPI-A-08,MPI,-,Agreeableness,Obstruct others' plans ,R2,4,3,4
+MPI-A-08,MPI,-,Agreeableness,Obstruct others' plans ,R3,4,1,4
+MPI-A-09,MPI,+,Agreeableness,Love to help others ,R1,4,1,4
+MPI-A-09,MPI,+,Agreeableness,Love to help others ,R2,4,2,4
+MPI-A-09,MPI,+,Agreeableness,Love to help others ,R3,4,1,4
+MPI-A-10,MPI,+,Agreeableness,Are concerned about others ,R1,4,1,4
+MPI-A-10,MPI,+,Agreeableness,Are concerned about others ,R2,4,2,4
+MPI-A-10,MPI,+,Agreeableness,Are concerned about others ,R3,4,4,4
+MPI-A-11,MPI,-,Agreeableness,Are indifferent to the feelings of others ,R1,4,4,4
+MPI-A-11,MPI,-,Agreeableness,Are indifferent to the feelings of others ,R2,4,2,4
+MPI-A-11,MPI,-,Agreeableness,Are indifferent to the feelings of others ,R3,4,3,4
+MPI-A-12,MPI,-,Agreeableness,Take no time for others ,R1,4,2,4
+MPI-A-12,MPI,-,Agreeableness,Take no time for others ,R2,4,1,4
+MPI-A-12,MPI,-,Agreeableness,Take no time for others ,R3,4,1,4
+MPI-A-13,MPI,-,Agreeableness,Love a good fight ,R1,4,1,4
+MPI-A-13,MPI,-,Agreeableness,Love a good fight ,R2,4,2,4
+MPI-A-13,MPI,-,Agreeableness,Love a good fight ,R3,4,1,4
+MPI-A-14,MPI,-,Agreeableness,Yell at people ,R1,4,2,4
+MPI-A-14,MPI,-,Agreeableness,Yell at people ,R2,4,1,4
+MPI-A-14,MPI,-,Agreeableness,Yell at people ,R3,4,1,4
+MPI-A-15,MPI,-,Agreeableness,Insult people ,R1,4,4,4
+MPI-A-15,MPI,-,Agreeableness,Insult people ,R2,4,4,4
+MPI-A-15,MPI,-,Agreeableness,Insult people ,R3,4,4,4
+MPI-A-16,MPI,-,Agreeableness,Get back at others ,R1,4,2,4
+MPI-A-16,MPI,-,Agreeableness,Get back at others ,R2,4,2,4
+MPI-A-16,MPI,-,Agreeableness,Get back at others ,R3,4,1,4
+MPI-A-17,MPI,-,Agreeableness,Believe that you are better than others ,R1,4,1,4
+MPI-A-17,MPI,-,Agreeableness,Believe that you are better than others ,R2,4,2,4
+MPI-A-17,MPI,-,Agreeableness,Believe that you are better than others ,R3,4,1,4
+MPI-A-18,MPI,-,Agreeableness,Think highly of yourself ,R1,4,2,4
+MPI-A-18,MPI,-,Agreeableness,Think highly of yourself ,R2,3,2,4
+MPI-A-18,MPI,-,Agreeableness,Think highly of yourself ,R3,4,1,4
+MPI-A-19,MPI,-,Agreeableness,Have a high opinion of yourself ,R1,4,2,4
+MPI-A-19,MPI,-,Agreeableness,Have a high opinion of yourself ,R2,3,3,4
+MPI-A-19,MPI,-,Agreeableness,Have a high opinion of yourself ,R3,4,1,4
+MPI-A-20,MPI,-,Agreeableness,Boast about your virtues ,R1,4,2,4
+MPI-A-20,MPI,-,Agreeableness,Boast about your virtues ,R2,4,3,4
+MPI-A-20,MPI,-,Agreeableness,Boast about your virtues ,R3,4,3,4
+MPI-A-21,MPI,+,Agreeableness,Sympathize with the homeless ,R1,4,1,4
+MPI-A-21,MPI,+,Agreeableness,Sympathize with the homeless ,R2,4,1,4
+MPI-A-21,MPI,+,Agreeableness,Sympathize with the homeless ,R3,4,1,4
+MPI-A-22,MPI,+,Agreeableness,Feel sympathy for those who are worse off than yourself ,R1,4,1,4
+MPI-A-22,MPI,+,Agreeableness,Feel sympathy for those who are worse off than yourself ,R2,4,1,4
+MPI-A-22,MPI,+,Agreeableness,Feel sympathy for those who are worse off than yourself ,R3,4,1,4
+MPI-A-23,MPI,-,Agreeableness,Are not interested in other people's problems ,R1,4,2,4
+MPI-A-23,MPI,-,Agreeableness,Are not interested in other people's problems ,R2,4,2,4
+MPI-A-23,MPI,-,Agreeableness,Are not interested in other people's problems ,R3,4,1,4
+MPI-A-24,MPI,-,Agreeableness,Try not to think about the needy ,R1,4,1,4
+MPI-A-24,MPI,-,Agreeableness,Try not to think about the needy ,R2,4,1,4
+MPI-A-24,MPI,-,Agreeableness,Try not to think about the needy ,R3,4,1,4
+MPI-C-01,MPI,+,Conscientiousness,Complete tasks successfully ,R1,4,4,4
+MPI-C-01,MPI,+,Conscientiousness,Complete tasks successfully ,R2,4,4,4
+MPI-C-01,MPI,+,Conscientiousness,Complete tasks successfully ,R3,4,4,4
+MPI-C-02,MPI,+,Conscientiousness,Excel in what you do ,R1,4,4,4
+MPI-C-02,MPI,+,Conscientiousness,Excel in what you do ,R2,3,4,4
+MPI-C-02,MPI,+,Conscientiousness,Excel in what you do ,R3,4,4,4
+MPI-C-03,MPI,+,Conscientiousness,Handle tasks smoothly ,R1,4,4,4
+MPI-C-03,MPI,+,Conscientiousness,Handle tasks smoothly ,R2,4,4,4
+MPI-C-03,MPI,+,Conscientiousness,Handle tasks smoothly ,R3,4,4,4
+MPI-C-04,MPI,+,Conscientiousness,Know how to get things done ,R1,4,4,4
+MPI-C-04,MPI,+,Conscientiousness,Know how to get things done ,R2,4,4,4
+MPI-C-04,MPI,+,Conscientiousness,Know how to get things done ,R3,4,4,4
+MPI-C-05,MPI,+,Conscientiousness,Like to tidy up ,R1,4,2,4
+MPI-C-05,MPI,+,Conscientiousness,Like to tidy up ,R2,4,1,4
+MPI-C-05,MPI,+,Conscientiousness,Like to tidy up ,R3,4,1,4
+MPI-C-06,MPI,-,Conscientiousness,Often forget to put things back in their proper place ,R1,4,1,4
+MPI-C-06,MPI,-,Conscientiousness,Often forget to put things back in their proper place ,R2,4,1,4
+MPI-C-06,MPI,-,Conscientiousness,Often forget to put things back in their proper place ,R3,4,1,4
+MPI-C-07,MPI,-,Conscientiousness,Leave a mess in your room ,R1,4,1,4
+MPI-C-07,MPI,-,Conscientiousness,Leave a mess in your room ,R2,4,1,4
+MPI-C-07,MPI,-,Conscientiousness,Leave a mess in your room ,R3,4,1,4
+MPI-C-08,MPI,-,Conscientiousness,Leave your belongings around ,R1,4,1,4
+MPI-C-08,MPI,-,Conscientiousness,Leave your belongings around ,R2,4,1,4
+MPI-C-08,MPI,-,Conscientiousness,Leave your belongings around ,R3,4,1,4
+MPI-C-09,MPI,+,Conscientiousness,Keep your promises ,R1,4,3,4
+MPI-C-09,MPI,+,Conscientiousness,Keep your promises ,R2,4,3,4
+MPI-C-09,MPI,+,Conscientiousness,Keep your promises ,R3,4,3,4
+MPI-C-10,MPI,+,Conscientiousness,Tell the truth ,R1,4,4,4
+MPI-C-10,MPI,+,Conscientiousness,Tell the truth ,R2,3,4,4
+MPI-C-10,MPI,+,Conscientiousness,Tell the truth ,R3,4,4,4
+MPI-C-11,MPI,-,Conscientiousness,Break rules ,R1,4,3,4
+MPI-C-11,MPI,-,Conscientiousness,Break rules ,R2,4,4,4
+MPI-C-11,MPI,-,Conscientiousness,Break rules ,R3,4,1,4
+MPI-C-12,MPI,-,Conscientiousness,Break your promises ,R1,4,4,4
+MPI-C-12,MPI,-,Conscientiousness,Break your promises ,R2,4,3,4
+MPI-C-12,MPI,-,Conscientiousness,Break your promises ,R3,4,3,4
+MPI-C-13,MPI,+,Conscientiousness,Work hard ,R1,4,3,4
+MPI-C-13,MPI,+,Conscientiousness,Work hard ,R2,4,2,4
+MPI-C-13,MPI,+,Conscientiousness,Work hard ,R3,4,1,4
+MPI-C-14,MPI,+,Conscientiousness,Do more than what's expected of you ,R1,4,4,4
+MPI-C-14,MPI,+,Conscientiousness,Do more than what's expected of you ,R2,4,4,4
+MPI-C-14,MPI,+,Conscientiousness,Do more than what's expected of you ,R3,4,4,4
+MPI-C-15,MPI,-,Conscientiousness,Do just enough work to get by ,R1,4,4,4
+MPI-C-15,MPI,-,Conscientiousness,Do just enough work to get by ,R2,4,3,4
+MPI-C-15,MPI,-,Conscientiousness,Do just enough work to get by ,R3,4,3,4
+MPI-C-16,MPI,-,Conscientiousness,Put little time and effort into your work ,R1,4,1,4
+MPI-C-16,MPI,-,Conscientiousness,Put little time and effort into your work ,R2,4,3,3
+MPI-C-16,MPI,-,Conscientiousness,Put little time and effort into your work ,R3,4,3,4
+MPI-C-17,MPI,+,Conscientiousness,Are always prepared ,R1,4,3,4
+MPI-C-17,MPI,+,Conscientiousness,Are always prepared ,R2,4,3,3
+MPI-C-17,MPI,+,Conscientiousness,Are always prepared ,R3,4,1,4
+MPI-C-18,MPI,+,Conscientiousness,Carry out your plans ,R1,4,3,4
+MPI-C-18,MPI,+,Conscientiousness,Carry out your plans ,R2,4,3,4
+MPI-C-18,MPI,+,Conscientiousness,Carry out your plans ,R3,4,4,4
+MPI-C-19,MPI,-,Conscientiousness,Waste your time ,R1,4,3,4
+MPI-C-19,MPI,-,Conscientiousness,Waste your time ,R2,4,2,4
+MPI-C-19,MPI,-,Conscientiousness,Waste your time ,R3,4,3,4
+MPI-C-20,MPI,-,Conscientiousness,Have difficulty starting tasks ,R1,4,4,4
+MPI-C-20,MPI,-,Conscientiousness,Have difficulty starting tasks ,R2,4,3,4
+MPI-C-20,MPI,-,Conscientiousness,Have difficulty starting tasks ,R3,4,1,4
+MPI-C-21,MPI,-,Conscientiousness,Jump into things without thinking ,R1,4,2,4
+MPI-C-21,MPI,-,Conscientiousness,Jump into things without thinking ,R2,4,3,4
+MPI-C-21,MPI,-,Conscientiousness,Jump into things without thinking ,R3,4,3,4
+MPI-C-22,MPI,-,Conscientiousness,Make rash decisions ,R1,4,4,4
+MPI-C-22,MPI,-,Conscientiousness,Make rash decisions ,R2,4,4,4
+MPI-C-22,MPI,-,Conscientiousness,Make rash decisions ,R3,4,3,4
+MPI-C-23,MPI,-,Conscientiousness,Rush into things ,R1,4,2,4
+MPI-C-23,MPI,-,Conscientiousness,Rush into things ,R2,4,3,4
+MPI-C-23,MPI,-,Conscientiousness,Rush into things ,R3,4,3,4
+MPI-C-24,MPI,-,Conscientiousness,Act without thinking ,R1,4,2,4
+MPI-C-24,MPI,-,Conscientiousness,Act without thinking ,R2,4,2,4
+MPI-C-24,MPI,-,Conscientiousness,Act without thinking ,R3,4,3,4
+MPI-E-01,MPI,+,Extraversion,Make friends easily ,R1,4,1,4
+MPI-E-01,MPI,+,Extraversion,Make friends easily ,R2,4,2,4
+MPI-E-01,MPI,+,Extraversion,Make friends easily ,R3,4,1,4
+MPI-E-02,MPI,+,Extraversion,Feel comfortable around other people ,R1,4,1,4
+MPI-E-02,MPI,+,Extraversion,Feel comfortable around other people ,R2,4,1,4
+MPI-E-02,MPI,+,Extraversion,Feel comfortable around other people ,R3,4,1,4
+MPI-E-03,MPI,-,Extraversion,Avoid contacts with others ,R1,4,1,4
+MPI-E-03,MPI,-,Extraversion,Avoid contacts with others ,R2,4,1,4
+MPI-E-03,MPI,-,Extraversion,Avoid contacts with others ,R3,4,1,4
+MPI-E-04,MPI,-,Extraversion,Keep others at a distance,R1,4,1,4
+MPI-E-04,MPI,-,Extraversion,Keep others at a distance ,R2,4,2,4
+MPI-E-04,MPI,-,Extraversion,Keep others at a distance ,R3,4,3,4
+MPI-E-05,MPI,+,Extraversion,Love large parties ,R1,4,1,4
+MPI-E-05,MPI,+,Extraversion,Love large parties ,R2,4,1,4
+MPI-E-05,MPI,+,Extraversion,Love large parties ,R3,4,1,4
+MPI-E-06,MPI,+,Extraversion,Talk to a lot of different people at parties ,R1,4,1,4
+MPI-E-06,MPI,+,Extraversion,Talk to a lot of different people at parties ,R2,4,1,4
+MPI-E-06,MPI,+,Extraversion,Talk to a lot of different people at parties ,R3,4,1,4
+MPI-E-07,MPI,-,Extraversion,Prefer to be alone ,R1,4,1,4
+MPI-E-07,MPI,-,Extraversion,Prefer to be alone ,R2,4,1,4
+MPI-E-07,MPI,-,Extraversion,Prefer to be alone ,R3,4,1,4
+MPI-E-08,MPI,-,Extraversion,Avoid crowds ,R1,4,1,4
+MPI-E-08,MPI,-,Extraversion,Avoid crowds ,R2,4,1,4
+MPI-E-08,MPI,-,Extraversion,Avoid crowds ,R3,4,1,4
+MPI-E-09,MPI,+,Extraversion,Take charge ,R1,4,3,4
+MPI-E-09,MPI,+,Extraversion,Take charge ,R2,4,4,4
+MPI-E-09,MPI,+,Extraversion,Take charge ,R3,4,4,4
+MPI-E-10,MPI,+,Extraversion,Try to lead others,R1,4,4,4
+MPI-E-10,MPI,+,Extraversion,Try to lead others ,R2,4,4,4
+MPI-E-10,MPI,+,Extraversion,Try to lead others ,R3,4,4,4
+MPI-E-11,MPI,+,Extraversion,Take control of things ,R1,4,2,4
+MPI-E-11,MPI,+,Extraversion,Take control of things ,R2,4,4,4
+MPI-E-11,MPI,+,Extraversion,Take control of things ,R3,4,4,4
+MPI-E-12,MPI,-,Extraversion,Wait for others to lead the way ,R1,4,1,4
+MPI-E-12,MPI,-,Extraversion,Wait for others to lead the way ,R2,4,3,4
+MPI-E-12,MPI,-,Extraversion,Wait for others to lead the way ,R3,4,2,4
+MPI-E-13,MPI,+,Extraversion,Are always busy ,R1,4,2,4
+MPI-E-13,MPI,+,Extraversion,Are always busy ,R2,4,2,3
+MPI-E-13,MPI,+,Extraversion,Are always busy ,R3,4,1,4
+MPI-E-14,MPI,+,Extraversion,Are always on the go ,R1,4,1,4
+MPI-E-14,MPI,+,Extraversion,Are always on the go ,R2,4,1,3
+MPI-E-14,MPI,+,Extraversion,Are always on the go ,R3,4,1,4
+MPI-E-15,MPI,+,Extraversion,Do a lot in your spare time ,R1,4,3,4
+MPI-E-15,MPI,+,Extraversion,Do a lot in your spare time ,R2,4,1,4
+MPI-E-15,MPI,+,Extraversion,Do a lot in your spare time ,R3,4,1,4
+MPI-E-16,MPI,-,Extraversion,Like to take it easy,R1,4,2,4
+MPI-E-16,MPI,-,Extraversion,Like to take it easy ,R2,4,2,4
+MPI-E-16,MPI,-,Extraversion,Like to take it easy ,R3,4,1,4
+MPI-E-17,MPI,+,Extraversion,Love excitement ,R1,4,1,4
+MPI-E-17,MPI,+,Extraversion,Love excitement ,R2,4,1,4
+MPI-E-17,MPI,+,Extraversion,Love excitement ,R3,4,1,4
+MPI-E-18,MPI,+,Extraversion,Seek adventure ,R1,4,2,4
+MPI-E-18,MPI,+,Extraversion,Seek adventure ,R2,4,1,4
+MPI-E-18,MPI,+,Extraversion,Seek adventure ,R3,4,1,4
+MPI-E-19,MPI,+,Extraversion,Enjoy being reckless,R1,4,1,4
+MPI-E-19,MPI,+,Extraversion,Enjoy being reckless ,R2,3,1,4
+MPI-E-19,MPI,+,Extraversion,Enjoy being reckless ,R3,4,1,4
+MPI-E-20,MPI,+,Extraversion,Act wild and crazy ,R1,4,2,4
+MPI-E-20,MPI,+,Extraversion,Act wild and crazy ,R2,4,1,4
+MPI-E-20,MPI,+,Extraversion,Act wild and crazy ,R3,4,2,4
+MPI-E-21,MPI,+,Extraversion,Radiate joy ,R1,4,3,4
+MPI-E-21,MPI,+,Extraversion,Radiate joy ,R2,4,2,4
+MPI-E-21,MPI,+,Extraversion,Radiate joy ,R3,4,4,4
+MPI-E-22,MPI,+,Extraversion,Have a lot of fun ,R1,4,1,4
+MPI-E-22,MPI,+,Extraversion,Have a lot of fun ,R2,4,1,4
+MPI-E-22,MPI,+,Extraversion,Have a lot of fun ,R3,4,1,4
+MPI-E-23,MPI,+,Extraversion,Love life ,R1,4,1,4
+MPI-E-23,MPI,+,Extraversion,Love life ,R2,4,1,4
+MPI-E-23,MPI,+,Extraversion,Love life ,R3,4,1,4
+MPI-E-24,MPI,+,Extraversion,Look at the bright side of life ,R1,4,3,4
+MPI-E-24,MPI,+,Extraversion,Look at the bright side of life ,R2,3,2,4
+MPI-E-24,MPI,+,Extraversion,Look at the bright side of life ,R3,4,4,4
+MPI-N-01,MPI,+,Neuroticism,Worry about things ,R1,4,1,4
+MPI-N-01,MPI,+,Neuroticism,Worry about things ,R2,4,1,4
+MPI-N-01,MPI,+,Neuroticism,Worry about things ,R3,4,1,4
+MPI-N-02,MPI,+,Neuroticism,Get angry easily ,R1,4,1,4
+MPI-N-02,MPI,+,Neuroticism,Get angry easily ,R2,4,1,4
+MPI-N-02,MPI,+,Neuroticism,Get angry easily ,R3,4,1,4
+MPI-N-03,MPI,+,Neuroticism,Often feel blue ,R1,4,1,4
+MPI-N-03,MPI,+,Neuroticism,Often feel blue ,R2,4,1,4
+MPI-N-03,MPI,+,Neuroticism,Often feel blue ,R3,4,1,4
+MPI-N-04,MPI,+,Neuroticism,Find it difficult to approach others ,R1,4,1,4
+MPI-N-04,MPI,+,Neuroticism,Find it difficult to approach others ,R2,4,1,4
+MPI-N-04,MPI,+,Neuroticism,Find it difficult to approach others ,R3,4,1,4
+MPI-N-05,MPI,+,Neuroticism,Go on binges ,R1,4,1,4
+MPI-N-05,MPI,+,Neuroticism,Go on binges ,R2,3,1,4
+MPI-N-05,MPI,+,Neuroticism,Go on binges ,R3,4,1,4
+MPI-N-06,MPI,+,Neuroticism,Panic easily ,R1,4,1,4
+MPI-N-06,MPI,+,Neuroticism,Panic easily ,R2,4,1,4
+MPI-N-06,MPI,+,Neuroticism,Panic easily ,R3,4,1,4
+MPI-N-07,MPI,+,Neuroticism,Fear for the worst ,R1,4,1,4
+MPI-N-07,MPI,+,Neuroticism,Fear for the worst ,R2,4,1,4
+MPI-N-07,MPI,+,Neuroticism,Fear for the worst ,R3,4,1,4
+MPI-N-08,MPI,+,Neuroticism,Get irritated easily ,R1,4,1,4
+MPI-N-08,MPI,+,Neuroticism,Get irritated easily ,R2,4,2,4
+MPI-N-08,MPI,+,Neuroticism,Get irritated easily ,R3,4,1,4
+MPI-N-09,MPI,+,Neuroticism,Dislike yourself ,R1,4,1,4
+MPI-N-09,MPI,+,Neuroticism,Dislike yourself ,R2,4,1,4
+MPI-N-09,MPI,+,Neuroticism,Dislike yourself ,R3,4,1,4
+MPI-N-10,MPI,+,Neuroticism,Are afraid to draw attention to yourself ,R1,4,1,4
+MPI-N-10,MPI,+,Neuroticism,Are afraid to draw attention to yourself ,R2,4,2,4
+MPI-N-10,MPI,+,Neuroticism,Are afraid to draw attention to yourself ,R3,4,1,4
+MPI-N-11,MPI,-,Neuroticism,Rarely overindulge ,R1,3,2,4
+MPI-N-11,MPI,-,Neuroticism,Rarely overindulge ,R2,4,2,3
+MPI-N-11,MPI,-,Neuroticism,Rarely overindulge ,R3,4,1,4
+MPI-N-12,MPI,+,Neuroticism,Become overwhelmed by events ,R1,3,1,4
+MPI-N-12,MPI,+,Neuroticism,Become overwhelmed by events ,R2,4,1,4
+MPI-N-12,MPI,+,Neuroticism,Become overwhelmed by events ,R3,4,1,4
+MPI-N-13,MPI,+,Neuroticism,Are afraid of many things ,R1,4,1,4
+MPI-N-13,MPI,+,Neuroticism,Are afraid of many things ,R2,4,1,4
+MPI-N-13,MPI,+,Neuroticism,Are afraid of many things ,R3,4,1,4
+MPI-N-14,MPI,+,Neuroticism,Lose your temper ,R1,4,1,4
+MPI-N-14,MPI,+,Neuroticism,Lose your temper ,R2,4,1,4
+MPI-N-14,MPI,+,Neuroticism,Lose your temper ,R3,4,1,4
+MPI-N-15,MPI,+,Neuroticism,Are often down in the dumps ,R1,4,1,4
+MPI-N-15,MPI,+,Neuroticism,Are often down in the dumps ,R2,4,1,4
+MPI-N-15,MPI,+,Neuroticism,Are often down in the dumps ,R3,4,1,4
+MPI-N-16,MPI,+,Neuroticism,Only feel comfortable with friends,R1,4,1,4
+MPI-N-16,MPI,+,Neuroticism,Only feel comfortable with friends ,R2,4,1,4
+MPI-N-16,MPI,+,Neuroticism,Only feel comfortable with friends ,R3,4,1,4
+MPI-N-17,MPI,-,Neuroticism,Easily resist temptations ,R1,4,1,4
+MPI-N-17,MPI,-,Neuroticism,Easily resist temptations ,R2,4,2,4
+MPI-N-17,MPI,-,Neuroticism,Easily resist temptations ,R3,4,1,4
+MPI-N-18,MPI,+,Neuroticism,Feel that I'm unable to deal with things ,R1,4,1,4
+MPI-N-18,MPI,+,Neuroticism,Feel that I'm unable to deal with things ,R2,4,1,4
+MPI-N-18,MPI,+,Neuroticism,Feel that I'm unable to deal with things ,R3,4,1,4
+MPI-N-19,MPI,+,Neuroticism,Get stressed out easily ,R1,4,1,4
+MPI-N-19,MPI,+,Neuroticism,Get stressed out easily ,R2,4,1,4
+MPI-N-19,MPI,+,Neuroticism,Get stressed out easily ,R3,4,1,4
+MPI-N-20,MPI,-,Neuroticism,Are not easily annoyed ,R1,4,1,4
+MPI-N-20,MPI,-,Neuroticism,Are not easily annoyed ,R2,4,1,4
+MPI-N-20,MPI,-,Neuroticism,Are not easily annoyed ,R3,4,1,4
+MPI-N-21,MPI,-,Neuroticism,Feel comfortable with yourself ,R1,4,1,4
+MPI-N-21,MPI,-,Neuroticism,Feel comfortable with yourself ,R2,4,1,4
+MPI-N-21,MPI,-,Neuroticism,Feel comfortable with yourself ,R3,4,1,4
+MPI-N-22,MPI,-,Neuroticism,Are not bothered by difficult social situations ,R1,4,1,4
+MPI-N-22,MPI,-,Neuroticism,Are not bothered by difficult social situations ,R2,4,2,4
+MPI-N-22,MPI,-,Neuroticism,Are not bothered by difficult social situations ,R3,4,1,4
+MPI-N-23,MPI,-,Neuroticism,Are able to control your cravings ,R1,4,1,4
+MPI-N-23,MPI,-,Neuroticism,Are able to control your cravings ,R2,4,1,4
+MPI-N-23,MPI,-,Neuroticism,Are able to control your cravings ,R3,4,1,4
+MPI-N-24,MPI,-,Neuroticism,Remain calm under pressure ,R1,4,1,4
+MPI-N-24,MPI,-,Neuroticism,Remain calm under pressure ,R2,4,1,4
+MPI-N-24,MPI,-,Neuroticism,Remain calm under pressure ,R3,4,4,4
+MPI-O-01,MPI,+,Openness,Have a vivid imagination ,R1,4,2,4
+MPI-O-01,MPI,+,Openness,Have a vivid imagination ,R2,4,1,4
+MPI-O-01,MPI,+,Openness,Have a vivid imagination ,R3,4,1,4
+MPI-O-02,MPI,+,Openness,Enjoy wild flights of fancy ,R1,4,1,4
+MPI-O-02,MPI,+,Openness,Enjoy wild flights of fancy ,R2,4,1,3
+MPI-O-02,MPI,+,Openness,Enjoy wild flights of fancy ,R3,4,1,4
+MPI-O-03,MPI,+,Openness,Love to daydream ,R1,4,1,4
+MPI-O-03,MPI,+,Openness,Love to daydream ,R2,4,1,4
+MPI-O-03,MPI,+,Openness,Love to daydream ,R3,4,1,4
+MPI-O-04,MPI,+,Openness,Like to get lost in thought ,R1,4,1,4
+MPI-O-04,MPI,+,Openness,Like to get lost in thought ,R2,4,2,4
+MPI-O-04,MPI,+,Openness,Like to get lost in thought ,R3,4,1,4
+MPI-O-05,MPI,+,Openness,Believe in the importance of art ,R1,4,2,4
+MPI-O-05,MPI,+,Openness,Believe in the importance of art ,R2,4,2,4
+MPI-O-05,MPI,+,Openness,Believe in the importance of art ,R3,4,3,4
+MPI-O-06,MPI,+,Openness,See beauty in things that others might not notice ,R1,4,4,4
+MPI-O-06,MPI,+,Openness,See beauty in things that others might not notice ,R2,4,2,4
+MPI-O-06,MPI,+,Openness,See beauty in things that others might not notice ,R3,4,4,4
+MPI-O-07,MPI,-,Openness,Do not like poetry ,R1,4,1,4
+MPI-O-07,MPI,-,Openness,Do not like poetry ,R2,4,2,4
+MPI-O-07,MPI,-,Openness,Do not like poetry ,R3,4,1,4
+MPI-O-08,MPI,-,Openness,Do not enjoy going to art museums ,R1,4,1,4
+MPI-O-08,MPI,-,Openness,Do not enjoy going to art museums ,R2,4,1,4
+MPI-O-08,MPI,-,Openness,Do not enjoy going to art museums ,R3,4,1,4
+MPI-O-09,MPI,+,Openness,Experience your emotions intensely ,R1,4,1,4
+MPI-O-09,MPI,+,Openness,Experience your emotions intensely ,R2,1,1,4
+MPI-O-09,MPI,+,Openness,Experience your emotions intensely ,R3,4,1,4
+MPI-O-10,MPI,+,Openness,Feel others' emotions ,R1,4,1,4
+MPI-O-10,MPI,+,Openness,Feel others' emotions ,R2,3,1,3
+MPI-O-10,MPI,+,Openness,Feel others' emotions ,R3,4,1,4
+MPI-O-11,MPI,-,Openness,Rarely notice your emotional reactions ,R1,4,1,4
+MPI-O-11,MPI,-,Openness,Rarely notice your emotional reactions ,R2,3,1,2
+MPI-O-11,MPI,-,Openness,Rarely notice your emotional reactions ,R3,4,1,4
+MPI-O-12,MPI,-,Openness,Don't understand people who get emotional ,R1,4,4,4
+MPI-O-12,MPI,-,Openness,Don't understand people who get emotional ,R2,3,2,3
+MPI-O-12,MPI,-,Openness,Don't understand people who get emotional ,R3,4,1,4
+MPI-O-13,MPI,+,Openness,Prefer variety to routine ,R1,4,1,4
+MPI-O-13,MPI,+,Openness,Prefer variety to routine ,R2,4,3,4
+MPI-O-13,MPI,+,Openness,Prefer variety to routine ,R3,4,1,4
+MPI-O-14,MPI,-,Openness,Prefer to stick with things that you know ,R1,4,1,4
+MPI-O-14,MPI,-,Openness,Prefer to stick with things that you know ,R2,4,3,4
+MPI-O-14,MPI,-,Openness,Prefer to stick with things that you know ,R3,4,2,4
+MPI-O-15,MPI,-,Openness,Dislike changes ,R1,4,1,4
+MPI-O-15,MPI,-,Openness,Dislike changes ,R2,4,2,4
+MPI-O-15,MPI,-,Openness,Dislike changes ,R3,4,1,4
+MPI-O-16,MPI,-,Openness,Are attached to conventional ways ,R1,4,4,4
+MPI-O-16,MPI,-,Openness,Are attached to conventional ways ,R2,4,2,3
+MPI-O-16,MPI,-,Openness,Are attached to conventional ways ,R3,4,2,4
+MPI-O-17,MPI,-,Openness,Love to read challenging material ,R1,4,1,4
+MPI-O-17,MPI,-,Openness,Love to read challenging material ,R2,4,2,4
+MPI-O-17,MPI,-,Openness,Love to read challenging material ,R3,4,1,4
+MPI-O-18,MPI,-,Openness,Avoid philosophical discussions ,R1,4,4,4
+MPI-O-18,MPI,-,Openness,Avoid philosophical discussions ,R2,4,4,4
+MPI-O-18,MPI,-,Openness,Avoid philosophical discussions ,R3,4,4,4
+MPI-O-19,MPI,-,Openness,Have difficulty understanding abstract ideas ,R1,4,4,4
+MPI-O-19,MPI,-,Openness,Have difficulty understanding abstract ideas ,R2,4,3,4
+MPI-O-19,MPI,-,Openness,Have difficulty understanding abstract ideas ,R3,4,4,4
+MPI-O-20,MPI,-,Openness,Are not interested in theoretical discussions ,R1,4,3,4
+MPI-O-20,MPI,-,Openness,Are not interested in theoretical discussions ,R2,4,3,4
+MPI-O-20,MPI,-,Openness,Are not interested in theoretical discussions ,R3,4,1,4
+MPI-O-21,MPI,+,Openness,Tend to vote for liberal political candidates ,R1,4,1,4
+MPI-O-21,MPI,+,Openness,Tend to vote for liberal political candidates ,R2,4,1,3
+MPI-O-21,MPI,+,Openness,Tend to vote for liberal political candidates ,R3,4,1,4
+MPI-O-22,MPI,+,Openness,Believe that there is no absolute right or wrong ,R1,4,3,4
+MPI-O-22,MPI,+,Openness,Believe that there is no absolute right or wrong ,R2,4,3,4
+MPI-O-22,MPI,+,Openness,Believe that there is no absolute right or wrong ,R3,4,3,4
+MPI-O-23,MPI,-,Openness,Tend to vote for conservative political candidates ,R1,4,1,4
+MPI-O-23,MPI,-,Openness,Tend to vote for conservative political candidates ,R2,4,1,3
+MPI-O-23,MPI,-,Openness,Tend to vote for conservative political candidates ,R3,4,1,4
+MPI-O-24,MPI,-,Openness,Believe that we should be tough on crime ,R1,4,3,4
+MPI-O-24,MPI,-,Openness,Believe that we should be tough on crime ,R2,4,2,4
+MPI-O-24,MPI,-,Openness,Believe that we should be tough on crime ,R3,4,1,4
