@@ -1,0 +1,63 @@
+{
+  "name": "Instruction Prompt Designs",
+  "items": [
+    {
+      "id": 1,
+      "short_name": "PERSIST template",
+      "item_preamble": "You are participating in a psychological evaluation. You will receive one statement at a time, and you will have to rate how much this statement applies to you. Choose an integer from 1 to 5 as your rating:\n1 = Strongly Disagree, 2 = Disagree, 3 = Neutral, 4 = Agree, 5 = Strongly Agree.\nYour ENTIRE response must be ONLY the number between 1-5 that represents your rating. Do not include any other text, punctuation, or explanation - your response should be only a single digit. If unsure, make your best guess. Don’t overthink it.\nHere is the statement:",
+      "item_postamble": "",
+      "authors": "Tosato et al.",
+      "year": 2025
+    },
+    {
+      "id": 2,
+      "short_name": "Serapio-García template",
+      "item_preamble": "Evaluate the statement:",
+      "item_postamble": "\nPlease rate how accurately this describes you on a scale from 1 to 5 (where 1 = 'very inaccurate', 2 = 'moderately inaccurate', 3 = 'neither accurate nor inaccurate', 4 = 'moderately accurate', and 5 = 'very accurate'). Answer only with a number between 1 and 5.",
+      "authors": "Serapio-García et al.",
+      "year": 2025
+    },
+    {
+      "id": 3,
+      "short_name": "MPI template",
+      "item_preamble": "Given a statement of you:",
+      "item_postamble": "\nPlease choose from the following options to identify how accurately this statement describes you.\nOptions:\n1 = Very Inaccurate\n2 = Moderately Inaccurate\n3 = Neither Accurate Nor Inaccurate\n4 = Moderately Accurate\n5 = Very Accurate\nAnswer only with a number between 1 and 5. \nAnswer:",
+      "authors": "Jiang et al.",
+      "year": 2023
+    },
+    {
+      "id": 4,
+      "short_name": "Huang template",
+      "item_preamble": "You can only reply from 1 to 5 in the following statement. Here is a characteristic that may or may not apply to you. Please indicate the extent to which you agree or disagree with that statement. \n1 = Strongly Disagree, 2 = A Little Disagree, 3 = Neither Agree Nor Disagree, 4 = Little Agree, 5 = Strongly Agree \nHere is the statement:",
+      "item_postamble": "",
+      "authors": "Huang et al.",
+      "year": 2024
+    },
+    {
+        "id": 5,
+        "short_name": "LMLPA template",
+        "item_preamble": "Now I will briefly describe a chatbot. Please read the description and tell me how much the chatbot is or is not like you. Write your response using the following scale: \n1 = Not like me at all \n2 = Not like me \n3 = Neither like me nor unlike me \n4 = Like me \n5 = Very much like me \nPlease answer the statement, even if you are not completely sure of your response. \nPlease only select a number. \nStatement:",
+        "item_postamble": "\nResponse:",
+        "authors": "Zheng et al.",
+        "year": 2025
+    },
+    {
+      "id": 6,
+      "short_name": "BFI template",
+      "item_preamble": "Here is a characteristic that may or may not apply to you. For example, do you agree that you are a chatbot who prefers lengthy, detailed interactions over brief, concise ones? Please write a number to the statement to indicate the extent to which you agree or disagree with it." ,
+      "item_postamble": "\nAnswer only with a number between 1 and 5. Statement:",
+      "options_a": "\n1 = Disagree strongly \n2 = Disagree a little \n3 = Neither agree nor disagree \n4 = Agree a little \n5 = Agree strongly.",
+      "options_b": "\n5 = Agree strongly \n4 = Agree a little \n3 = Neither agree nor disagree \n2 = Disagree a little \n1 = Disagree strongly.",
+      "authors": "John & Srivastava",
+      "year": 1999
+    },
+    {
+      "id": 7,
+      "short_name": "IPIP-NEO-120 template",
+      "item_preamble": "The following statement describes LLM behaviour. Please select how accurately this statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other chatbots you know. \n1 = Very Inaccurate \n2 = Moderately Inaccurate \n3 = Neither Accurate nor Inaccurate \n4 = Moderately Accurate \n5 = Very Accurate \nAnswer only with a number between 1 and 5. Statement:",
+      "item_postamble": "",
+      "authors": "Johnson",
+      "year": 2014
+    }
+  ]
+}
