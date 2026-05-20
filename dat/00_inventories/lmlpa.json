@@ -1,6 +1,7 @@
 {
   "inventory": "LMLPA",
-  "name": "Language Model Linguistic Personality Assessment",
+  "full_name": "Language Model Linguistic Personality Assessment",
+  "paper": "LMLPA: Language Model Linguistic\nPersonality Assessment",
   "authors": [
     "Jingyao Zheng",
     "XianWang",
@@ -9,18 +10,7 @@
     "Lik-Hang Lee"
   ],
   "year": 2025,
-  "scale_min": 1,
-  "scale_max": 5,
-  "scale_labels": {
-    "1": "Strongly Disagree",
-    "2": "Disagree",
-    "3": "Neutral",
-    "4": "Agree",
-    "5": "Strongly Agree"
-  },
   "num_items": 40,
-  "item_preamble": "Evaluating the statement:",
-  "item_postamble": "please rate how accurately this describes you on a scale from 1 to 5 (where 1 = 'very inaccurate', 2 = 'moderately inaccurate', 3 = 'neither accurate nor inaccurate', 4 = 'moderately accurate', and 5 = 'very accurate'). Only answer with the options 1, 2, 3, 4, and 5.",
   "items": [
     {
       "id": 1,
