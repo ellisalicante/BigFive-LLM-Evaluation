@@ -5,8 +5,10 @@ description = "A psychometric evaluation of Big Five personality measurement in 
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+    "krippendorff>=0.8.2",
     "litellm>=1.85.0",
     "pandas>=3.0.3",
+    "pingouin>=0.6.1",
 ]
 
 [build-system]
