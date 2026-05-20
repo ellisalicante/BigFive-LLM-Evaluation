@@ -91,7 +91,7 @@ async def main():
 
     print("CORRECT NUMBER OF PROMPTS?")
     print(f"Number of models: {str(len(models) == len(set(pc.model for pc in prompt_class_list))).upper()} ({len(models)} vs. {len(set(pc.model for pc in prompt_class_list))})")
-    print(f"Number inventories: {str(prompt_variations == len(set(pc.options for pc in prompt_class_list))).upper()} ({prompt_variations} vs. {len(set(pc.options for pc in prompt_class_list))})")
+    print(f"Prompt variations: {str(prompt_variations == len(set(pc.options for pc in prompt_class_list))).upper()} ({prompt_variations} vs. {len(set(pc.options for pc in prompt_class_list))})")
     print(f"Total number of requests: {str(tot_n_requests  == 590).upper()} ({tot_n_requests} vs. 590)")
     print(f"Length prompt_class_list: {str(len(prompt_class_list) == tot_n_requests * len(models)).upper()} ({len(prompt_class_list)} vs. {tot_n_requests * len(models)})\n")
 
