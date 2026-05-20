@@ -18,7 +18,7 @@ warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 async def main():
 
-    ### 1) INITIALIZING
+    ### 1) INITIALIZATION
 
     # Initialize lists
     prompt_class_list = []
@@ -39,16 +39,16 @@ async def main():
     prompt_variations = 2 # option order a and b
 
     # Get models for experiments from meta info
-    meta = pd.read_csv("../dat/03_large_scale_administration/meta_info_models.csv")
+    meta = pd.read_csv("../../dat/03_large_scale_administration/meta_info_models.csv")
     models = meta["Model_ID"].dropna().tolist()
 
 
 
-    ### 2) GENERATING PROMPTS
+    ### 2) PROMPT GENERATION
     # for all inventories, option orders, models, and repetitions
 
     # Load winning prompt template with two possible option orders
-    with open("../dat/00_inventories/bfi-llm.json", "r") as f:
+    with open("../../dat/00_inventories/bfi-llm.json", "r") as f:
         bfi_llm_json = json.load(f)
 
     item_preamble = bfi_llm_json["item_preamble"]
@@ -61,7 +61,7 @@ async def main():
         items = []
 
         # Load inventory from .JSON
-        with open(f"../dat/00_inventories/{inventory}.json") as inv:
+        with open(f"../../dat/00_inventories/{inventory}.json") as inv:
             inventory_json = json.load(inv)
 
         # Collect all items
@@ -80,10 +80,8 @@ async def main():
             for model in models:
                 for rep in range(n_reps):
                     # Store all prompts and the corresponding info in a PromptClass object
-                    prompt_class_a = PromptClass(prompt_a, model, inventory, situation, rep, item, item_preamble, item_postamble, options_a, timestamp, None, None, None)
-                    prompt_class_b = PromptClass(prompt_b, model, inventory, situation, rep, item, item_preamble, item_postamble, options_b, timestamp, None, None, None)
-                    prompt_class_list.append(prompt_class_a)
-                    prompt_class_list.append(prompt_class_b)
+                    prompt_class_list.append(PromptClass(prompt_a, model, inventory, situation, rep, item, item_preamble, item_postamble, options_a, timestamp, None, None, None))
+                    prompt_class_list.append(PromptClass(prompt_b, model, inventory, situation, rep, item, item_preamble, item_postamble, options_b, timestamp, None, None, None))
 
 
 
