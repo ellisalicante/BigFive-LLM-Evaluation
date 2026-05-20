@@ -1,7 +1,14 @@
 [project]
 name = "bigfive-llm-evaluation"
 version = "0.1.0"
-description = "Add your description here"
+description = "A psychometric evaluation of Big Five personality measurement in large language models: content validity, normative data, and factor structure across a large sample of LLMs."
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = []
+
+[build-system]
+requires = ["setuptools>=80.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["src"]
