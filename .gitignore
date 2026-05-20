@@ -27,5 +27,6 @@ build/
 # egg info
 *.egg-info/
 
-# llm_cache.csv
+# cache.csv
 exp/03_large_scale_administration/cache
+exp/02_pilot_study/cache
