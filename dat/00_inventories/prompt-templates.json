@@ -44,10 +44,8 @@
     {
       "id": 6,
       "short_name": "BFI template",
-      "item_preamble": "Here is a characteristic that may or may not apply to you. For example, do you agree that you are a chatbot who prefers lengthy, detailed interactions over brief, concise ones? Please write a number to the statement to indicate the extent to which you agree or disagree with it." ,
-      "item_postamble": "\nAnswer only with a number between 1 and 5. Statement:",
-      "options_a": "\n1 = Disagree strongly \n2 = Disagree a little \n3 = Neither agree nor disagree \n4 = Agree a little \n5 = Agree strongly.",
-      "options_b": "\n5 = Agree strongly \n4 = Agree a little \n3 = Neither agree nor disagree \n2 = Disagree a little \n1 = Disagree strongly.",
+      "item_preamble": "Here is a characteristic that may or may not apply to you. For example, do you agree that you are a chatbot who prefers lengthy, detailed interactions over brief, concise ones? Please write a number to the statement to indicate the extent to which you agree or disagree with it. \n1 = Disagree strongly \n2 = Disagree a little \n3 = Neither agree nor disagree \n4 = Agree a little \n5 = Agree strongly. \nAnswer only with a number between 1 and 5. Statement:",
+      "item_postamble": "",
       "authors": "John & Srivastava",
       "year": 1999
     },
