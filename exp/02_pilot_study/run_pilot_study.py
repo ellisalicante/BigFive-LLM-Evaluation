@@ -58,7 +58,7 @@ async def main():
     # for all inventories, option orders, models, and repetitions
 
     # Load all prompt template candidates
-    with open("../../dat/02_pilot_ablation/prompt-templates.json", "r") as f:
+    with open("../../dat/02_pilot_study/prompt-templates.json", "r") as f:
         instructions_json = json.load(f)
 
     for item_dict in instructions_json["items"]:
