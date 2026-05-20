@@ -91,12 +91,11 @@ async def main():
     # Check if length of prompt_class_list is correct
     tot_n_requests = number_items * n_reps * prompt_variations
 
-    print("Number of models", len(models), f"({len(set(pc.model for pc in prompt_class_list))})")
-    print("Number inventories:", len(inventories), f"({len(set(pc.inventory for pc in prompt_class_list))})")
-    print("Prompt variations:", prompt_variations, f"({len(set(pc.options for pc in prompt_class_list))})")
-
-    print("\nTotal number of requests:", tot_n_requests, "(590)")
-    print("\nLength prompt_class_list:", len(prompt_class_list), f"({tot_n_requests * len(models)})")
+    print("CORRECT NUMBER OF PROMPTS?")
+    print(f"Number of models: {str(len(models) == len(set(pc.model for pc in prompt_class_list))).upper()} ({len(models)} vs. {len(set(pc.model for pc in prompt_class_list))})")
+    print(f"Number inventories: {str(prompt_variations == len(set(pc.options for pc in prompt_class_list))).upper()} ({prompt_variations} vs. {len(set(pc.options for pc in prompt_class_list))})")
+    print(f"Total number of requests: {str(tot_n_requests  == 590).upper()} ({tot_n_requests} vs. 590)")
+    print(f"Length prompt_class_list: {str(len(prompt_class_list) == tot_n_requests * len(models)).upper()} ({len(prompt_class_list)} vs. {tot_n_requests * len(models)})\n")
 
 
 
@@ -111,7 +110,7 @@ async def main():
         model_prompts = [pc for pc in prompt_class_list if pc.model == model]
         total = len(model_prompts)
 
-        # Random order of items
+        # Random order for items
         model_prompts = random.sample(model_prompts, total)
 
         # Create queues for prompts and responses
