@@ -15,8 +15,6 @@ from dataclasses import dataclass, asdict
 
 @dataclass
 class PromptClass:
-    model: str
-    inventory: str
     prompt:    str
     model:     str
     inventory: str
@@ -100,8 +98,8 @@ def save_cache(response_queue: Queue, prompt_class: PromptClass, path: str, fina
         cache_model = cache[cache["model"] == prompt_class.model]
         if not cache_model.empty:
             filename = build_filename(prompt_class)
-            os.makedirs(f"./responses/{path}", exist_ok=True)
-            cache_model.to_csv(f"./responses/{path}/{filename}.csv", index=False)
+            os.makedirs(f"./{path}", exist_ok=True)
+            cache_model.to_csv(f"./{path}/{filename}.csv", index=False)
 
 
 def prompt_generator(preamble, item, postamble, inventory) -> str:
