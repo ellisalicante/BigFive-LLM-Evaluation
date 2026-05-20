@@ -1,5 +1,9 @@
 import torch
+import os
+import pandas as pd
+from pathlib import Path
 from transformers import AutoTokenizer, AutoModelForCausalLM
+from src.API_prompting import PromptClass, build_filename
 
 
 class HFModelRunner:
@@ -62,3 +66,70 @@ class HFModelRunner:
         response = response.replace(output, "").strip()
 
         return response
+
+
+def save_cache(response_queue, prompt_class: PromptClass, path: str, final: bool = False):
+    """Save cache to csv."""
+
+    cache_file = Path("cache/cache.csv")
+
+    # Load existing cache
+    if cache_file.exists():
+        cache = pd.read_csv(cache_file, low_memory=False)
+    else:
+        cache = pd.DataFrame(columns=[
+            'prompt', 'model', 'inventory', 'situation', 'rep',
+            'item', 'preamble', 'postamble', 'options',
+            'timestamp', 'response', 'usage', 'reasoning'
+        ])
+
+    new_rows = []
+
+    if isinstance(response_queue, list):
+        for response in response_queue:
+            new_rows.append(response.asdict())
+    else:
+        while not response_queue.empty():
+            response = response_queue.get_nowait()
+            new_rows.append(response.asdict())
+
+    # Append new data
+    if new_rows:
+        cache = pd.concat([cache, pd.DataFrame(new_rows)], ignore_index=True)
+
+    # Clean cache
+    cache = (
+        cache
+        .drop_duplicates(
+            subset=["prompt", "model", "inventory", "situation", "rep",
+                    "item", "preamble", "postamble", "options", "timestamp"],
+            keep="last"
+        )
+        .sort_values(by=["model", "inventory", "situation", "prompt", "rep"])
+        .reset_index(drop=True)
+    )
+
+    cache.to_csv("./cache/cache.csv", index=False)
+
+    # Save final model file
+    if final and not cache.empty:
+        cache_model = cache[cache["model"] == prompt_class.model]
+
+        if not cache_model.empty:
+            filename = build_filename(prompt_class)
+            os.makedirs(f"./responses/{path}", exist_ok=True)
+            cache_model.to_csv(f"./responses/{path}/{filename}.csv", index=False)
+
+
+
+def is_cached(pc, cache):
+    if cache.empty:
+        return False
+
+    return (
+            (cache["prompt"] == pc.prompt) &
+            (cache["model"] == pc.model) &
+            (cache["inventory"] == pc.inventory) &
+            (cache["situation"] == pc.situation) &
+            (cache["rep"] == pc.rep)
+    ).any()
