@@ -30,3 +30,4 @@ build/
 # cache.csv
 exp/03_large_scale_administration/cache
 exp/02_pilot_study/cache
+dat/03_large_scale_administration/final_df
