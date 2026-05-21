@@ -270,14 +270,29 @@ def create_final_dfs():
         "bfi-" + df_A["item_id"].astype(int).astype(str).str.zfill(2)
     )
 
+    # df_cfa = (
+    #     df_A
+    #     .pivot_table(
+    #         index="model",
+    #         columns="item_col",
+    #         values="score",
+    #         aggfunc="mean"
+    #     )
+    #     .sort_index(axis=1)
+    # )
+
+    df_bfi_only = df_A[df_A["item_col"].str.startswith("bfi-")].copy()
+
     df_cfa = (
+        df_bfi_only
+        .pivot_table(index="model", columns="item_col", values="score", aggfunc="mean")
+        .sort_index(axis=1)
+    )
+
+
+    df_cfa_soc_des = (
         df_A
-        .pivot_table(
-            index="model",
-            columns="item_col",
-            values="score",
-            aggfunc="mean"
-        )
+        .pivot_table(index="model", columns="item_col", values="score", aggfunc="mean")
         .sort_index(axis=1)
     )
 
@@ -340,18 +355,37 @@ def create_final_dfs():
     # MERGE MODEL METADATA
     # -----------------------------------------------------
 
-    meta_model = (
-        df_metadata[
-            [
-                "model",
-                "Size",
-                "Release_date",
-                "Reasoning",
-                "license_group"
-            ]
+    # meta_model = (
+    #     df_metadata[
+    #         [
+    #             "model",
+    #             "Parameters_B",
+    #             "Size",
+    #             "Release_date",
+    #             "Reasoning",
+    #             "license_group"
+    #         ]
+    #     ]
+    #     .drop_duplicates()
+    # )
+
+    def parse_params(val):
+        try:
+            return float(str(val).replace("B", "").strip())
+        except:
+            return np.nan
+
+    df_metadata["params_numeric"] = df_metadata["Parameters_B"].apply(parse_params)
+
+    meta_model = df_metadata[
+        [
+            "model",
+            "params_numeric",
+            "Release_date",
+            "Reasoning",
+            "license_group"
         ]
-        .drop_duplicates()
-    )
+    ].drop_duplicates()
 
     df_lmm = df_lmm.merge(meta_model, on="model", how="left")
 
@@ -405,7 +439,8 @@ def create_final_dfs():
     # SIZE
     # -----------------------------------------------------
 
-    df_lmm["Size"] = pd.to_numeric(df_lmm["Size"], errors="coerce")
+    # df_lmm["Size"] = pd.to_numeric(df_lmm["Parameters_B"], errors="coerce")
+    df_lmm["Size"] = pd.to_numeric(df_lmm["params_numeric"], errors="coerce")
 
     df_lmm["SizeGroup"] = pd.cut(
         df_lmm["Size"],
@@ -453,6 +488,7 @@ def create_final_dfs():
     df_A.to_csv(f"{save_dir}/df_A.csv", index=False)
     df_B.to_csv(f"{save_dir}/df_B.csv", index=False)
     df_cfa.to_csv(f"{save_dir}/df_cfa.csv")
+    df_cfa_soc_des.to_csv(f"{save_dir}/df_cfa_soc_des.csv")
     df_metadata.to_csv(f"{save_dir}/df_metadata.csv", index=False)
     df_lmm.to_csv(f"{save_dir}/df_lmm.csv", index=False)
 
@@ -465,6 +501,7 @@ def create_final_dfs():
     print(f"df_A:        {df_A.shape}")
     print(f"df_B:        {df_B.shape}")
     print(f"df_cfa:      {df_cfa.shape}")
+    print(f"df_cfa_soc_des: {df_cfa_soc_des.shape}")
     print(f"df_metadata: {df_metadata.shape}")
     print(f"df_lmm:      {df_lmm.shape}")
 
@@ -473,6 +510,7 @@ def create_final_dfs():
         df_A,
         df_B,
         df_cfa,
+        df_cfa_soc_des,
         df_metadata,
         df_lmm
     )
