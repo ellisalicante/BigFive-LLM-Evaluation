@@ -299,3 +299,4 @@ def cronbach_alpha(df_avg, group):
         })
 
     return pd.DataFrame(rows).set_index(group)[r'$\alpha$']
+
