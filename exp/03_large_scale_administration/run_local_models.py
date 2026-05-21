@@ -10,8 +10,8 @@ import json
 import os
 
 from datetime import datetime
-from src.huggingface_prompting import *
 from src.API_prompting import *
+from src.huggingface_prompting import *
 from tqdm import tqdm
 from huggingface_hub import login
 
@@ -41,14 +41,16 @@ def main():
 
     # Models for experiments
     models = [
-        "Qwen/Qwen3-0.6B",
-        "Qwen/Qwen3-0.6B-Base",
-        "Qwen/Qwen3-8B-Base",
-        "Qwen/Qwen3.5-0.8B-Base",
-        "Qwen/Qwen3.5-2B-Base",
-        "Qwen/Qwen3.5-4B-Base",
-        "google/gemma-3-270m",
-        "google/gemma-3-270m-it",
+        # "Qwen/Qwen3-0.6B",
+        # "Qwen/Qwen3-0.6B-Base",
+        # "Qwen/Qwen3-8B-Base",
+        # "Qwen/Qwen3.5-0.8B-Base",
+        # "Qwen/Qwen3.5-2B-Base",
+        # "Qwen/Qwen3.5-4B-Base",
+        # "google/gemma-3-270m",
+        # "google/gemma-3-270m-it",
+        "google/gemma-3-4b-pt",
+        # "meta-llama/Llama-3.1-8B",
     ]
 
     # Prompt constraint for local models
@@ -186,7 +188,7 @@ def main():
 
             # Save cache every 10th prompt
             if i % 10 == 0:
-                save_cache(results, model_prompts[0], "responses")
+                save_cache_local(results, model_prompts[0], "responses")
 
         end = time.time()
 
@@ -196,7 +198,7 @@ def main():
         total_time += (end - start)
 
         # Save final responses as csv
-        save_cache(results, model_prompts[0], "experiments", final=True)
+        save_cache_local(results, model_prompts[0], "experiments", final=True)
 
     # Print overall info for all models
     print("\nTotal runtime:", total_time)
