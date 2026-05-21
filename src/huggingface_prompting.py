@@ -68,7 +68,7 @@ class HFModelRunner:
         return response
 
 
-def save_cache(response_queue, prompt_class: PromptClass, path: str, final: bool = False):
+def save_cache_local(response_queue, prompt_class: PromptClass, path: str, final: bool = False):
     """Save cache to csv."""
 
     cache_file = Path("cache/cache.csv")
