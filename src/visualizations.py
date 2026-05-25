@@ -53,6 +53,31 @@ HUMAN_BFI_NORMS = {
 FIG_WIDTH  = 7.0
 FIG_HEIGHT = 3.5
 
+FAMILY_LABELS = {
+    "qwen": "Qwen",
+    "claude": "Claude",
+    "seed": "Seed",
+    "other": "Other",
+    "minimax": "MiniMax",
+    "mimo": "MiMo",
+    "deepseek": "DeepSeek",
+    "gemini": "Gemini",
+    "gemma": "Gemma",
+    "llama": "Llama",
+    "mistral": "Mistral",
+    "kimi": "Kimi",
+    "nemotron": "Nemotron",
+    "gpt-oss": "GPT-OSS",
+    "glm": "GLM",
+    "gpt": "GPT",
+    "o-series": "O-Series",
+    "aion": "Aion",
+    "trinity": "Trinity",
+    "ernie": "ERNIE",
+    "sonar": "Sonar",
+    "grok": "Grok",
+}
+
 def create_latex_descriptives_table(df_all, df_metadata, save_path="../../doc/tables/descriptives_table.txt"):
     """Create descriptive table and save as latex table."""
 
@@ -710,31 +735,6 @@ def plot_family_heatmap(df, group_col, order, cols=OCEAN_COLS,
     Z-scored mean OCEAN heatmap grouped by model family.
     """
 
-    FAMILY_LABELS = {
-        "qwen": "Qwen",
-        "claude": "Claude",
-        "seed": "Seed",
-        "other": "Other",
-        "minimax": "MiniMax",
-        "mimo": "MiMo",
-        "deepseek": "DeepSeek",
-        "gemini": "Gemini",
-        "gemma": "Gemma",
-        "llama": "Llama",
-        "mistral": "Mistral",
-        "kimi": "Kimi",
-        "nemotron": "Nemotron",
-        "gpt-oss": "GPT-OSS",
-        "glm": "GLM",
-        "gpt": "GPT",
-        "o-series": "O-Series",
-        "aion": "Aion",
-        "trinity": "Trinity",
-        "ernie": "ERNIE",
-        "sonar": "Sonar",
-        "grok": "Grok",
-    }
-
     TRAIT_ORDER = [
         "Openness",
         "Conscientiousness",
@@ -785,7 +785,7 @@ def plot_family_heatmap(df, group_col, order, cols=OCEAN_COLS,
     return fig
 
 
-def plot_release_date_regression(df, date_col, release_months_col, palette,
+def plot_release_date_regression(df, date_col, release_months_col, palette, figsize,
                                  cols=OCEAN_COLS, title="OCEAN Scores over Release Date",
                                  save_path=None, test=True):
     """
@@ -798,8 +798,18 @@ def plot_release_date_regression(df, date_col, release_months_col, palette,
 
     n_cols = 3
     n_rows = int(np.ceil(len(cols) / n_cols))
-    fig, axes = plt.subplots(n_rows, n_cols, figsize=(4 * 6, 12))
-    axes = axes.flatten()
+    # fig, axes = plt.subplots(n_rows, n_cols, figsize=figsize)
+    # axes = axes.flatten()
+    fig = plt.figure(figsize=figsize)
+    gs = fig.add_gridspec(2, 6)  # finer grid
+
+    axes = [
+        fig.add_subplot(gs[0, 0:2]),
+        fig.add_subplot(gs[0, 2:4]),
+        fig.add_subplot(gs[0, 4:6]),
+        fig.add_subplot(gs[1, 1:3]),  # centered left
+        fig.add_subplot(gs[1, 3:5]),  # centered right
+    ]
 
     for i, col in enumerate(cols):
         ax  = axes[i]
@@ -837,7 +847,7 @@ def plot_release_date_regression(df, date_col, release_months_col, palette,
         ax.set_ylabel("Score" if i % 3 == 0 else "")
         ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %Y"))
         ax.xaxis.set_major_locator(mdates.MonthLocator(interval=3))
-        plt.setp(ax.xaxis.get_majorticklabels(), rotation=35, ha="right")
+        plt.setp(ax.xaxis.get_majorticklabels(), rotation=35, ha="right", fontsize=18)
         ax.grid(linestyle="--", alpha=0.3)
         ax.legend()
 
@@ -851,8 +861,8 @@ def plot_release_date_regression(df, date_col, release_months_col, palette,
     return fig
 
 
-def plot_param_scale_regression(df, params_col, palette, cols=OCEAN_COLS,
-                                title="OCEAN Scores by Parameter Count",
+def plot_param_scale_regression(df, params_col, palette, figsize, title,
+                                cols=OCEAN_COLS,
                                 save_path=None, test=True):
     """
     Scatter + OLS regression (± 95% CI) on log10(params) scale per trait.
@@ -861,8 +871,19 @@ def plot_param_scale_regression(df, params_col, palette, cols=OCEAN_COLS,
 
     n_cols = 3
     n_rows = int(np.ceil(len(cols) / n_cols))
-    fig, axes = plt.subplots(n_rows, n_cols, figsize=(24, 12))
-    axes = axes.flatten()
+    # fig, axes = plt.subplots(n_rows, n_cols, figsize=figsize)
+    # axes = axes.flatten()
+
+    fig = plt.figure(figsize=figsize)
+    gs = fig.add_gridspec(2, 6)  # finer grid
+
+    axes = [
+        fig.add_subplot(gs[0, 0:2]),
+        fig.add_subplot(gs[0, 2:4]),
+        fig.add_subplot(gs[0, 4:6]),
+        fig.add_subplot(gs[1, 1:3]),  # centered left
+        fig.add_subplot(gs[1, 3:5]),  # centered right
+    ]
 
     df = df.copy()
     df[params_col] = pd.to_numeric(df[params_col], errors="coerce")
