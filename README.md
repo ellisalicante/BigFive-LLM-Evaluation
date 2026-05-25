@@ -1,12 +1,15 @@
-# BigFive-LLM-Evaluation
+# Personality Without Persons?
+### A Psychometric Critique of Big Five Testing in Large Language Models
 
-This repository contains the code, data, and figures for a psychometric study asking a simple but important question: **can human Big Five personality inventories be transferred to Large Language Models (LLMs)?** The paper shows that the answer is mostly no. Human-developed items do not meet accepted content-validity thresholds for LLM respondents, LLMs produce highly uniform and socially desirable responses, the expected five-factor structure does not hold well, and instruction tuning shifts scores toward socially desirable trait profiles.
+
+This repository contains the code, data, and figures for the AIES 2026 submission "Personality Without Persons?"
+
 
 The project is organized around three stages of analysis:
 
 1. **Content validity** of candidate personality inventories.
 2. **Pilot study** to test prompts and response behavior.
-3. **Large-scale administration and statistical analysis** across a broad model set.
+3. **Large-scale administration** and statistical analysis across a broad model set.
 
 ## Repository structure
 
