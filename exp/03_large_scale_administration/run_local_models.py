@@ -49,8 +49,12 @@ def main():
         # "Qwen/Qwen3.5-4B-Base",
         # "google/gemma-3-270m",
         # "google/gemma-3-270m-it",
-        "google/gemma-3-4b-pt",
+        # "google/gemma-3-4b-pt",
         # "meta-llama/Llama-3.1-8B",
+        "meta-llama/Llama-3.2-1B",
+        "meta-llama/Llama-3.2-1B-Instruct",
+        "meta-llama/Llama-3.2-3B",
+        "meta-llama/Llama-3.2-3B-Instruct",
     ]
 
     # Prompt constraint for local models
