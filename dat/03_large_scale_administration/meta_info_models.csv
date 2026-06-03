@@ -257,7 +257,7 @@ Qwen 3.5 0.8B base,Qwen/Qwen3.5-0.8B-Base,FALSE,huggingface,alibaba,qwen,china,c
 Qwen 3.5 2B base,Qwen/Qwen3.5-2B-Base,FALSE,huggingface,alibaba,qwen,china,china,2,small,open-weight,2026-02-16,,base
 Qwen 3.5 4B base,Qwen/Qwen3.5-4B-Base,FALSE,huggingface,alibaba,qwen,china,china,4,small,open-weight,2026-02-16,,base
 Qwen 3.5 9B base,Qwen/Qwen3.5-9B-Base,FALSE,huggingface,alibaba,qwen,china,china,9,small,open-weight,2026-02-16,,base
-Gemma 2 2B base,google/gemma-2-2b,FALSE,huggingface,google deepmind,gemma,US,US,2,2/16/26,open-weight,2024-07-21,,base
+Gemma 2 2B base,google/gemma-2-2b,FALSE,huggingface,google deepmind,gemma,US,US,2,small,open-weight,2024-07-21,,base
 Gemma 2 2B IT,google/gemma-2-2b-it,FALSE,huggingface,google deepmind,gemma,US,US,2,small,open-weight,2024-07-21,,IT
 Gemma 2B base,google/gemma-2b,FALSE,huggingface,google deepmind,gemma,US,US,2,small,open-weight,2024-02-21,,base
 Gemma 2B IT,google/gemma-2b-it,FALSE,huggingface,google deepmind,gemma,US,US,2,small,open-weight,2024-02-21,,IT
