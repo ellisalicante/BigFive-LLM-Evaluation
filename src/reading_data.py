@@ -246,6 +246,14 @@ def create_final_dfs():
 
     df_A["item_id"] = df_A["item"].map(text_to_id)
 
+    df_A["item_col"] = np.where(
+        df_A["inventory"]
+        .astype(str)
+        .str.contains("social", case=False, na=False),
+        "soc-" + df_A["item_id"].astype(int).astype(str).str.zfill(2),
+        "bfi-" + df_A["item_id"].astype(int).astype(str).str.zfill(2)
+    )
+
     # =====================================================
     # DF_B: trait-level scores
     # =====================================================
@@ -261,14 +269,6 @@ def create_final_dfs():
     # =====================================================
     # DF_CFA: wide item matrix for CFA in R
     # =====================================================
-
-    df_A["item_col"] = np.where(
-        df_A["inventory"]
-        .astype(str)
-        .str.contains("social", case=False, na=False),
-        "soc-" + df_A["item_id"].astype(int).astype(str).str.zfill(2),
-        "bfi-" + df_A["item_id"].astype(int).astype(str).str.zfill(2)
-    )
 
     # df_cfa = (
     #     df_A
@@ -303,6 +303,9 @@ def create_final_dfs():
     meta = pd.read_csv(
         "../../dat/03_large_scale_administration/meta_info_models.csv"
     ).rename(columns={"Model_ID": "model"})
+
+    # df_cfa = df_cfa.merge(meta, on="model", how="left")
+    # df_cfa = df_cfa.drop(columns=["MT_Bench", "Alignment"], errors="ignore")
 
     df_metadata = df_B.merge(
         meta,
@@ -454,9 +457,35 @@ def create_final_dfs():
         .fillna("undisclosed")
     )
 
+    df_lmm["negated"] = (df_lmm["key"] == "-").astype(int)  # 0 = normal, 1 = negated
+
     # -----------------------------------------------------
     # FINAL DF
     # -----------------------------------------------------
+
+    df_lmm_key = (
+        df_lmm[
+            [
+                "model",
+                "item_id",
+                "rep",
+                "dimension",
+                "key",
+                "negated",
+                "y",
+                "y_soc_des",
+                "Size",
+                "SizeGroup",
+                "ReleaseDate",
+                "Reasoning",
+                "OpenWeight"
+            ]
+        ]
+        .rename(columns={"model": "model_id"})
+        .dropna(subset=["y"])
+    )
+
+    df_lmm_key["model_id"] = df_lmm_key["model_id"].astype("category")
 
     df_lmm = (
         df_lmm[
@@ -480,6 +509,69 @@ def create_final_dfs():
 
     df_lmm["model_id"] = df_lmm["model_id"].astype("category")
 
+
+    # =====================================================
+    # DF_ML: wide item matrix per repetition (for ML)
+    # one row = one model × one rep
+    # columns = score per item + all model metadata
+    # =====================================================
+    df_ml_long = df_all.copy()
+    df_ml_long["item_id_tmp"] = df_ml_long["item"].map(text_to_id)
+    df_ml_long["item_col"] = np.where(
+        df_ml_long["inventory"]
+        .astype(str)
+        .str.contains("social", case=False, na=False),
+        "soc-" + df_ml_long["item_id_tmp"].astype(int).astype(str).str.zfill(2),
+        "bfi-" + df_ml_long["item_id_tmp"].astype(int).astype(str).str.zfill(2)
+    )
+    df_ml = (
+        df_ml_long
+        .pivot_table(
+            index=["model", "rep", "options"],
+            columns="item_col",
+            values="score",
+            aggfunc="mean"
+        )
+        .sort_index(axis=1)
+        .reset_index()
+    )
+    df_ml.columns.name = None
+
+    # merge full metadata (Family, Parameters_B, License, etc.)
+    df_ml = df_ml.merge(meta, on="model", how="left")
+    df_ml = df_ml.drop(columns=["MT_Bench", "Alignment"], errors="ignore")
+
+    # # derived columns (reuse parse_params and ref_date from df_lmm block above)
+    # df_ml["license_group"] = df_ml["License"].apply(
+    #     lambda x: "open-weight"
+    #     if isinstance(x, str) and "proprietary" not in x.lower()
+    #     else "proprietary"
+    # )
+    # df_ml["params_numeric"] = df_ml["Parameters_B"].apply(parse_params)
+    # df_ml["Size"] = pd.to_numeric(df_ml["params_numeric"], errors="coerce")
+    # df_ml["SizeGroup"] = pd.cut(
+    #     df_ml["Size"],
+    #     bins=[-np.inf, 10, 100, np.inf],
+    #     labels=["small", "medium", "large"]
+    # )
+    # df_ml["SizeGroup"] = (
+    #     df_ml["SizeGroup"]
+    #     .cat.add_categories("undisclosed")
+    #     .fillna("undisclosed")
+    # )
+    # df_ml["ReleaseDate"] = (
+    #         pd.to_datetime(df_ml["Release_date"], errors="coerce") - ref_date
+    # ).dt.days.abs()
+    # df_ml["Reasoning"] = (
+    #     df_ml["Reasoning"]
+    #     .astype(str)
+    #     .str.upper()
+    #     .isin(["TRUE", "1", "YES"])
+    #     .astype(int)
+    # )
+    # df_ml["OpenWeight"] = df_ml["license_group"].eq("open-weight").astype(int)
+
+
     # =====================================================
     # SAVE
     # =====================================================
@@ -491,6 +583,8 @@ def create_final_dfs():
     df_cfa_soc_des.to_csv(f"{save_dir}/df_cfa_soc_des.csv")
     df_metadata.to_csv(f"{save_dir}/df_metadata.csv", index=False)
     df_lmm.to_csv(f"{save_dir}/df_lmm.csv", index=False)
+    df_lmm_key.to_csv(f"{save_dir}/df_lmm_key.csv", index=False)
+    # df_ml.to_csv(f"{save_dir}/df_ml.csv", index=False)
 
     # =====================================================
     # PRINT
@@ -504,6 +598,8 @@ def create_final_dfs():
     print(f"df_cfa_soc_des: {df_cfa_soc_des.shape}")
     print(f"df_metadata: {df_metadata.shape}")
     print(f"df_lmm:      {df_lmm.shape}")
+    print(f"df_lmm_key:      {df_lmm_key.shape}")
+    # print(f"df_ml:       {df_ml.shape}")
 
     return (
         df_all,
@@ -512,7 +608,9 @@ def create_final_dfs():
         df_cfa,
         df_cfa_soc_des,
         df_metadata,
-        df_lmm
+        df_lmm,
+        df_lmm_key
+        # df_ml
     )
 
 
