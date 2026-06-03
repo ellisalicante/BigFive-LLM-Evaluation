@@ -41,6 +41,7 @@ async def main():
     # Get models for experiments from meta info
     meta = pd.read_csv("../../dat/03_large_scale_administration/meta_info_models.csv")
     models = meta["Model_ID"].dropna().tolist()
+    # models = ["deepinfra/meta-llama/Meta-Llama-3-8B-Instruct"]
 
 
 
