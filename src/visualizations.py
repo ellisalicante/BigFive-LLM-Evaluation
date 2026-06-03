@@ -22,6 +22,20 @@ IMPACT_TEN = [
     "#008CBB", "#9569D1", "#A3D900", "#E30053", "#FFB000",
     "#3092FF", "#00BFA5", "#FF6F61", "#6C5CE7", "#7CB342",
 ]
+ACCENT_COLORS = [
+    "#E05C5C",  # coral-red
+    "#5C8CE0",  # periwinkle blue
+    "#E0A85C",  # warm amber
+    "#7EC87E",  # sage green
+    "#B47EE0",  # soft violet
+    "#5CC8C8",  # teal
+    "#E07EC8",  # rose-pink
+    "#C8C85C",  # olive-yellow
+    "#5CE0A8",  # seafoam
+    "#A85CE0",  # purple
+    "#E08C5C",  # terracotta
+    "#5CA8E0",  # sky blue
+]
 BINARY_PAL_BLUE_PURPLE = ["#008CBB", "#9569D1"]
 BINARY_PAL_GREEN_RED   = ["#A3D900", "#E30053"]
 BINARY_PAL_BLUE_ORANGE = ["#3092FF", "#FFB000"]
@@ -52,6 +66,9 @@ HUMAN_BFI_NORMS = {
 
 FIG_WIDTH  = 7.0
 FIG_HEIGHT = 3.5
+
+SCALE_MIN = 1.0
+SCALE_MAX = 5.0
 
 FAMILY_LABELS = {
     "qwen": "Qwen",
@@ -214,8 +231,8 @@ def apply_paper_style():
         "xtick.labelsize":  22,
         "ytick.labelsize":  22,
         "legend.fontsize":  22,
-        "font.family":      "serif",
-        "font.serif":       ["Times New Roman", "Times", "DejaVu Serif"],
+        # "font.family":      "serif",
+        # "font.serif":       ["Times New Roman", "Times", "DejaVu Serif"],
         "axes.titlepad":    10,
         "axes.labelpad":    10,
     })
@@ -427,7 +444,7 @@ def print_group_stats(df, group_col, cols=OCEAN_COLS):
 
 ### PLOTTING FUNCTIONS
 
-def plot_ocean_distributions(df, cols=OCEAN_COLS, title="OCEAN Score Distributions", save_path=None):
+def plot_ocean_distributions(df, cols=OCEAN_COLS, title="OCEAN Score Distributions", save_path=None, show_mean=True):
     """
     Three-row panel per trait: boxplot (with human BFI baseline),
     histogram + KDE, and QQ-plot. Includes KS normality annotation.
@@ -454,26 +471,30 @@ def plot_ocean_distributions(df, cols=OCEAN_COLS, title="OCEAN Score Distributio
             linecolor="black", fliersize=3, width=0.35,
             boxprops=dict(alpha=0.75), saturation=1,
         )
-        if col in HUMAN_BFI_NORMS:
-            ax_box.axhline(
-                HUMAN_BFI_NORMS[col], linestyle="--",
-                linewidth=1, color="#333333", alpha=0.85,
-            )
+        if show_mean:
+            if col in HUMAN_BFI_NORMS:
+                ax_box.axhline(
+                    HUMAN_BFI_NORMS[col], linestyle="--",
+                    linewidth=1, color="#333333", alpha=0.85,
+                )
         ax_box.set_ylim(1, 5)
         ax_box.set_xticks([])
         ax_box.set_ylabel("Score" if i == 0 else "")
         ax_box.set_title(col, fontweight="bold")
         ax_box.text(
-            0.98, 0.95,
+            # 0.98, 0.95,
+            0.05, 0.05,
             f"M={data.mean():.2f}\nSD={data.std():.2f}",
-            transform=ax_box.transAxes, ha="right", va="top", fontsize=17,
+            # transform=ax_box.transAxes, ha="right", va="top", fontsize=17,
+            transform=ax_box.transAxes, ha="left", va="bottom", fontsize=13,
             bbox=dict(boxstyle="round,pad=0.2", facecolor="white", alpha=0.6, edgecolor="none"),
         )
         ax_box.grid(axis="y", linestyle="--", alpha=0.3)
 
         ### Histogram + KDE
         ax_kde = axes[1, i]
-        bins = int(np.sqrt(len(data)))
+        # bins = int(np.sqrt(len(data)))
+        bins = 15
         sns.histplot(data, ax=ax_kde, bins=bins, stat="density",
                      color=color, alpha=0.4, edgecolor="white")
         sns.kdeplot(data, ax=ax_kde, color=color, fill=True,
@@ -481,7 +502,7 @@ def plot_ocean_distributions(df, cols=OCEAN_COLS, title="OCEAN Score Distributio
         ax_kde.text(
             0.05, 0.94,
             f"KS: p={ks_p:.3f}".replace("0.", ".") + f"{ks_sig}\n{normality_txt}",
-            transform=ax_kde.transAxes, ha="left", va="top", fontsize=17,
+            transform=ax_kde.transAxes, ha="left", va="top", fontsize=13,
             multialignment="left",
             bbox=dict(boxstyle="round,pad=0.2", facecolor="white", alpha=0.65, edgecolor="none"),
         )
@@ -508,7 +529,7 @@ def plot_ocean_distributions(df, cols=OCEAN_COLS, title="OCEAN Score Distributio
     fig.suptitle(title, fontweight="bold", y=1.01)
     plt.tight_layout()
     if save_path:
-        plt.savefig(save_path, format="pdf", bbox_inches="tight", transparent=False)
+        plt.savefig(save_path, format="png", bbox_inches="tight", transparent=False)
     return fig
 
 
@@ -577,6 +598,9 @@ def plot_binary_comparison(df, group_col, title, palette, order=None,
             d = df[df[group_col] == grp][col].dropna()
             sns.kdeplot(d, ax=ax2, label=str(grp), color=pal[j],
                         fill=True, alpha=0.25, linewidth=1.5, warn_singular=False)
+        if i == 0:
+            ax2.legend(title=group_col, loc="upper left",
+                       frameon=True, fontsize=13, title_fontsize=13)
         ax2.set_xlim(1, 5)
         ax2.set_xlabel(col)
         ax2.set_ylabel("Density" if i == 0 else "")
@@ -857,7 +881,7 @@ def plot_release_date_regression(df, date_col, release_months_col, palette, figs
     fig.suptitle(title, fontweight="bold")
     plt.tight_layout()
     if save_path:
-        plt.savefig(save_path, format="pdf", bbox_inches="tight", transparent=False)
+        plt.savefig(save_path, format="png", bbox_inches="tight", transparent=False)
     return fig
 
 
@@ -1024,3 +1048,424 @@ def plot_trait_covariances(
         plt.savefig(save_path, bbox_inches="tight")
 
     return fig
+
+
+def make_star_plot(family_name, means, sds, color, ax=None, standalone=True):
+    """Draw a single radar/star plot on ax."""
+    N = len(OCEAN_COLS)
+    angles = np.linspace(0, 2 * np.pi, N, endpoint=False).tolist()
+    angles_closed = angles + [angles[0]]
+
+    means_norm = [(v - SCALE_MIN) / (SCALE_MAX - SCALE_MIN) for v in means]
+    means_closed = means_norm + [means_norm[0]]
+
+    # ── SD band ──────────────────────────────────────────────────────────────
+    upper = [min((m + s - SCALE_MIN) / (SCALE_MAX - SCALE_MIN), 1.0) for m, s in zip(means, sds)]
+    lower = [max((m - s - SCALE_MIN) / (SCALE_MAX - SCALE_MIN), 0.0) for m, s in zip(means, sds)]
+    upper_closed = upper + [upper[0]]
+    lower_closed = lower + [lower[0]]
+
+    if standalone:
+        fig = plt.figure(figsize=(6, 6), dpi=150, facecolor="white")
+        ax = fig.add_subplot(111, projection="polar", facecolor="white")
+    else:
+        fig = ax.get_figure()
+
+    # ax.set_facecolor("white")
+    ax.set_facecolor("none")  # make the polar axes patch transparent
+    ax.patch.set_visible(False)  # belt and suspenders
+    ax.set_theta_offset(np.pi / 2)
+    ax.set_theta_direction(-1)
+
+    # ── Concentric grid rings ─────────────────────────────────────────────
+    ring_vals = [0.25, 0.50, 0.75, 1.0]
+    ring_labels = ["2", "3", "4", "5"]
+    for rv, rl in zip(ring_vals, ring_labels):
+        ring_x = np.linspace(0, 2 * np.pi, 300)
+        ax.plot(ring_x, [rv] * 300, color="#CCCCCC", lw=0.6, zorder=1)
+        ax.text(np.pi / 2, rv + 0.02, rl, ha="center", va="bottom",
+                fontsize=7, color="#AAAAAA", fontfamily="monospace")
+
+    # ── Spoke lines ───────────────────────────────────────────────────────
+    for ang in angles:
+        ax.plot([ang, ang], [0, 1.05], color="#DDDDDD", lw=0.8, zorder=1)
+
+    # ── SD band ───────────────────────────────────────────────────────────
+    ax.fill_between(angles_closed, lower_closed, upper_closed,
+                    color=color, alpha=0.12, zorder=2)
+
+    # ── Main polygon ──────────────────────────────────────────────────────
+    ax.plot(angles_closed, means_closed,
+            color=color, lw=2.2, zorder=3, solid_capstyle="round")
+    ax.fill(angles_closed, means_closed, color=color, alpha=0.18, zorder=2)
+
+    # ── Dots at vertices (like the network graph) ─────────────────────────
+    dot_sizes = [80] * N
+    ax.scatter(angles, means_norm, s=dot_sizes, color=color,
+               zorder=5, edgecolors="white", linewidths=1.8)
+
+    # ── Outer accent dot (larger, fainter — network node look) ────────────
+    ax.scatter(angles, means_norm, s=200, color=color,
+               zorder=4, alpha=0.15, edgecolors="none")
+
+    # ── Score labels next to dots ─────────────────────────────────────────
+    for ang, mn, mv in zip(angles, means_norm, means):
+        offset = 0.13
+        label_r = mn + offset if mn < 0.85 else mn - offset
+        va = "bottom" if mn < 0.85 else "top"
+        ax.text(ang, label_r, f"{mv:.2f}",
+                ha="center", va=va, fontsize=8.5,
+                color=color, fontweight="bold",
+                fontfamily="monospace")
+
+    # ── Trait labels ──────────────────────────────────────────────────────
+    ax.set_xticks(angles)
+    ax.set_xticklabels([])  # we draw custom labels
+    for ang, trait in zip(angles, OCEAN_COLS):
+        r_label = 1.18
+        ax.text(ang, r_label, trait,
+                ha="center", va="center",
+                fontsize=11, color="#333333",
+                fontfamily="monospace", fontweight="bold",
+                rotation=0)
+
+    ax.set_ylim(0, 1.3)
+    ax.set_yticks([])
+    ax.spines["polar"].set_visible(False)
+
+    # ── Title ─────────────────────────────────────────────────────────────
+    if standalone:
+        fig.text(0.5, 0.96, family_name,
+                 ha="center", va="top",
+                 fontsize=18, fontweight="bold",
+                 color=color, fontfamily="monospace")
+        fig.text(0.5, 0.91, "Big Five Personality Profile",
+                 ha="center", va="top",
+                 fontsize=9, color="#999999", fontfamily="monospace")
+
+    return fig if standalone else ax
+
+
+"""
+Big Five (OCEAN) Star / Radar plots — one PNG per model family + animated GIF.
+Drop-in replacement: uses your real df_family, TRAIT_ORDER, family_order.
+Aesthetic: network-graph nodes — colored dots, thin lines, white background.
+
+USAGE (in your notebook / script):
+    # after you have df_family, TRAIT_ORDER, family_order, FAMILY_LABELS defined:
+    exec(open("ocean_star_plots_realdata.py").read())
+    # OR just paste the functions below and call make_all_plots(...)
+"""
+
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.gridspec import GridSpec
+from PIL import Image
+import io, os
+
+# ── Palette matching the reference images ─────────────────────────────────
+# Hand-picked to match the coloured-dot network graph aesthetic:
+# pastel-bright nodes, desaturated enough to look elegant on white.
+ACCENT_COLORS = [
+    "#D95F5F",  # coral-red
+    "#5B8DD9",  # periwinkle blue
+    "#E0A040",  # warm amber
+    "#5BAD72",  # sage green
+    "#9B6DD9",  # soft violet
+    "#3DBDBD",  # teal
+    "#D96BB0",  # rose-pink
+    "#B0B040",  # olive-yellow
+    "#40BF96",  # seafoam
+    "#7040D9",  # purple
+    "#D97840",  # terracotta
+    "#40A0D9",  # sky blue
+    "#D94040",  # vivid red
+    "#4060D9",  # cobalt
+    "#B05BA0",  # mauve
+    "#60B060",  # mid-green
+]
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+def _norm(v):
+    """Map a score in [SCALE_MIN, SCALE_MAX] to [0, 1]."""
+    return (v - SCALE_MIN) / (SCALE_MAX - SCALE_MIN)
+
+
+def _draw_radar(ax, means, global_means, sds, color, trait_names,
+                show_labels=True, show_scores=True, title=None):
+    """
+    Core drawing routine.  All scores must already be on the original scale
+    (e.g. 1-5); normalisation happens internally.
+    `sds` may be None to skip the SD band.
+    """
+    N = len(trait_names)
+    angles = np.linspace(0, 2 * np.pi, N, endpoint=False)
+
+    # closed arrays for plotting
+    def close(arr):
+        return list(arr) + [arr[0]]
+
+    mn  = [_norm(v) for v in means]
+    ang = close(angles)
+    mnc = close(mn)
+
+    # ax.set_facecolor("white")
+    ax.set_facecolor("none")  # make the polar axes patch transparent
+    ax.patch.set_visible(False)  # belt and suspenders
+    ax.set_theta_offset(np.pi / 2)
+    ax.set_theta_direction(-1)
+
+    # ── Grid rings ───────────────────────────────────────────────────────
+    theta_full = np.linspace(0, 2 * np.pi, 300)
+    ring_scores = [2, 3, 4, 5]
+    for rs in ring_scores:
+        rv = _norm(rs)
+        ax.plot(theta_full, [rv] * 300, color="#E0E0E0", lw=0.55, zorder=1)
+        # small score label on the top spoke
+        if show_labels:
+            ax.text(np.pi / 2, rv + 0.025, str(rs),
+                    ha="center", va="bottom",
+                    fontsize=6.5, color="#BBBBBB", fontfamily="monospace")
+
+    # ── Spokes ───────────────────────────────────────────────────────────
+    for ang_i in angles:
+        ax.plot([ang_i, ang_i], [0, 1.0], color="#E8E8E8", lw=0.7, zorder=1)
+
+    # ── SD band ──────────────────────────────────────────────────────────
+    # if sds is not None:
+    #     up = [_norm(min(m + s, SCALE_MAX)) for m, s in zip(means, sds)]
+    #     lo = [_norm(max(m - s, SCALE_MIN)) for m, s in zip(means, sds)]
+    #     ax.fill_between(close(angles), close(lo), close(up),
+    #                     color=color, alpha=0.13, zorder=2, linewidth=0)
+
+    # ── Global mean polygon (all models) ─────────────────────────────────────
+    global_mn = [_norm(v) for v in global_means]  # pass as new arg
+    ax.plot(close(angles), close(global_mn),
+            color="#AAAAAA", lw=1.2, zorder=3,
+            linestyle="--", dash_capstyle="round", alpha=0.5)
+    ax.scatter(angles, global_mn, s=18, color="#AAAAAA", zorder=5,
+               edgecolors="white", linewidths=1.0)
+
+    # ── Filled polygon ───────────────────────────────────────────────────
+    ax.fill(ang, mnc, color=color, alpha=0.2, zorder=2)
+    ax.plot(ang, mnc, color=color, lw=2.0, zorder=3, solid_capstyle="round")
+
+    # ── Outer halo dots (like the faint outer ring nodes in the image) ───
+    ax.scatter(angles, mn, s=170, color=color, alpha=0.18,
+               edgecolors="none", zorder=4)
+
+    # ── Vertex dots ──────────────────────────────────────────────────────
+    ax.scatter(angles, mn, s=65, color=color, zorder=5,
+               edgecolors="white", linewidths=1.6)
+
+    # ── Score labels ─────────────────────────────────────────────────────
+    if show_scores:
+        for ang_i, mn_i, mv in zip(angles, mn, means):
+            offset = 0.14
+            r_lbl = mn_i + offset if mn_i < 0.80 else mn_i - offset
+            va = "bottom" if mn_i < 0.80 else "top"
+            ax.text(ang_i, r_lbl, f"{mv:.2f}",
+                    ha="center", va=va, fontsize=7.5,
+                    color=color, fontweight="bold", fontfamily="monospace",
+                    zorder=6)
+
+    # ── Trait axis labels ─────────────────────────────────────────────────
+    ax.set_xticks(angles)
+    ax.set_xticklabels([])
+    if show_labels:
+
+        label_r = {
+            "Openness": 1.10,
+            "Conscientiousness": 1.40,
+            "Extraversion": 1.25,
+            "Agreeableness": 1.25,
+            "Neuroticism": 1.30,
+        }
+
+        for ang_i, trait in zip(angles, trait_names):
+            r = label_r.get(trait, 1.30)
+            ax.text(ang_i, r, trait,
+                    ha="center", va="center", fontsize=9,
+                    color="#2A2A2A", fontweight="bold",
+                    fontfamily="monospace", zorder=7)
+        # for ang_i, trait in zip(angles, trait_names):
+        #     # ax.text(ang_i, 1.21, trait,
+        #     ax.text(ang_i, 1.30, trait,
+        #             ha="center", va="center", fontsize=9,
+        #             color="#2A2A2A", fontweight="bold",
+        #             fontfamily="monospace", zorder=7)
+
+    # ax.set_ylim(0, 1.38)
+    ax.set_ylim(0, 1.46)
+    ax.set_yticks([])
+    ax.spines["polar"].set_visible(False)
+
+    if title:
+        ax.set_title(title, fontsize=11, fontweight="bold",
+                     color=color, fontfamily="monospace", pad=28)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+def make_individual_png(df_family, family_name, means, global_means, sds, color, trait_names,
+                        display_name=None, dpi=150):
+    """Return a matplotlib Figure for a single family."""
+    fig = plt.figure(figsize=(5.6, 5.6), dpi=dpi, facecolor="white")
+    ax  = fig.add_subplot(111, projection="polar", facecolor="white")
+
+    _draw_radar(ax, means, global_means, sds, color, trait_names,
+                show_labels=True, show_scores=True)
+
+    label = display_name or family_name
+    fig.text(0.5, 0.97, label,
+             ha="center", va="top",
+             fontsize=17, fontweight="bold",
+             color=color, fontfamily="monospace")
+    fig.text(0.5, 0.92, "Big Five Personality Profile",
+             ha="center", va="top",
+             fontsize=8.5, color="#AAAAAA", fontfamily="monospace")
+    n_models = df_family[df_family["FamilyGrouped"] == family_name].shape[0]  # pass n_models as arg
+    fig.text(0.5, 0.88, f"N = {n_models}",
+             ha="center", va="top",
+             fontsize=8, color="#AAAAAA", fontfamily="monospace",
+             fontstyle="italic")
+    return fig
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+def make_overview_figure(families, means_dict, sds_dict,
+                         colors, trait_names,
+                         display_names=None, ncols=4, dpi=150):
+    """4-per-row grid of all families."""
+    n = len(families)
+    nrows = int(np.ceil(n / ncols))
+    fig = plt.figure(figsize=(ncols * 3.8, nrows * 4.0),
+                     facecolor="white", dpi=dpi)
+    fig.text(0.5, 0.995,
+             "Big Five Personality — All Model Families",
+             ha="center", va="top",
+             fontsize=14, fontweight="bold",
+             color="#1A1A1A", fontfamily="monospace")
+
+    for idx, fam in enumerate(families):
+        ax = fig.add_subplot(nrows, ncols, idx + 1,
+                             projection="polar", facecolor="white")
+        label = (display_names or {}).get(fam, fam)
+        _draw_radar(ax, means_dict[fam], sds_dict.get(fam),
+                    colors[idx % len(colors)], trait_names,
+                    show_labels=True, show_scores=True, title=label)
+
+    plt.tight_layout(rect=[0, 0, 1, 0.985])
+    return fig
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+def make_all_plots(df_family, family_order, trait_order,
+                   family_labels=None,
+                   out_dir="ocean_frames",
+                   gif_path="ocean_families.gif",
+                   overview_path="ocean_overview.png",
+                   gif_duration_ms=1400,
+                   dpi_individual=300,
+                   dpi_overview=150):
+    """
+    Main entry point.
+
+    Parameters
+    ----------
+    df_family       : your raw long dataframe with a 'FamilyGrouped' column
+    family_order    : list of FamilyGrouped values in desired order
+    trait_order     : list of trait column names (your TRAIT_ORDER / OCEAN_COLS)
+    family_labels   : dict mapping FamilyGrouped → display name  (your FAMILY_LABELS)
+    out_dir         : folder for individual PNGs
+    gif_path        : output GIF path
+    overview_path   : output overview PNG path
+    gif_duration_ms : ms per frame in the GIF
+    """
+    os.makedirs(out_dir, exist_ok=True)
+
+    # ── Aggregate ─────────────────────────────────────────────────────────
+    heat = (df_family.groupby("FamilyGrouped")[trait_order]
+            .mean()
+            .loc[family_order])
+    heat_sd = (df_family.groupby("FamilyGrouped")[trait_order]
+               .std()
+               .loc[family_order])
+
+    means_dict = {fam: heat.loc[fam].values for fam in family_order}
+    sds_dict   = {fam: heat_sd.loc[fam].values for fam in family_order}
+
+    display_names = family_labels or {}
+
+    gif_frames = []
+    png_paths  = []
+
+    global_means = df_family[trait_order].mean().values  # shape (n_traits,)
+
+    for idx, fam in enumerate(family_order):
+        color = ACCENT_COLORS[idx % len(ACCENT_COLORS)]
+        label = display_names.get(fam, fam)
+
+        fig = make_individual_png(
+            df_family=df_family,
+            family_name=fam,
+            means=means_dict[fam],
+            global_means=global_means,
+            sds=sds_dict[fam],
+            color=color,
+            trait_names=trait_order,
+            display_name=label,
+            dpi=dpi_individual,
+        )
+
+        png_path = os.path.join(out_dir, f"{idx:02d}_{fam}.png")
+        fig.savefig(png_path, dpi=dpi_individual,
+                    bbox_inches="tight", facecolor="white")
+        plt.close(fig)
+        png_paths.append(png_path)
+        print(f"  ✓  {png_path}")
+
+        # GIF frame at lower res
+        buf = io.BytesIO()
+        fig2 = make_individual_png(
+            df_family=df_family,
+            family_name=fam, means=means_dict[fam], global_means=global_means, sds=sds_dict[fam],
+            color=color, trait_names=trait_order,
+            display_name=label, dpi=300,
+        )
+        fig2.savefig(buf, format="png", dpi=300,
+                     bbox_inches="tight", facecolor="white")
+        plt.close(fig2)
+        buf.seek(0)
+        gif_frames.append(Image.open(buf).copy())
+
+    # # ── Overview PNG ──────────────────────────────────────────────────────
+    # colors = [ACCENT_COLORS[i % len(ACCENT_COLORS)] for i in range(len(family_order))]
+    # fig_ov = make_overview_figure(
+    #     families=family_order,
+    #     means_dict=means_dict,
+    #     global_means=global_means,
+    #     sds_dict=sds_dict,
+    #     colors=colors,
+    #     trait_names=trait_order,
+    #     display_names=display_names,
+    #     ncols=4,
+    #     dpi=dpi_overview,
+    # )
+    # fig_ov.savefig(overview_path, dpi=dpi_overview,
+    #                bbox_inches="tight", facecolor="white")
+    # plt.close(fig_ov)
+    # print(f"  ✓  Overview → {overview_path}")
+
+    # ── GIF ───────────────────────────────────────────────────────────────
+    gif_frames[0].save(
+        gif_path,
+        save_all=True,
+        append_images=gif_frames[1:],
+        duration=gif_duration_ms,
+        loop=0,
+        optimize=False,
+    )
+    print(f"  ✓  GIF      → {gif_path}")
+    print(f"\nDone — {len(family_order)} PNGs + overview + GIF")
+    return png_paths, overview_path, gif_path
