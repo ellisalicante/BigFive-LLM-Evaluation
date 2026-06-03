@@ -117,8 +117,8 @@ def save_cache_local(response_queue, prompt_class: PromptClass, path: str, final
 
         if not cache_model.empty:
             filename = build_filename(prompt_class)
-            os.makedirs(f"./responses/{path}", exist_ok=True)
-            cache_model.to_csv(f"./responses/{path}/{filename}.csv", index=False)
+            os.makedirs(f"./responses", exist_ok=True)
+            cache_model.to_csv(f"./responses/{filename}.csv", index=False)
 
 
 

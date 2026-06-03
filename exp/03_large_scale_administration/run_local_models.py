@@ -47,14 +47,29 @@ def main():
         # "Qwen/Qwen3.5-0.8B-Base",
         # "Qwen/Qwen3.5-2B-Base",
         # "Qwen/Qwen3.5-4B-Base",
+        # "Qwen/Qwen3.5-9B-Base",
+        # "google/gemma-4-E2B",
+        # "google/gemma-4-E2B-it",
+        # "google/gemma-3-4b-pt",
+        # "google/gemma-2-2b",
+        # "google/gemma-2-2b-it",
+        # "google/gemma-3-1b-it",
+        # "google/gemma-3-1b-pt",
         # "google/gemma-3-270m",
         # "google/gemma-3-270m-it",
-        # "google/gemma-3-4b-pt",
         # "meta-llama/Llama-3.1-8B",
-        "meta-llama/Llama-3.2-1B",
-        "meta-llama/Llama-3.2-1B-Instruct",
-        "meta-llama/Llama-3.2-3B",
-        "meta-llama/Llama-3.2-3B-Instruct",
+        # "meta-llama/Llama-3.2-1B",
+        # "meta-llama/Llama-3.2-1B-Instruct",
+        # "meta-llama/Llama-3.2-3B",
+        # "meta-llama/Llama-3.2-3B-Instruct",
+        # "tiiuae/Falcon3-1B-Base",
+        # "tiiuae/Falcon3-1B-Instruct",
+        # "tiiuae/Falcon3-3B-Base",
+        # "tiiuae/Falcon3-3B-Instruct",
+        # "mistralai/Mistral-7B-v0.1",
+        "ibm-granite/granite-4.0-h-micro-base",
+        "nvidia/NVIDIA-Nemotron-Nano-9B-v2-Base",
+        "mistralai/Mistral-Nemo-Base-2407",
     ]
 
     # Prompt constraint for local models
@@ -202,7 +217,7 @@ def main():
         total_time += (end - start)
 
         # Save final responses as csv
-        save_cache_local(results, model_prompts[0], "experiments", final=True)
+        save_cache_local(results, model_prompts[0], "responses", final=True)
 
     # Print overall info for all models
     print("\nTotal runtime:", total_time)
