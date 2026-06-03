@@ -5,6 +5,7 @@ description = "A psychometric evaluation of Big Five personality measurement in 
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+    "factor-analyzer>=0.5.1",
     "ipykernel>=7.2.0",
     "krippendorff>=0.8.2",
     "litellm>=1.85.0",
