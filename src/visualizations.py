@@ -93,6 +93,8 @@ FAMILY_LABELS = {
     "ernie": "ERNIE",
     "sonar": "Sonar",
     "grok": "Grok",
+    "falcon": "Falcon",
+    "granite": "Granite",
 }
 
 def create_latex_descriptives_table(df_all, df_metadata, save_path="../../doc/tables/descriptives_table.txt"):
