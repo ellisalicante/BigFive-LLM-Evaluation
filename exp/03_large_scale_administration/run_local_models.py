@@ -67,9 +67,7 @@ def main():
         # "tiiuae/Falcon3-3B-Base",
         # "tiiuae/Falcon3-3B-Instruct",
         # "mistralai/Mistral-7B-v0.1",
-        "ibm-granite/granite-4.0-h-micro-base",
-        "nvidia/NVIDIA-Nemotron-Nano-9B-v2-Base",
-        "mistralai/Mistral-Nemo-Base-2407",
+        # "ibm-granite/granite-4.0-h-micro-base",
     ]
 
     # Prompt constraint for local models
