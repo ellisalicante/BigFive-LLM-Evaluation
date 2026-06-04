@@ -53,6 +53,13 @@ def main():
         # "google/gemma-3-4b-pt",
         # "google/gemma-2-2b",
         # "google/gemma-2-2b-it",
+        # "google/gemma-2-7b",
+        "google/gemma-2b",
+        "google/gemma-2b-it",
+        # "google/gemma-7b",
+        # "google/gemma-7b-it",
+        "Qwen/Qwen2.5-7B",
+        "Qwen/Qwen2.5-7B-Instruct",
         # "google/gemma-3-1b-it",
         # "google/gemma-3-1b-pt",
         # "google/gemma-3-270m",
@@ -68,6 +75,8 @@ def main():
         # "tiiuae/Falcon3-3B-Instruct",
         # "mistralai/Mistral-7B-v0.1",
         # "ibm-granite/granite-4.0-h-micro-base",
+        "allenai/Olmo-Hybrid-7B",
+        "allenai/Olmo-Hybrid-Instruct-SFT-7B"
     ]
 
     # Prompt constraint for local models
