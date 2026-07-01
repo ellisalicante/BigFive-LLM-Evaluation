@@ -73,7 +73,7 @@ def main():
         # "tiiuae/Falcon3-1B-Instruct",
         # "tiiuae/Falcon3-3B-Base",
         # "tiiuae/Falcon3-3B-Instruct",
-        # "mistralai/Mistral-7B-v0.1",
+        "mistralai/Mistral-7B-v0.1",
         # "ibm-granite/granite-4.0-h-micro-base",
         # "allenai/Olmo-Hybrid-7B", #!
         # "allenai/Olmo-Hybrid-Instruct-SFT-7B" #!
