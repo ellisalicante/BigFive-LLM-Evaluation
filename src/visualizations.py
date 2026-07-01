@@ -44,7 +44,7 @@ TRI_COLOR              = ["#E30053", "#FFB000", "#3092FF"]
 
 DIVERGING_CMAP = LinearSegmentedColormap.from_list(
     "impact_diverging",
-    [IMPACT_SIX[3], "#FFFFFF", IMPACT_SIX[4]],
+    [IMPACT_SIX[3], "#FFFFFF", IMPACT_SIX[0]],
     N=256,
 )
 
@@ -233,8 +233,8 @@ def apply_paper_style():
         "xtick.labelsize":  22,
         "ytick.labelsize":  22,
         "legend.fontsize":  22,
-        # "font.family":      "serif",
-        # "font.serif":       ["Times New Roman", "Times", "DejaVu Serif"],
+        "font.family":      "serif",
+        "font.serif":       ["Times New Roman", "Times", "DejaVu Serif"],
         "axes.titlepad":    10,
         "axes.labelpad":    10,
     })
@@ -488,7 +488,7 @@ def plot_ocean_distributions(df, cols=OCEAN_COLS, title="OCEAN Score Distributio
             0.05, 0.05,
             f"M={data.mean():.2f}\nSD={data.std():.2f}",
             # transform=ax_box.transAxes, ha="right", va="top", fontsize=17,
-            transform=ax_box.transAxes, ha="left", va="bottom", fontsize=13,
+            transform=ax_box.transAxes, ha="left", va="bottom", fontsize=17,
             bbox=dict(boxstyle="round,pad=0.2", facecolor="white", alpha=0.6, edgecolor="none"),
         )
         ax_box.grid(axis="y", linestyle="--", alpha=0.3)
@@ -504,7 +504,7 @@ def plot_ocean_distributions(df, cols=OCEAN_COLS, title="OCEAN Score Distributio
         ax_kde.text(
             0.05, 0.94,
             f"KS: p={ks_p:.3f}".replace("0.", ".") + f"{ks_sig}\n{normality_txt}",
-            transform=ax_kde.transAxes, ha="left", va="top", fontsize=13,
+            transform=ax_kde.transAxes, ha="left", va="top", fontsize=17,
             multialignment="left",
             bbox=dict(boxstyle="round,pad=0.2", facecolor="white", alpha=0.65, edgecolor="none"),
         )
@@ -535,7 +535,7 @@ def plot_ocean_distributions(df, cols=OCEAN_COLS, title="OCEAN Score Distributio
     return fig
 
 
-def plot_binary_comparison(df, group_col, title, palette, order=None,
+def plot_binary_comparison(df, group_col, title, palette, order=None, display_labels=None,
                            stats_df=None, cols=OCEAN_COLS, save_path=None, t_test=True):
     """
     Two-row panel (boxplot + KDE) comparing exactly two groups per trait.
@@ -543,14 +543,16 @@ def plot_binary_comparison(df, group_col, title, palette, order=None,
     """
     groups = [g for g in (order or sorted(df[group_col].dropna().unique()))
               if g in df[group_col].values]
+    labels = [display_labels.get(g, str(g)) if display_labels else str(g)
+              for g in groups]
     n   = len(cols)
     pal = palette[:len(groups)] if isinstance(palette, list) else sns.color_palette(palette, len(groups))
     cmap_dict = {g: pal[i] for i, g in enumerate(groups)}
 
     fig, axes = plt.subplots(
         2, n,
-        figsize=(4 * n, 8),
-        gridspec_kw={"height_ratios": [1.6, 1]},
+        figsize=(4 * n, 7),
+        gridspec_kw={"height_ratios": [1.2, 1]},
     )
     if n == 1:
         axes = axes.reshape(2, 1)
@@ -568,7 +570,7 @@ def plot_binary_comparison(df, group_col, title, palette, order=None,
             capprops=dict(linewidth=1),
         )
         ax.set_xticks(range(len(groups)))
-        ax.set_xticklabels([str(g) for g in groups], rotation=25, ha="right")
+        ax.set_xticklabels(labels, rotation=25, ha="right")
         ax.set_ylim(1, 5)
         ax.set_xlabel("")
         ax.set_ylabel("Score" if i == 0 else "")
@@ -589,7 +591,7 @@ def plot_binary_comparison(df, group_col, title, palette, order=None,
                         x_pos, y_pos,
                         f"t={row['t'].values[0]:.2f}\np={row['p_bonferroni'].values[0]:.3f}{sig_str}",
                         transform=ax.transAxes, ha="left", va=va, multialignment="left",
-                        fontsize=13,
+                        fontsize=17,
                         bbox=dict(boxstyle="round,pad=0.25", facecolor="white",
                                   alpha=0.65, edgecolor="none"),
                     )
@@ -598,13 +600,21 @@ def plot_binary_comparison(df, group_col, title, palette, order=None,
         ax2 = axes[1, i]
         for j, grp in enumerate(groups):
             d = df[df[group_col] == grp][col].dropna()
-            sns.kdeplot(d, ax=ax2, label=str(grp), color=pal[j],
+            sns.kdeplot(d, ax=ax2, label=labels[j], color=pal[j],
                         fill=True, alpha=0.25, linewidth=1.5, warn_singular=False)
         if i == 0:
-            ax2.legend(title=group_col, loc="upper left",
-                       frameon=True, fontsize=13, title_fontsize=13)
+            # ax2.legend(loc="upper left",
+            #            frameon=True, fontsize=17)
+            ax2.legend(
+                loc="upper left",
+                frameon=False,
+                fontsize=17,
+                labelspacing=0.2,
+                borderpad=0.2,
+                handletextpad=0.4,
+            )
         ax2.set_xlim(1, 5)
-        ax2.set_xlabel(col)
+        ax2.set_xlabel("")
         ax2.set_ylabel("Density" if i == 0 else "")
         ax2.grid(axis="x", linestyle="--", alpha=0.3)
 
@@ -684,7 +694,7 @@ def plot_multigroup_comparison(df, group_col, title, palette, order=None,
         ax.set_xlabel("")
         ax.set_ylabel("Score" if i == 0 else "")
         ax.set_xticks(range(len(groups)))
-        ax.set_xticklabels(groups, rotation=45, ha="right", fontsize=15)
+        ax.set_xticklabels(groups, rotation=45, ha="right", fontsize=17)
         ax.grid(axis="y", linestyle="--", alpha=0.25)
         ax.set_title(col, fontweight="bold")
 
@@ -699,7 +709,7 @@ def plot_multigroup_comparison(df, group_col, title, palette, order=None,
             ax.text(
                 x_pos, y_pos, stat_label,
                 transform=ax.transAxes, ha=ha, va=va, multialignment="left",
-                fontsize=13,
+                fontsize=17,
                 bbox=dict(boxstyle="round,pad=0.25", facecolor="white",
                           alpha=0.7, edgecolor="none"),
             )
@@ -712,8 +722,16 @@ def plot_multigroup_comparison(df, group_col, title, palette, order=None,
                 sns.kdeplot(d, ax=ax2, color=pal[j], fill=True,
                             alpha=0.22, linewidth=2, warn_singular=False, label=str(grp))
             if i == 0:
-                ax2.legend(title=group_col, loc="upper left",
-                           frameon=True, fontsize=13, title_fontsize=13)
+                # ax2.legend(loc="upper left",
+                #            frameon=True, fontsize=17)
+                ax2.legend(
+                    loc="upper left",
+                    frameon=False,
+                    fontsize=17,
+                    labelspacing=0.2,
+                    borderpad=0.2,
+                    handletextpad=0.4,
+                )
             ax2.set_xlim(1, 5)
             ax2.set_xlabel("")
             ax2.set_ylabel("Density" if i == 0 else "")
@@ -743,7 +761,7 @@ def plot_trait_correlation_heatmap(corr_matrix, trait_labels_short, title="Trait
         display, mask=mask, annot=True, fmt=".2f", cmap=DIVERGING_CMAP,
         center=0, vmin=-1.2, vmax=1.2, square=True,
         linewidths=0.5, linecolor="white", ax=ax,
-        cbar_kws={"label": "Std. covariance", "fraction": 0.05, "pad": 0.02},
+        cbar_kws={"label": "Standardized covariance", "fraction": 0.05, "pad": 0.02},
     )
     ax.set_title(title, fontweight="bold")
     ax.set_xticklabels(ax.get_xticklabels(), rotation=0, ha="right")
@@ -783,7 +801,14 @@ def plot_family_heatmap(df, group_col, order, cols=OCEAN_COLS,
 
 
     # Clean display names
-    heat_z.index = [FAMILY_LABELS.get(idx, idx.title()) for idx in heat_z.index]
+    # heat_z.index = [FAMILY_LABELS.get(idx, idx.title()) for idx in heat_z.index]
+
+    counts = df.groupby(group_col).size().loc[order]
+
+    heat_z.index = [
+        f"{FAMILY_LABELS.get(idx, idx.title())} ({counts.loc[idx]})"
+        for idx in heat_z.index
+    ]
 
     fig, ax = plt.subplots(figsize=figsize)
 
@@ -944,7 +969,7 @@ def plot_param_scale_regression(df, params_col, palette, figsize, title,
         ax.set_title(col, fontweight="bold")
         ax.set_xlabel("Parameters (B, log scale)")
         ax.set_ylabel("Score" if i % 3 == 0 else "")
-        ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f"{x:g}B"))
+        ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f"{x:g}"))
         ax.grid(linestyle="--", alpha=0.3)
         ax.legend()
 
@@ -1011,7 +1036,7 @@ def plot_trait_covariances(
 
     cmap = LinearSegmentedColormap.from_list(
         "impact_custom",
-        [impact_six[3], "#FFFFFF", impact_six[4]],
+        [impact_six[3], "#FFFFFF", impact_six[0]],
         N=256
     )
 
@@ -1034,7 +1059,7 @@ def plot_trait_covariances(
         linecolor="white",
         ax=ax,
         cbar_kws={
-            "label": "Std. covariance",
+            "label": "Standardized covariance",
             "fraction": 0.05,
             "pad": 0.02
         }
@@ -1468,6 +1493,6 @@ def make_all_plots(df_family, family_order, trait_order,
         loop=0,
         optimize=False,
     )
-    print(f"  ✓  GIF      → {gif_path}")
+    # print(f"  ✓  GIF      → {gif_path}")
     print(f"\nDone — {len(family_order)} PNGs + overview + GIF")
     return png_paths, overview_path, gif_path
