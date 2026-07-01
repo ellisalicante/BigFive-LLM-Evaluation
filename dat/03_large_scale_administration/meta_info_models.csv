@@ -27,9 +27,13 @@ Devstral Medium,openrouter/mistralai/devstral-medium,FALSE,openrouter,mistralai,
 Devstral Small 1.1,openrouter/mistralai/devstral-small,FALSE,openrouter,mistralai,mistral,EU,france,24,medium,open-weight,07/10/25
 Ernie 4.5 300B A47B,openrouter/baidu/ernie-4.5-300b-a47b,FALSE,openrouter,baidu,ernie,china,china,300,large,open-weight,06/30/25
 Ernie 4.5 VL 424B A47B,openrouter/baidu/ernie-4.5-vl-424b-a47b,FALSE,openrouter,baidu,ernie,china,china,424,large,open-weight,06/30/25
+Falcon 1B Base,tiiuae/Falcon3-1B-Base,FALSE,huggingface,tii uae,falcon,uae,uae,1,small,open-weight,17/12/24
+Falcon 1B Instruct,tiiuae/Falcon3-1B-Instruct,FALSE,huggingface,tii uae,falcon,uae,uae,1,small,open-weight,17/12/24
+Falcon 3B Base,tiiuae/Falcon3-3B-Base,FALSE,huggingface,tii uae,falcon,uae,uae,3,small,open-weight,17/12/24
+Falcon 3B Instruct,tiiuae/Falcon3-3B-Instruct,FALSE,huggingface,tii uae,falcon,uae,uae,3,small,open-weight,17/12/24
 Gemini 2.0 Flash,openrouter/google/gemini-2.0-flash-001,FALSE,openrouter,google deepmind,gemini,US,US,undisclosed,undisclosed,proprietary,02/05/25
 Gemini 2.5 Flash,deepinfra/google/gemini-2.5-flash,TRUE,deepinfra,google deepmind,gemini,US,US,undisclosed,undisclosed,proprietary,06/17/25
-Gemini 2.5 Flash-Lite Preview,openrouter/google/gemini-2.5-flash-lite-preview-09-2025,FALSE,openrouter,google deepmind,gemini,US,US,undisclosed,undisclosed,proprietary,07/22/25
+Gemini 2.5 Flash Lite Preview,openrouter/google/gemini-2.5-flash-lite-preview-09-2025,FALSE,openrouter,google deepmind,gemini,US,US,undisclosed,undisclosed,proprietary,07/22/25
 Gemini 2.5 Pro,deepinfra/google/gemini-2.5-pro,TRUE,deepinfra,google deepmind,gemini,US,US,undisclosed,undisclosed,proprietary,06/17/25
 Gemini 3 Flash Preview,openrouter/google/gemini-3-flash-preview,FALSE,openrouter,google deepmind,gemini,US,US,undisclosed,undisclosed,proprietary,12/17/25
 Gemini 3.1 Flash Lite Preview,openrouter/google/gemini-3.1-flash-lite-preview,FALSE,openrouter,google deepmind,gemini,US,US,undisclosed,undisclosed,proprietary,03/03/26
@@ -50,8 +54,6 @@ Gemma 3 4B IT,deepinfra/google/gemma-3-4b-it,FALSE,deepinfra,google deepmind,gem
 Gemma 4 31B IT,openrouter/google/gemma-4-31b-it,FALSE,openrouter,google deepmind,gemma,US,US,30.7,medium,open-weight,03/31/26
 Gemma 4B E2B Base,google/gemma-4-E2B,FALSE,huggingface,google deepmind,gemma,US,US,2,small,open-weight,03/31/25
 Gemma 4B E2B IT,google/gemma-4-E2B-it,FALSE,huggingface,google deepmind,gemma,US,US,2,small,open-weight,03/31/25
-Gemma 7B Base,google/gemma-7b,FALSE,huggingface,google deepmind,gemma,US,US,7,small,open-weight,02/21/24
-Gemma 7B IT,google/gemma-7b-it,FALSE,huggingface,google deepmind,gemma,US,US,7,small,open-weight,02/21/24
 GLM 4 32B,openrouter/z-ai/glm-4-32b,FALSE,openrouter,zai,glm,china,china,32,medium,open-weight,07/25/25
 GLM 4.5,openrouter/z-ai/glm-4.5,TRUE,openrouter,zai,glm,china,china,undisclosed,undisclosed,proprietary,07/28/25
 GLM 4.5 Air,openrouter/z-ai/glm-4.5-air,TRUE,openrouter,zai,glm,china,china,undisclosed,undisclosed,proprietary,07/28/25
@@ -128,9 +130,9 @@ Llama 3.2 1B IT,meta-llama/Llama-3.2-1B-Instruct,FALSE,huggingface,meta,llama,US
 Llama 3.2 3B Base,meta-llama/Llama-3.2-3B,FALSE,huggingface,meta,llama,US,US,3,small,open-weight,09/25/24
 Llama 3.2 3B IT,meta-llama/Llama-3.2-3B-Instruct,FALSE,huggingface,meta,llama,US,US,3,small,open-weight,09/25/24
 Llama 3.3 70B Instruct Turbo,deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo,FALSE,deepinfra,meta,llama,US,US,70,medium,open-weight,12/06/24
+Llama 3.3 Nemotron Super 49B V1.5,deepinfra/nvidia/Llama-3.3-Nemotron-Super-49B-v1.5,TRUE,deepinfra,nvidia,nemotron,US,US,49,medium,open-weight,07/25/25
 Llama 4 Maverick 17B 128E,deepinfra/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8,FALSE,deepinfra,meta,llama,US,US,17,medium,open-weight,04/05/25
 Llama 4 Scout 17B 16E,deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct,FALSE,deepinfra,meta,llama,US,US,17,medium,open-weight,04/05/25
-Llama 3.3 Nemotron Super 49B V1.5,deepinfra/nvidia/Llama-3.3-Nemotron-Super-49B-v1.5,TRUE,deepinfra,nvidia,nemotron,US,US,49,medium,open-weight,07/25/25
 Mercury 2,openrouter/inception/mercury-2,TRUE,openrouter,inception,mercury,US,US,undisclosed,undisclosed,proprietary,03/04/26
 MiMo V2 Flash,openrouter/xiaomi/mimo-v2-flash,FALSE,openrouter,xiaomi,mimo,china,china,309,large,open-weight,12/14/25
 MiMo V2 Omni,openrouter/xiaomi/mimo-v2-omni,TRUE,openrouter,xiaomi,mimo,china,china,undisclosed,undisclosed,proprietary,03/18/26
@@ -151,6 +153,7 @@ Mistral 3.1 Medium,openrouter/mistralai/mistral-medium-3.1,FALSE,openrouter,mist
 Mistral 3.2 Small  24B Instruct,deepinfra/mistralai/Mistral-Small-3.2-24B-Instruct-2506,FALSE,deepinfra,mistralai,mistral,EU,france,24,medium,open-weight,06/20/25
 Mistral 3.5 Medium,openrouter/mistralai/mistral-medium-3-5,FALSE,openrouter,mistralai,mistral,EU,france,128,large,open-weight,04/30/26
 Mistral 4 Small,openrouter/mistralai/mistral-small-2603,FALSE,openrouter,mistralai,mistral,EU,france,119,large,open-weight,03/16/26
+Mistral 7B,mistralai/Mistral-7B-v0.1,FALSE,huggingface,mistralai,mistral,EU,france,7,small,open-weight,09/28/23
 Mistral 7B Instruct,openrouter/mistralai/mistral-7b-instruct-v0.1,FALSE,openrouter,mistralai,mistral,EU,france,7,small,open-weight,09/28/23
 Mistral Large,openrouter/mistralai/mistral-large,FALSE,openrouter,mistralai,mistral,EU,france,undisclosed,undisclosed,proprietary,02/26/24
 Mistral Nemo Instruct,deepinfra/mistralai/Mistral-Nemo-Instruct-2407,FALSE,deepinfra,mistralai,mistral,EU,france,12,medium,open-weight,07/19/24
@@ -172,8 +175,6 @@ Phi-4,deepinfra/microsoft/phi-4,FALSE,deepinfra,microsoft,phi,US,US,14,medium,op
 Phi-4 Mini,openrouter/microsoft/phi-4-mini-instruct,FALSE,openrouter,microsoft,phi,US,US,14,medium,open-weight,01/10/25
 Pixtral Large,openrouter/mistralai/pixtral-large-2411,FALSE,openrouter,mistralai,mistral,EU,france,124,large,open-weight,11/19/24
 Qwen 2.5 72B Instruct,deepinfra/Qwen/Qwen2.5-72B-Instruct,FALSE,deepinfra,alibaba,qwen,china,china,72,medium,open-weight,09/19/24
-Qwen 2.5 7B Base,Qwen/Qwen2.5-7B,FALSE,huggingface,alibaba,qwen,china,china,7,small,open-weight,10/16/25
-Qwen 2.5 7B Instruct,Qwen/Qwen2.5-7B-Instruct,FALSE,huggingface,alibaba,qwen,china,china,7,small,open-weight,10/16/25
 Qwen 2.5 VL 72B Instruct,openrouter/qwen/qwen2.5-vl-72b-instruct,FALSE,openrouter,alibaba,qwen,china,china,72,medium,open-weight,02/01/25
 Qwen 3 0.6B Base,Qwen/Qwen3-0.6B-Base,FALSE,huggingface,alibaba,qwen,china,china,0.6,small,open-weight,04/08/25
 Qwen 3 0.6B Instruct,Qwen/Qwen3-0.6B,FALSE,huggingface,alibaba,qwen,china,china,0.6,small,open-weight,04/08/25
@@ -242,7 +243,3 @@ Trinity Mini,openrouter/arcee-ai/trinity-mini,TRUE,openrouter,arcee-ai,trinity,U
 UI TARS 1.5 7b,openrouter/bytedance/ui-tars-1.5-7b,FALSE,openrouter,bytedance,ui tars,china,china,7,small,open-weight,09/19/25
 Unslopnemo 12B,openrouter/thedrummer/unslopnemo-12b,FALSE,openrouter,thedrummer,unslopnemo,other,other,12,medium,open-weight,11/08/25
 Weaver,openrouter/mancer/weaver,FALSE,openrouter,mancer,weaver,US,US,undisclosed,undisclosed,proprietary,08/02/23
-Falcon 1B Base,tiiuae/Falcon3-1B-Base,FALSE,huggingface,tii uae,falcon,uae,uae,1,small,open-weight,17/12/24
-Falcon 1B Instruct,tiiuae/Falcon3-1B-Instruct,FALSE,huggingface,tii uae,falcon,uae,uae,1,small,open-weight,17/12/24
-Falcon 3B Base,tiiuae/Falcon3-3B-Base,FALSE,huggingface,tii uae,falcon,uae,uae,3,small,open-weight,17/12/24
-Falcon 3B Instruct,tiiuae/Falcon3-3B-Instruct,FALSE,huggingface,tii uae,falcon,uae,uae,3,small,open-weight,17/12/24
