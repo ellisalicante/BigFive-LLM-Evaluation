@@ -409,7 +409,7 @@ def mannwhitney_pairwise(df, group_col, cols=OCEAN_COLS, groups=None):
             "stat_name": stat_name,
             "stat":      round(stat, 3),
             "p":         round(p, 5),
-            "sig":       "***" if p < .001 else "**" if p < .01 else "*" if p < .05 else "ns",
+            "sig":       "***" if p < .001 else "**" if p < .01 else "*" if p < .05 else "",
         })
 
         if len(groups) > 2 and p < .05:
@@ -531,7 +531,7 @@ def plot_ocean_distributions(df, cols=OCEAN_COLS, title="OCEAN Score Distributio
     fig.suptitle(title, fontweight="bold", y=1.01)
     plt.tight_layout()
     if save_path:
-        plt.savefig(save_path, format="png", bbox_inches="tight", transparent=False)
+        plt.savefig(save_path, format="pdf", bbox_inches="tight", transparent=False)
     return fig
 
 
