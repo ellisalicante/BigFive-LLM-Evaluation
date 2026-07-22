@@ -17,7 +17,9 @@ import itertools
 
 ### PALETTES & STYLE
 
-IMPACT_SIX = ["#008CBB", "#9569D1", "#A3D900", "#E30053", "#FFB000", "#3092FF"]
+# IMPACT_SIX = ["#008CBB", "#9569D1", "#A3D900", "#E30053", "#FFB000", "#3092FF"]
+# IMPACT_SIX = ["#f15943", "#80bae1", "#f79740", "#8ac441", "#22668e", "#5db29c"]
+IMPACT_SIX = ["#df2835", "#59b2de", "#f7931d", "#A3D900", "#22668e", "#5db29c"]
 IMPACT_TEN = [
     "#008CBB", "#9569D1", "#A3D900", "#E30053", "#FFB000",
     "#3092FF", "#00BFA5", "#FF6F61", "#6C5CE7", "#7CB342",
@@ -49,11 +51,11 @@ DIVERGING_CMAP = LinearSegmentedColormap.from_list(
 )
 
 OCEAN_COLS = [
-    "Agreeableness",
+    "Openness",
     "Conscientiousness",
     "Extraversion",
+    "Agreeableness",
     "Neuroticism",
-    "Openness",
 ]
 
 HUMAN_BFI_NORMS = {
@@ -233,8 +235,8 @@ def apply_paper_style():
         "xtick.labelsize":  22,
         "ytick.labelsize":  22,
         "legend.fontsize":  22,
-        "font.family":      "serif",
-        "font.serif":       ["Times New Roman", "Times", "DejaVu Serif"],
+        # "font.family":      "serif",
+        # "font.serif":       ["Times New Roman", "Times", "DejaVu Serif"],
         "axes.titlepad":    10,
         "axes.labelpad":    10,
     })
@@ -471,7 +473,8 @@ def plot_ocean_distributions(df, cols=OCEAN_COLS, title="OCEAN Score Distributio
         sns.boxplot(
             y=data, ax=ax_box, color=color,
             linecolor="black", fliersize=3, width=0.35,
-            boxprops=dict(alpha=0.75), saturation=1,
+            boxprops=dict(alpha=0.92), saturation=1,
+            # boxprops=dict(alpha=0.75), saturation=1,
         )
         if show_mean:
             if col in HUMAN_BFI_NORMS:
@@ -497,8 +500,10 @@ def plot_ocean_distributions(df, cols=OCEAN_COLS, title="OCEAN Score Distributio
         ax_kde = axes[1, i]
         # bins = int(np.sqrt(len(data)))
         bins = 15
+        # sns.histplot(data, ax=ax_kde, bins=bins, stat="density",
+        #              color=color, alpha=0.4, edgecolor="white")
         sns.histplot(data, ax=ax_kde, bins=bins, stat="density",
-                     color=color, alpha=0.4, edgecolor="white")
+                     color=color, alpha=0.8, edgecolor="white")
         sns.kdeplot(data, ax=ax_kde, color=color, fill=True,
                     alpha=0.2, linewidth=1.8, cut=0)
         ax_kde.text(
@@ -506,7 +511,8 @@ def plot_ocean_distributions(df, cols=OCEAN_COLS, title="OCEAN Score Distributio
             f"KS: p={ks_p:.3f}".replace("0.", ".") + f"{ks_sig}\n{normality_txt}",
             transform=ax_kde.transAxes, ha="left", va="top", fontsize=17,
             multialignment="left",
-            bbox=dict(boxstyle="round,pad=0.2", facecolor="white", alpha=0.65, edgecolor="none"),
+            # bbox=dict(boxstyle="round,pad=0.2", facecolor="white", alpha=0.65, edgecolor="none"),
+            bbox=dict(boxstyle="round,pad=0.2", facecolor="white", alpha=0.75, edgecolor="none"),
         )
         ax_kde.set_xlim(1, 5)
         ax_kde.set_ylim(0, 1.9)
@@ -534,6 +540,266 @@ def plot_ocean_distributions(df, cols=OCEAN_COLS, title="OCEAN Score Distributio
         plt.savefig(save_path, format="pdf", bbox_inches="tight", transparent=False)
     return fig
 
+
+
+# (dark, light)
+IMPACT_SIX_PAIRS = [
+    ("#002653", "#56b3e2"),  # Blue
+    ("#004639", "#4ca587"),  # Teal
+    ("#3f420d", "#b7bb32"),  # Olive
+    ("#6e1a36", "#e16892"),  # Bordeaux
+    ("#4f2644", "#915f97"),  # Purple
+]
+
+
+def plot_ocean_distributions_poster(df, cols=OCEAN_COLS, title="OCEAN Score Distributions", save_path=None, show_mean=True):
+    """
+    Three-row panel per trait: boxplot (with human BFI baseline),
+    histogram + KDE, and QQ-plot. Includes KS normality annotation.
+    """
+    n = len(cols)
+    fig, axes = plt.subplots(
+        3, n,
+        figsize=(4 * n, 10),
+        gridspec_kw={"height_ratios": [1, 1.2, 1.2]},
+    )
+
+    for i, col in enumerate(cols):
+        data   = df[col].dropna()
+        dark_color, light_color = IMPACT_SIX_PAIRS[i]
+        z      = zscore(data)
+        ks_stat, ks_p = kstest(z, "norm")
+        ks_sig = "***" if ks_p < .001 else "**" if ks_p < .01 else "*" if ks_p < .05 else ""
+        normality_txt = "non-normal" if ks_p < 0.05 else "approx. normal"
+
+        ### Boxplot
+        ax_box = axes[0, i]
+        sns.boxplot(
+            y=data, ax=ax_box, #color=color,
+            linecolor="black", fliersize=3, width=0.35,
+            boxprops=dict(alpha=0.9, facecolor=light_color,edgecolor=dark_color), saturation=1,
+            whiskerprops=dict(color=dark_color),
+            capprops=dict(color=dark_color),
+            medianprops=dict(color=dark_color),
+            flierprops=dict(
+                markerfacecolor=dark_color,
+                markeredgecolor=dark_color,
+                alpha=0.5,
+            ),
+        )
+        if show_mean:
+            if col in HUMAN_BFI_NORMS:
+                ax_box.axhline(
+                    HUMAN_BFI_NORMS[col], linestyle="--",
+                    linewidth=1, color="#333333", alpha=0.85,
+                )
+        ax_box.set_ylim(1, 5)
+        ax_box.set_xticks([])
+        ax_box.set_ylabel("Score" if i == 0 else "")
+        ax_box.set_title(col, fontweight="bold")
+        ax_box.text(
+            # 0.98, 0.95,
+            0.05, 0.05,
+            f"M={data.mean():.2f}\nSD={data.std():.2f}",
+            # transform=ax_box.transAxes, ha="right", va="top", fontsize=17,
+            transform=ax_box.transAxes, ha="left", va="bottom", fontsize=17,
+            bbox=dict(boxstyle="round,pad=0.2", facecolor="white", alpha=0.6, edgecolor="none"),
+        )
+        ax_box.grid(axis="y", linestyle="--", alpha=0.3)
+
+        ### Histogram + KDE
+        ax_kde = axes[1, i]
+        # bins = int(np.sqrt(len(data)))
+        bins = 15
+        sns.histplot(data, ax=ax_kde, bins=bins, stat="density",
+                     color=light_color, alpha=0.65, edgecolor="white")
+        sns.kdeplot(data, ax=ax_kde, color=light_color, fill=True,
+                    alpha=0.3, linewidth=1.8, cut=0)
+        ax_kde.text(
+            0.05, 0.94,
+            f"KS: p={ks_p:.3f}".replace("0.", ".") + f"{ks_sig}\n{normality_txt}",
+            transform=ax_kde.transAxes, ha="left", va="top", fontsize=17,
+            multialignment="left",
+            bbox=dict(boxstyle="round,pad=0.2", facecolor="white", alpha=0.65, edgecolor="none"),
+        )
+        ax_kde.set_xlim(1, 5)
+        ax_kde.set_ylim(0, 1.9)
+        ax_kde.set_xticks([1, 2, 3, 4, 5])
+        ax_kde.set_yticks([0.5, 1, 1.5])
+        ax_kde.set_xlabel("Score")
+        ax_kde.set_ylabel("Density" if i == 0 else "")
+        ax_kde.grid(axis="x", linestyle="--", alpha=0.3)
+
+        ### QQ-plot
+        ax_qq = axes[2, i]
+        qq = probplot(data, dist="norm")
+        theoretical, ordered = qq[0]
+        ax_qq.scatter(theoretical, ordered, s=26, alpha=0.75, color=light_color, linewidth=0.5)
+        slope, intercept, _ = qq[1]
+        xline = np.linspace(theoretical.min(), theoretical.max(), 100)
+        ax_qq.plot(xline, slope * xline + intercept, color="#333333", linewidth=2, alpha=0.85)
+        ax_qq.set_ylabel("Q-Q Plot" if i == 0 else "")
+        ax_qq.set_title("")
+        ax_qq.grid(alpha=0.25)
+
+    fig.suptitle(title, fontweight="bold", y=1.01)
+    plt.tight_layout()
+    if save_path:
+        plt.savefig(save_path, format="pdf", bbox_inches="tight", transparent=False)
+    return fig
+
+# def plot_ocean_distributions_poster(df, cols=OCEAN_COLS, title="OCEAN Score Distributions", save_path=None, show_mean=True):
+#     """
+#     Three-row panel per trait: boxplot (with human BFI baseline),
+#     histogram + KDE, and QQ-plot. Includes KS normality annotation.
+#     """
+#     n = len(cols)
+#     fig, axes = plt.subplots(
+#         3, n,
+#         figsize=(4 * n, 10),
+#         gridspec_kw={"height_ratios": [1, 1.2, 1.2]},
+#     )
+#
+#     for i, col in enumerate(cols):
+#         data = df[col].dropna()
+#         dark_color, light_color = IMPACT_SIX_PAIRS[i]
+#
+#         z = zscore(data)
+#         ks_stat, ks_p = kstest(z, "norm")
+#         ks_sig = "***" if ks_p < .001 else "**" if ks_p < .01 else "*" if ks_p < .05 else ""
+#         normality_txt = "non-normal" if ks_p < 0.05 else "approx. normal"
+#
+#         ### Boxplot
+#         ax_box = axes[0, i]
+#         sns.boxplot(
+#             y=data,
+#             ax=ax_box,
+#             width=0.35,
+#             fliersize=3,
+#             saturation=1,
+#             boxprops=dict(
+#                 facecolor=light_color,
+#                 edgecolor=dark_color,
+#                 linewidth=1,
+#                 alpha=0.9,
+#             ),
+#             whiskerprops=dict(color=dark_color, linewidth=1),
+#             capprops=dict(color=dark_color, linewidth=1),
+#             medianprops=dict(color=dark_color, linewidth=1),
+#             flierprops=dict(
+#                 marker="o",
+#                 markerfacecolor=dark_color,
+#                 markeredgecolor=dark_color,
+#                 markersize=3,
+#                 alpha=0.7,
+#             ),
+#         )
+#
+#         if show_mean and col in HUMAN_BFI_NORMS:
+#             ax_box.axhline(
+#                 HUMAN_BFI_NORMS[col],
+#                 linestyle="--",
+#                 linewidth=1,
+#                 color="#333333",
+#                 alpha=0.85,
+#             )
+#
+#         ax_box.set_ylim(1, 5)
+#         ax_box.set_xticks([])
+#         ax_box.set_ylabel("Score" if i == 0 else "")
+#         ax_box.set_title(col, fontweight="bold")
+#         ax_box.text(
+#             0.05, 0.05,
+#             f"M={data.mean():.2f}\nSD={data.std():.2f}",
+#             transform=ax_box.transAxes,
+#             ha="left",
+#             va="bottom",
+#             fontsize=17,
+#             bbox=dict(boxstyle="round,pad=0.2",
+#                       facecolor="white",
+#                       alpha=0.6,
+#                       edgecolor="none"),
+#         )
+#         ax_box.grid(axis="y", linestyle="--", alpha=0.3)
+#
+#         ### Histogram + KDE
+#         ax_kde = axes[1, i]
+#         bins = 15
+#
+#         sns.histplot(
+#             data,
+#             ax=ax_kde,
+#             bins=bins,
+#             stat="density",
+#             color=light_color,
+#             edgecolor="white",
+#             alpha=0.9,
+#         )
+#
+#         sns.kdeplot(
+#             data,
+#             ax=ax_kde,
+#             color=light_color,
+#             fill=True,
+#             alpha=0.20,
+#             linewidth=1.8,
+#             cut=0,
+#         )
+#
+#         ax_kde.text(
+#             0.05, 0.94,
+#             f"KS: p={ks_p:.3f}".replace("0.", ".") + f"{ks_sig}\n{normality_txt}",
+#             transform=ax_kde.transAxes,
+#             ha="left",
+#             va="top",
+#             fontsize=17,
+#             multialignment="left",
+#             bbox=dict(boxstyle="round,pad=0.2",
+#                       facecolor="white",
+#                       alpha=0.65,
+#                       edgecolor="none"),
+#         )
+#
+#         ax_kde.set_xlim(1, 5)
+#         ax_kde.set_ylim(0, 1.9)
+#         ax_kde.set_xticks([1, 2, 3, 4, 5])
+#         ax_kde.set_yticks([0.5, 1, 1.5])
+#         ax_kde.set_xlabel("Score")
+#         ax_kde.set_ylabel("Density" if i == 0 else "")
+#         ax_kde.grid(axis="x", linestyle="--", alpha=0.3)
+#
+#         ### QQ-plot
+#         ax_qq = axes[2, i]
+#         qq = probplot(data, dist="norm")
+#         theoretical, ordered = qq[0]
+#
+#         ax_qq.scatter(
+#             theoretical,
+#             ordered,
+#             s=26,
+#             alpha=0.8,
+#             color=dark_color,
+#             edgecolors=dark_color,
+#             linewidth=0.4,
+#         )
+#
+#         slope, intercept, _ = qq[1]
+#         xline = np.linspace(theoretical.min(), theoretical.max(), 100)
+#         ax_qq.plot(
+#             xline,
+#             slope * xline + intercept,
+#             color=dark_color,
+#             linewidth=2,
+#         )
+#
+#         ax_qq.set_ylabel("Q-Q Plot" if i == 0 else "")
+#         ax_qq.grid(alpha=0.25)
+#
+#     fig.suptitle(title, fontweight="bold", y=1.01)
+#     plt.tight_layout()
+#     if save_path:
+#         plt.savefig(save_path, format="pdf", bbox_inches="tight", transparent=False)
+#     return fig
 
 def plot_binary_comparison(df, group_col, title, palette, order=None, display_labels=None,
                            stats_df=None, cols=OCEAN_COLS, save_path=None, t_test=True):
@@ -835,6 +1101,70 @@ def plot_family_heatmap(df, group_col, order, cols=OCEAN_COLS,
 
     return fig
 
+def plot_family_heatmap_percentile(df, group_col, order, cols=OCEAN_COLS,
+                                    title="OCEAN Trait Profiles by Model Family",
+                                    save_path=None, figsize=(9, 8)):
+    """
+    Percentile-rank mean OCEAN heatmap grouped by model family.
+    Uses percentile ranks instead of z-scores since traits are not normally distributed.
+    """
+
+    TRAIT_ORDER = [
+        "Openness",
+        "Conscientiousness",
+        "Extraversion",
+        "Agreeableness",
+        "Neuroticism",
+    ]
+
+    TRAIT_LABELS = {
+        "Openness": "O",
+        "Conscientiousness": "C",
+        "Extraversion": "E",
+        "Agreeableness": "A",
+        "Neuroticism": "N",
+    }
+
+    # mean per family per trait
+    heat = df.groupby(group_col)[TRAIT_ORDER].mean().loc[order]
+
+    # convert each trait column to percentile rank (0-100) across families
+    heat_pct = heat.rank(pct=True) * 100
+    heat_pct = heat_pct.rename(columns=TRAIT_LABELS)
+
+    counts = df.groupby(group_col).size().loc[order]
+
+    heat_pct.index = [
+        f"{FAMILY_LABELS.get(idx, idx.title())} ({counts.loc[idx]})"
+        for idx in heat_pct.index
+    ]
+
+    fig, ax = plt.subplots(figsize=figsize)
+
+    sns.heatmap(
+        heat_pct,
+        annot=True,
+        fmt=".0f",
+        cmap=DIVERGING_CMAP,
+        linewidths=0.5,
+        cbar_kws={"label": "Percentile rank"},
+        ax=ax,
+        vmin=0,
+        vmax=100,
+        center=50,
+    )
+
+    ax.set_title(title, fontweight="bold")
+    ax.set_xlabel("")
+    ax.set_ylabel("")
+
+    plt.tight_layout()
+
+    if save_path:
+        plt.savefig(save_path, format="pdf", bbox_inches="tight")
+
+    return fig
+
 
 def plot_release_date_regression(df, date_col, release_months_col, palette, figsize,
                                  cols=OCEAN_COLS, title="OCEAN Scores over Release Date",
@@ -1032,18 +1362,19 @@ def plot_trait_covariances(
     # -----------------------------
     # colormap (your paper style)
     # -----------------------------
-    impact_six = ["#008CBB", "#9569D1", "#A3D900", "#E30053", "#FFB000", "#3092FF"]
+    # impact_six = ["#008CBB", "#9569D1", "#A3D900", "#E30053", "#FFB000", "#3092FF"]
+    impact_six = ["#df2835", "#80bae1", "#f79740", "#8ac441", "#22668e", "#5db29c"]
 
     cmap = LinearSegmentedColormap.from_list(
         "impact_custom",
-        [impact_six[3], "#FFFFFF", impact_six[0]],
+        [impact_six[0], "#FFFFFF", impact_six[4]],
         N=256
     )
 
     # -----------------------------
     # plot
     # -----------------------------
-    fig, ax = plt.subplots(figsize=(6, 5), constrained_layout=False)
+    fig, ax = plt.subplots(figsize=(12, 5), constrained_layout=False)
 
     sns.heatmap(
         corr_plot,
@@ -1054,7 +1385,8 @@ def plot_trait_covariances(
         center=0,
         vmin=vmin,
         vmax=vmax,
-        square=True,
+        # square=True,
+        square=False,
         linewidths=0.5,
         linecolor="white",
         ax=ax,
