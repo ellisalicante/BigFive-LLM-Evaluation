@@ -4,6 +4,7 @@ import pandas as pd
 from pathlib import Path
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from src.API_prompting import PromptClass, build_filename
+from huggingface_hub import login, HfApi, scan_cache_info
 
 
 class HFModelRunner:
@@ -133,3 +134,36 @@ def is_cached(pc, cache):
             (cache["situation"] == pc.situation) &
             (cache["rep"] == pc.rep)
     ).any()
+
+
+
+def estimate_model_size_billion(model_name):
+    api = HfApi()
+    info = api.model_info(model_name, files_metadata=True)
+    total_bytes = sum(
+        f.size for f in info.siblings
+        if f.size and (f.rfilename.endswith(".safetensors") or f.rfilename.endswith(".bin"))
+    )
+    return total_bytes / 2 / 1e9
+
+
+def select_quantization(param_billion):
+    if param_billion <= 50:
+        return None
+    elif param_billion <= 83:
+        return BitsAndBytesConfig(load_in_8bit=True)
+    elif param_billion <= 130:
+        return BitsAndBytesConfig(load_in_8bit=True, llm_int8_enable_fp32_cpu_offload=True)
+    elif param_billion <= 160:
+        return BitsAndBytesConfig(load_in_4bit=True)
+    else:
+        return BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_use_double_quant=True, llm_int8_enable_fp32_cpu_offload=True)
+
+
+def delete_model_cache(model_name):
+    cache_info = scan_cache_info()
+    for repo in cache_info.repos:
+        if repo.repo_id == model_name:
+            revisions = {rev.commit_hash for rev in repo.revisions}
+            delete_strategy = cache_info.delete_revisions(*revisions)
+            delete_strategy.execute()
