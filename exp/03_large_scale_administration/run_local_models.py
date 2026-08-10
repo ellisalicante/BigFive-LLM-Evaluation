@@ -1,6 +1,3 @@
-
-
-
 ### 0) IMPORTS
 import random
 import time
