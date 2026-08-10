@@ -23,6 +23,7 @@ login(os.getenv("HF_TOKEN"))
 
 def main():
 
+
     ### 1) INITIALIZATION
 
     # Initialize lists
@@ -36,47 +37,45 @@ def main():
     n_reps = 5
     timestamp = datetime.now().strftime("%Y%m%d")
 
-    number_items = 59 # 44 BFI-LLM + 15
+    number_items = 59
     prompt_variations = 2 # option order a and b
 
     # Models for experiments
     models = [
-        # "Qwen/Qwen3-0.6B",
-        # "Qwen/Qwen3-0.6B-Base",
-        # "Qwen/Qwen3-8B-Base",
-        # "Qwen/Qwen3.5-0.8B-Base",
-        # "Qwen/Qwen3.5-2B-Base",
-        # "Qwen/Qwen3.5-4B-Base",
-        # "Qwen/Qwen3.5-9B-Base",
-        # "google/gemma-4-E2B",
-        # "google/gemma-4-E2B-it",
-        # "google/gemma-3-4b-pt",
-        # "google/gemma-2-2b",
-        # "google/gemma-2-2b-it",
-        # "google/gemma-2-7b",
-        # "google/gemma-2b",
-        # "google/gemma-2b-it",
-        # "google/gemma-7b", #!
-        # "google/gemma-7b-it", #!
-        # "Qwen/Qwen2.5-7B", #!
-        # "Qwen/Qwen2.5-7B-Instruct", #!
-        # "google/gemma-3-1b-it",
-        # "google/gemma-3-1b-pt",
-        # "google/gemma-3-270m",
-        # "google/gemma-3-270m-it",
-        # "meta-llama/Llama-3.1-8B",
-        # "meta-llama/Llama-3.2-1B",
-        # "meta-llama/Llama-3.2-1B-Instruct",
-        # "meta-llama/Llama-3.2-3B",
-        # "meta-llama/Llama-3.2-3B-Instruct",
-        # "tiiuae/Falcon3-1B-Base",
-        # "tiiuae/Falcon3-1B-Instruct",
-        # "tiiuae/Falcon3-3B-Base",
-        # "tiiuae/Falcon3-3B-Instruct",
+        "Qwen/Qwen3-0.6B",
+        "Qwen/Qwen3-0.6B-Base",
+        "Qwen/Qwen3-8B-Base",
+        "Qwen/Qwen3.5-0.8B-Base",
+        "Qwen/Qwen3.5-2B-Base",
+        "Qwen/Qwen3.5-4B-Base",
+        "Qwen/Qwen3.5-9B-Base",
+        "google/gemma-4-E2B",
+        "google/gemma-4-E2B-it",
+        "google/gemma-3-4b-pt",
+        "google/gemma-2-2b",
+        "google/gemma-2-2b-it",
+        "google/gemma-2-7b",
+        "google/gemma-2b",
+        "google/gemma-2b-it",
+        "google/gemma-7b", #!
+        "google/gemma-7b-it", #!
+        "Qwen/Qwen2.5-7B", #!
+        "Qwen/Qwen2.5-7B-Instruct", #!
+        "google/gemma-3-1b-it",
+        "google/gemma-3-1b-pt",
+        "google/gemma-3-270m",
+        "google/gemma-3-270m-it",
+        "meta-llama/Llama-3.1-8B",
+        "meta-llama/Llama-3.2-1B",
+        "meta-llama/Llama-3.2-1B-Instruct",
+        "meta-llama/Llama-3.2-3B",
+        "meta-llama/Llama-3.2-3B-Instruct",
+        "tiiuae/Falcon3-1B-Base",
+        "tiiuae/Falcon3-1B-Instruct",
+        "tiiuae/Falcon3-3B-Base",
+        "tiiuae/Falcon3-3B-Instruct",
         "mistralai/Mistral-7B-v0.1",
-        # "ibm-granite/granite-4.0-h-micro-base",
-        # "allenai/Olmo-Hybrid-7B", #!
-        # "allenai/Olmo-Hybrid-Instruct-SFT-7B" #!
+        "ibm-granite/granite-4.0-h-micro-base",
     ]
 
     # Prompt constraint for local models
