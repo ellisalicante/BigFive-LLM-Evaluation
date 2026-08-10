@@ -18,6 +18,7 @@ warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 async def main():
 
+
     ### 1) INITIALIZATION
 
     # Initialize lists
