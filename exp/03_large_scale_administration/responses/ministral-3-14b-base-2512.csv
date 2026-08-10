@@ -5394,7 +5394,7 @@ Answer only with a number between 1 and 5. Statement:","
 !pip install huggingface_hub
 !pip install pydantic
 
-!huggingface-cli login --token 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
+!huggingface-cli login --token .
 !pip install -U accelerate==0.32.2
 !pip install -U sentence_transformers==3.0.0
 
