@@ -64,15 +64,139 @@ reasoning_with_response = {
     "openrouter/minimax/minimax-m1"
 }
 
+# json_response_models = {
+#     "Qwen/Qwen3-0.6B-Base",
+#     "Qwen/Qwen3-0.6B",
+# }
+
 json_response_models = {
-    "Qwen/Qwen3-0.6B-Base",
     "Qwen/Qwen3-0.6B",
+    "Qwen/Qwen3-0.6B-Base",
+    "Qwen/Qwen3-8B-Base",
+    "Qwen/Qwen3.5-0.8B-Base",
+    "Qwen/Qwen3.5-2B-Base",
+    "Qwen/Qwen3.5-4B-Base",
+    "Qwen/Qwen3.5-9B-Base",
+    "google/gemma-4-E2B",
+    "google/gemma-4-E2B-it",
+    "google/gemma-3-4b-pt",
+    "google/gemma-2-2b",
+    "google/gemma-2-2b-it",
+    "google/gemma-2-7b",
+    "google/gemma-2b",
+    "google/gemma-2b-it",
+    "google/gemma-7b", #!
+    "google/gemma-7b-it", #!
+    "Qwen/Qwen2.5-7B", #!
+    "Qwen/Qwen2.5-7B-Instruct", #!
+    "google/gemma-3-1b-it",
+    "google/gemma-3-1b-pt",
+    "google/gemma-3-270m",
+    "google/gemma-3-270m-it",
+    "meta-llama/Llama-3.1-8B",
+    "meta-llama/Llama-3.2-1B",
+    "meta-llama/Llama-3.2-1B-Instruct",
+    "meta-llama/Llama-3.2-3B",
+    "meta-llama/Llama-3.2-3B-Instruct",
+    "tiiuae/Falcon3-1B-Base",
+    "tiiuae/Falcon3-1B-Instruct",
+    "tiiuae/Falcon3-3B-Base",
+    "tiiuae/Falcon3-3B-Instruct",
+    "mistralai/Mistral-7B-v0.1",
+    "ibm-granite/granite-4.0-h-micro-base",
+    "allenai/Olmo-Hybrid-7B", #!
+    "allenai/Olmo-Hybrid-Instruct-SFT-7B" #!
+    "ThingAI/Quark-270m-Instruct",
+    "ThingAI/Quark-270m-Base",
+    "deepseek-ai/DeepSeek-V4-Flash-Base",
+    "deepseek-ai/DeepSeek-V4-Pro-Base",
+    "XiaomiMiMo/MiMo-V2.5-Pro-Base",
+    "Qwen/Qwen3-30B-A3B-Base",
+    "Qwen/Qwen3.5-35B-A3B-Base",
+    "Qwen/Qwen3-14B-Base",
+    "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16",
+    "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16",
+    "mistralai/Mistral-Nemo-Base-2407",
+    "mistralai/Mistral-Small-24B-Base-2501",
+    "mistralai/Mixtral-8x22B-v0.1",
+    "allenai/OLMo-2-0425-1B",
+    "allenai/OLMo-2-0425-1B-Instruct",
+    "allenai/OLMo-2-0325-32B",
+    "allenai/OLMo-2-0325-32B-Instruct",
+    "allenai/OLMo-2-1124-13B",
+    "allenai/OLMo-2-1124-13B-Instruct",
+    "allenai/OLMo-2-1124-7B",
+    "allenai/OLMo-2-1124-7B-Instruct",
+    "arcee-ai/Trinity-Large-TrueBase",
+    "arcee-ai/Trinity-Mini-Base-Pre-Anneal",
+    "EssentialAI/rnj-1",
+    "mistralai/Ministral-3-14B-Base-2512",
+    "mistralai/Ministral-3-8B-Base-2512",
+    "mistralai/Ministral-3-3B-Base-2512",
+    "tencent/Hy3-preview-Base",
+    "tencent/Hunyuan-A13B-Pretrain",
+    "baidu/ERNIE-4.5-300B-A47B-Base-PT",
+    "baidu/ERNIE-4.5-VL-424B-A47B-Base-PT",
+    "google/gemma-4-31B",
+    "google/gemma-2-27b",
+    "meta-llama/Llama-3.1-70B",
+    "meta-llama/Llama-3.2-11B-Vision",
+    "meta-llama/Llama-3.2-90B-Vision",
+    "meta-llama/Llama-3.2-90B-Vision-Instruct",
 }
 
 
 # =========================================================
 # CLEAN RESPONSE / REASONING
 # =========================================================
+
+
+import json
+
+def extract_json_objects(text):
+    """Scan text and return all top-level {...} substrings via brace matching
+    (handles nested braces inside 'response' text safely, unlike a naive regex)."""
+    objs = []
+    depth = 0
+    start = None
+    for i, ch in enumerate(text):
+        if ch == '{':
+            if depth == 0:
+                start = i
+            depth += 1
+        elif ch == '}':
+            if depth > 0:
+                depth -= 1
+                if depth == 0 and start is not None:
+                    objs.append(text[start:i+1])
+                    start = None
+    return objs
+
+
+def parse_valid_score_jsons(text, strict_schema=True):
+    """Parse candidate JSON substrings and keep only ones matching the
+    expected {"score": int 1-5, "response": str} schema."""
+    valid = []
+    for candidate in extract_json_objects(text):
+        try:
+            obj = json.loads(candidate)
+        except json.JSONDecodeError:
+            continue
+        if not isinstance(obj, dict):
+            continue
+        if "score" not in obj or "response" not in obj:
+            continue
+        if strict_schema and set(obj.keys()) != {"score", "response"}:
+            continue
+        try:
+            score_int = int(obj["score"])
+        except (TypeError, ValueError):
+            continue
+        if not (1 <= score_int <= 5):
+            continue
+        valid.append(obj)
+    return valid
+
 
 def resolve_response_reasoning(resp_raw, reas_raw, model):
 
@@ -87,14 +211,27 @@ def resolve_response_reasoning(resp_raw, reas_raw, model):
         m = re.search(r'"score"\s*:\s*"?([1-5])"?', text)
         return m.group(1) if m else ""
 
+    # if model in json_response_models:
+    #
+    #     combined = resp_raw + "\n" + reas_raw
+    #
+    #     response = extract_json_score(combined)
+    #
+    #     if not response:
+    #         response = extract_1to5(combined)
+    #
+    #     return response, combined.strip()
+
     if model in json_response_models:
-
         combined = resp_raw + "\n" + reas_raw
+        valid_jsons = parse_valid_score_jsons(combined)
 
-        response = extract_json_score(combined)
-
-        if not response:
-            response = extract_1to5(combined)
+        if len(valid_jsons) == 1:
+            response = str(valid_jsons[0]["score"])
+        else:
+            # zero valid JSONs (refusal/garbage) OR more than one JSON object
+            # (model didn't follow "exactly one JSON" instruction) -> treat as NA
+            response = "NA"
 
         return response, combined.strip()
 
@@ -189,27 +326,42 @@ def create_final_dfs():
 
         dfs.append(df)
 
-    df_all = pd.concat(dfs, ignore_index=True)
+    df_all_raw = pd.concat(dfs, ignore_index=True)
 
     # -----------------------------------------------------
     # remove low-validity models
     # -----------------------------------------------------
 
-    df_all["response"] = pd.to_numeric(
-        df_all["response"],
+    df_all_raw["response"] = pd.to_numeric(
+        df_all_raw["response"],
         errors="coerce"
     )
 
+    all_models_before = set(df_all_raw["model"].unique())
+
     valid_counts = (
-        df_all.groupby("model")["response"]
-        .apply(lambda x: x.isin([1,2,3,4,5]).sum())
+        df_all_raw.groupby("model")["response"]
+        .apply(lambda x: x.isin([1, 2, 3, 4, 5]).sum())
     )
 
+    # models below threshold (includes the zero-valid ones)
     exclude_models = valid_counts[valid_counts < 200].index.tolist()
 
-    df_all = df_all[
-        ~df_all["model"].isin(exclude_models)
+    print(f"\nModels excluded (< 200 valid responses), {len(exclude_models)} total:")
+    excluded_summary = (
+        valid_counts[valid_counts < 200]
+        .sort_values()
+        .rename("n_valid")
+        .to_frame()
+    )
+    print(excluded_summary.to_string())
+
+    df_all = df_all_raw[
+        ~df_all_raw["model"].isin(exclude_models)
     ].copy()
+
+    print(f"\nModels present before exclusion: {len(all_models_before)}")
+    print(f"Models remaining after exclusion: {df_all['model'].nunique()}")
 
     # -----------------------------------------------------
     # item ids
@@ -576,6 +728,7 @@ def create_final_dfs():
     # SAVE
     # =====================================================
 
+    df_all_raw.to_csv(f"{save_dir}/df_all_raw.csv", index=False)
     df_all.to_csv(f"{save_dir}/df_all.csv", index=False)
     df_A.to_csv(f"{save_dir}/df_A.csv", index=False)
     df_B.to_csv(f"{save_dir}/df_B.csv", index=False)
@@ -591,6 +744,7 @@ def create_final_dfs():
     # =====================================================
 
     print("\nCreated dataframes:")
+    print(f"df_all_raw:      {df_all_raw.shape}")
     print(f"df_all:      {df_all.shape}")
     print(f"df_A:        {df_A.shape}")
     print(f"df_B:        {df_B.shape}")
@@ -602,6 +756,7 @@ def create_final_dfs():
     # print(f"df_ml:       {df_ml.shape}")
 
     return (
+        df_all_raw,
         df_all,
         df_A,
         df_B,
