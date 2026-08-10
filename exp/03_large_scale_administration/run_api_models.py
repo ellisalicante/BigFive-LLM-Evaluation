@@ -36,7 +36,7 @@ async def main():
     path = "responses"
     timestamp = datetime.now().strftime("%Y%m%d")
 
-    number_items = 59 # 44 BFI-LLM + 15
+    number_items = 59
     prompt_variations = 2 # option order a and b
 
     # Get models for experiments from meta info
