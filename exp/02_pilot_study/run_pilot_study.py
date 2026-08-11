@@ -1,6 +1,3 @@
-
-
-
 ### 0) IMPORTS
 import random
 import warnings
@@ -9,11 +6,9 @@ import litellm
 from datetime import datetime
 from src.API_prompting import *
 
-# Deactivate warnings
 litellm.set_verbose = False
 litellm.suppress_debug_info = True
 warnings.filterwarnings("ignore", category=RuntimeWarning)
-
 
 
 async def main():
@@ -37,7 +32,7 @@ async def main():
     path = "responses_pilot"
     timestamp = datetime.now().strftime("%Y%m%d")
 
-    number_items = 59 # 44 BFI-LLM + 15
+    number_items = 59
 
     # Get models for pilot
     models = [
@@ -51,7 +46,6 @@ async def main():
         "openrouter/qwen/qwen3.5-flash-02-23",
         "openrouter/mistralai/mistral-small-2603"
     ]
-
 
 
     ### 2) PROMPT GENERATION
@@ -92,7 +86,6 @@ async def main():
                         prompt_class_list.append(prompt_class)
 
 
-
     ### 3) SANITY CHECK & INFO
     # Check if length of prompt_class_list is correct
     tot_n_requests = number_items * n_reps * len(item_preambles)
@@ -102,7 +95,6 @@ async def main():
     print(f"Prompt variations: {str(len(item_preambles) == len(set(pc.preamble for pc in prompt_class_list))).upper()} ({len(item_preambles)} vs. {len(set(pc.preamble for pc in prompt_class_list))})")
     print(f"Total number of requests: {str(tot_n_requests  == 59*3*7).upper()} ({tot_n_requests} vs. {59*3*7})")
     print(f"Length prompt_class_list: {str(len(prompt_class_list) == tot_n_requests * len(models)).upper()} ({len(prompt_class_list)} vs. {tot_n_requests * len(models)})\n")
-
 
 
     ### 4) DATA COLLECTION
