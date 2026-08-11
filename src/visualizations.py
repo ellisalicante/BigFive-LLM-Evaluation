@@ -5,6 +5,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 from matplotlib.colors import LinearSegmentedColormap
+from matplotlib.sphinxext.mathmpl import fontset_choice
 from scipy import stats
 from scipy.stats import (
     ttest_rel, ttest_1samp, ttest_ind,
@@ -17,13 +18,13 @@ import itertools
 
 ### PALETTES & STYLE
 
-# IMPACT_SIX = ["#008CBB", "#9569D1", "#A3D900", "#E30053", "#FFB000", "#3092FF"]
-# IMPACT_SIX = ["#f15943", "#80bae1", "#f79740", "#8ac441", "#22668e", "#5db29c"]
-IMPACT_SIX = ["#df2835", "#59b2de", "#f7931d", "#A3D900", "#22668e", "#5db29c"]
-IMPACT_TEN = [
-    "#008CBB", "#9569D1", "#A3D900", "#E30053", "#FFB000",
-    "#3092FF", "#00BFA5", "#FF6F61", "#6C5CE7", "#7CB342",
-]
+IMPACT_SIX = ["#008CBB", "#9569D1", "#A3D900", "#E30053", "#FFB000", "#3092FF"]
+BINARY_PAL_BLUE_PURPLE = ["#008CBB", "#9569D1"]
+BINARY_PAL_GREEN_RED = ["#A3D900", "#E30053"]
+BINARY_PAL_BLUE_ORANGE = ["#008CBB", "#FFB000"]
+BINARY_PAL_BLUE_PINK = ["#008CBB", "#E30053"]
+TRI_COLOR = ["#E30053", "#FFB000", "#008CBB"]
+
 ACCENT_COLORS = [
     "#E05C5C",  # coral-red
     "#5C8CE0",  # periwinkle blue
@@ -38,11 +39,6 @@ ACCENT_COLORS = [
     "#E08C5C",  # terracotta
     "#5CA8E0",  # sky blue
 ]
-BINARY_PAL_BLUE_PURPLE = ["#008CBB", "#9569D1"]
-BINARY_PAL_GREEN_RED   = ["#A3D900", "#E30053"]
-BINARY_PAL_BLUE_ORANGE = ["#3092FF", "#FFB000"]
-BINARY_PAL_BLUE_PINK = ["#008CBB", "#E30053"]
-TRI_COLOR              = ["#E30053", "#FFB000", "#3092FF"]
 
 DIVERGING_CMAP = LinearSegmentedColormap.from_list(
     "impact_diverging",
@@ -68,7 +64,6 @@ HUMAN_BFI_NORMS = {
 
 FIG_WIDTH  = 7.0
 FIG_HEIGHT = 3.5
-
 SCALE_MIN = 1.0
 SCALE_MAX = 5.0
 
@@ -225,6 +220,22 @@ Model & Refusal (\%) & A & C & E & N & O & SD \\
     return latex_table, df_clean, refusal_by_model
 
 
+# def apply_paper_style():
+#     """Apply consistent matplotlib style for paper figures."""
+#     plt.rcParams.update({
+#         "figure.figsize":   (FIG_WIDTH, FIG_HEIGHT),
+#         "font.size":        22,
+#         "axes.titlesize":   22,
+#         "axes.labelsize":   22,
+#         "xtick.labelsize":  22,
+#         "ytick.labelsize":  22,
+#         "legend.fontsize":  22,
+#         "font.family":      "serif",
+#         "font.serif":       ["Times New Roman", "Times", "DejaVu Serif"],
+#         "axes.titlepad":    10,
+#         "axes.labelpad":    10,
+#     })
+
 def apply_paper_style():
     """Apply consistent matplotlib style for paper figures."""
     plt.rcParams.update({
@@ -240,6 +251,7 @@ def apply_paper_style():
         "axes.titlepad":    10,
         "axes.labelpad":    10,
     })
+
 
 
 ### STATISTICAL HELPERS
@@ -259,6 +271,132 @@ def descriptive_stats(df, cols=OCEAN_COLS):
         "min": "Min",
         "max": "Max"
     })[["Mean", "SD", "Min", "Q1", "Median", "Q3", "Max"]]
+
+
+def sample_desc(df_all_raw, df_metadata, OCEAN_COLS):
+    n_models_collected = df_all_raw["model"].nunique()
+    n_models_valid = df_metadata["model"].nunique()
+
+    families = (
+        df_metadata["Family"]
+        .dropna()
+        .astype(str)
+        .str.lower()
+        .nunique()
+    )
+    families_vals = (
+        df_metadata["Family"]
+        .dropna()
+        .astype(str)
+        .str.lower()
+        .unique()
+    )
+
+    regions = (
+        df_metadata["Region"]
+        .dropna()
+        .value_counts()
+    )
+    country_family = (
+        df_metadata[["Region", "Family"]]
+        .dropna()
+        .groupby("Region")["Family"]
+        .apply(lambda x: x.value_counts().index.tolist())
+    )
+
+    licenses = (
+        df_metadata["license_group"]
+        .value_counts(dropna=False)
+    )
+
+    reasoning_counts = (
+        df_metadata["Reasoning"]
+        .astype(str)
+        .str.lower()
+        .value_counts()
+    )
+
+    release_dates = pd.to_datetime(
+        df_metadata["Release_date"],
+        errors="coerce"
+    )
+    min_release = release_dates.min()
+    max_release = release_dates.max()
+
+    params = pd.to_numeric(
+        df_metadata["params_numeric"],
+        errors="coerce"
+    )
+    min_params = params.min()
+    max_params = params.max()
+
+    df_all_OCEAN = df_all_raw[df_all_raw["dimension"].isin(OCEAN_COLS)]
+
+    valid_mask = pd.to_numeric(
+        df_all_raw["response"],
+        errors="coerce"
+    ).isin([1, 2, 3, 4, 5])
+
+    valid_mask_OCEAN = pd.to_numeric(
+        df_all_OCEAN["response"],
+        errors="coerce"
+    ).isin([1, 2, 3, 4, 5])
+
+    total_rows = len(df_all_raw)
+    total_rows_OCEAN = len(df_all_OCEAN)
+
+    n_valid = valid_mask.sum()
+    n_invalid = (~valid_mask).sum()
+    n_valid_OCEAN = valid_mask_OCEAN.sum()
+    n_invalid_OCEAN = (~valid_mask_OCEAN).sum()
+
+    completion_rate = n_valid / total_rows * 100
+    refusal_rate = n_invalid / total_rows * 100
+    completion_rate_OCEAN = n_valid_OCEAN / total_rows_OCEAN * 100
+    refusal_rate_OCEAN = n_invalid_OCEAN / total_rows_OCEAN * 100
+
+    model_refusal = (
+        df_all_OCEAN.assign(
+            valid=pd.to_numeric(
+                df_all_OCEAN["response"],
+                errors="coerce"
+            ).isin([1, 2, 3, 4, 5])
+        )
+        .groupby("model")
+        .agg(
+            total=("valid", "size"),
+            valid=("valid", "sum")
+        )
+    )
+
+    model_refusal["refusal_rate"] = (
+                                            1 - (model_refusal["valid"] / model_refusal["total"])
+                                    ) * 100
+
+    OCEAN_means = descriptive_stats(df_metadata, cols=OCEAN_COLS)
+
+    stats = {
+        "n_models_collected": n_models_collected,
+        "n_models_valid": n_models_valid,
+        "families": families,
+        "families_vals": families_vals,
+        "regions": regions,
+        "country_family": country_family,
+        "licenses": licenses,
+        "reasoning_counts": reasoning_counts,
+        "min_release": min_release,
+        "max_release": max_release,
+        "min_params": min_params,
+        "max_params": max_params,
+        "total_rows_OCEAN": total_rows_OCEAN,
+        "n_valid_OCEAN": n_valid_OCEAN,
+        "n_invalid_OCEAN": n_invalid_OCEAN,
+        "completion_rate_OCEAN": completion_rate_OCEAN,
+        "refusal_rate_OCEAN": refusal_rate_OCEAN,
+        "model_refusal": model_refusal
+    }
+
+    return stats, OCEAN_means
 
 
 def ks_normality_tests(df, cols=OCEAN_COLS):
@@ -308,7 +446,7 @@ def bonferroni_ttest(df, group_col, cols=OCEAN_COLS):
     return pd.DataFrame(rows)
 
 
-def paired_ttest_base_vs_it(df_models, pairs, cols=OCEAN_COLS):
+def paired_ttest_base_vs_it(df_models, df_metadata, pairs, cols=OCEAN_COLS):
     """
     One-sample t-test on paired differences (instruction-tuned minus base).
     `pairs` is a list of (base_model_id, instruct_model_id) tuples.
@@ -318,6 +456,7 @@ def paired_ttest_base_vs_it(df_models, pairs, cols=OCEAN_COLS):
     for base, inst in pairs:
         base_row = df_models[df_models["model"] == base]
         inst_row = df_models[df_models["model"] == inst]
+        params = df_metadata[df_metadata["model"] == inst]["Parameters_B"]
         if base_row.empty or inst_row.empty:
             print(f"Missing pair: {base} vs {inst}")
             continue
@@ -325,12 +464,14 @@ def paired_ttest_base_vs_it(df_models, pairs, cols=OCEAN_COLS):
         inst_row = inst_row.iloc[0]
         for trait in cols:
             results.append({
-                "pair":        f"{base} → {inst}",
+                "pair":        f"{base[:30]} → {inst[:30]}",
+                "params":      params,
                 "trait":       trait,
                 "base":        base_row[trait],
                 "instruction": inst_row[trait],
                 "diff":        inst_row[trait] - base_row[trait],
             })
+        # print(params)
     df_pairs = pd.DataFrame(results)
 
     stats_rows = []
@@ -339,12 +480,12 @@ def paired_ttest_base_vs_it(df_models, pairs, cols=OCEAN_COLS):
         t, p = ttest_1samp(d, 0)
         stats_rows.append({
             "trait":     trait,
-            "mean_diff": round(d.mean(), 3),
-            "sd_diff":   round(d.std(), 3),
+            "mean_diff": round(d.mean(), 2),
+            "sd_diff":   round(d.std(), 2),
             "t":         round(t, 3),
             "p":         round(p, 5),
         })
-    print("=== Per-pair OCEAN differences (IT − Base) ===\n")
+    print("\n\n=== Per-pair OCEAN differences (IT − Base) ===\n")
 
     pair_table = (
         df_pairs
@@ -365,6 +506,8 @@ def paired_ttest_base_vs_it(df_models, pairs, cols=OCEAN_COLS):
     pair_table.columns = ["O", "C", "E", "A", "N"]
 
     print(pair_table.to_string())
+
+    print(f"\nN pairs = {len(pair_table)}")
 
     return df_pairs, pd.DataFrame(stats_rows)
 
@@ -453,12 +596,36 @@ def plot_ocean_distributions(df, cols=OCEAN_COLS, title="OCEAN Score Distributio
     Three-row panel per trait: boxplot (with human BFI baseline),
     histogram + KDE, and QQ-plot. Includes KS normality annotation.
     """
+
+    plt.rcParams.update({
+        "figure.figsize": (FIG_WIDTH, FIG_HEIGHT),
+        "font.size": 18,
+        "axes.titlesize": 18,
+        "axes.labelsize": 18,
+        "xtick.labelsize": 18,
+        "ytick.labelsize": 18,
+        "legend.fontsize": 18,
+        # "font.family":      "serif",
+        # "font.serif":       ["Times New Roman", "Times", "DejaVu Serif"],
+        "axes.titlepad": 10,
+        "axes.labelpad": 10,
+    })
+
     n = len(cols)
     fig, axes = plt.subplots(
-        3, n,
-        figsize=(4 * n, 10),
-        gridspec_kw={"height_ratios": [1, 1.2, 1.2]},
+        # 3, n,
+        2, n,
+        # figsize=(4 * n, 10),
+        figsize=(4 * n, 6),
+        # gridspec_kw={"height_ratios": [1.2, 1.2, 1.2]},
+        # gridspec_kw={
+        #     "height_ratios": [1, 1, 0.9],
+        #     # "hspace": 0.3,
+        # },
+        # gridspec_kw={"height_ratios": [1, 1.2, 1.2]},
     )
+
+    print("N =", len(df))
 
     for i, col in enumerate(cols):
         data   = df[col].dropna()
@@ -473,7 +640,7 @@ def plot_ocean_distributions(df, cols=OCEAN_COLS, title="OCEAN Score Distributio
         sns.boxplot(
             y=data, ax=ax_box, color=color,
             linecolor="black", fliersize=3, width=0.35,
-            boxprops=dict(alpha=0.92), saturation=1,
+            boxprops=dict(alpha=0.85), saturation=1,
             # boxprops=dict(alpha=0.75), saturation=1,
         )
         if show_mean:
@@ -483,18 +650,31 @@ def plot_ocean_distributions(df, cols=OCEAN_COLS, title="OCEAN Score Distributio
                     linewidth=1, color="#333333", alpha=0.85,
                 )
         ax_box.set_ylim(1, 5)
+        ax_box.set_yticks([1, 2, 3, 4, 5])
         ax_box.set_xticks([])
         ax_box.set_ylabel("Score" if i == 0 else "")
-        ax_box.set_title(col, fontweight="bold")
+        ax_box.set_title(col, fontweight="bold", pad=20)
+        ax_box.tick_params(axis="y", pad=8, length=0)
+        # ax_box.tick_params(axis="x", which="both", bottom=False, labelbottom=False, pad=-10)
+        ax_box.tick_params(
+            axis="x",
+            top=True,
+            bottom=False,
+            labeltop=True,
+            labelbottom=False,
+            pad=8,
+            length=0
+        )
+        ax_box.set_xlabel("")
         ax_box.text(
             # 0.98, 0.95,
             0.05, 0.05,
             f"M={data.mean():.2f}\nSD={data.std():.2f}",
             # transform=ax_box.transAxes, ha="right", va="top", fontsize=17,
-            transform=ax_box.transAxes, ha="left", va="bottom", fontsize=17,
+            transform=ax_box.transAxes, ha="left", va="bottom", fontsize=13,
             bbox=dict(boxstyle="round,pad=0.2", facecolor="white", alpha=0.6, edgecolor="none"),
         )
-        ax_box.grid(axis="y", linestyle="--", alpha=0.3)
+        ax_box.grid(axis="y", linestyle="--", alpha=0.35)
 
         ### Histogram + KDE
         ax_kde = axes[1, i]
@@ -503,38 +683,45 @@ def plot_ocean_distributions(df, cols=OCEAN_COLS, title="OCEAN Score Distributio
         # sns.histplot(data, ax=ax_kde, bins=bins, stat="density",
         #              color=color, alpha=0.4, edgecolor="white")
         sns.histplot(data, ax=ax_kde, bins=bins, stat="density",
-                     color=color, alpha=0.8, edgecolor="white")
+                     color=color, alpha=0.6, edgecolor="white")
         sns.kdeplot(data, ax=ax_kde, color=color, fill=True,
                     alpha=0.2, linewidth=1.8, cut=0)
         ax_kde.text(
             0.05, 0.94,
             f"KS: p={ks_p:.3f}".replace("0.", ".") + f"{ks_sig}\n{normality_txt}",
-            transform=ax_kde.transAxes, ha="left", va="top", fontsize=17,
+            transform=ax_kde.transAxes, ha="left", va="top", fontsize=13,
             multialignment="left",
             # bbox=dict(boxstyle="round,pad=0.2", facecolor="white", alpha=0.65, edgecolor="none"),
             bbox=dict(boxstyle="round,pad=0.2", facecolor="white", alpha=0.75, edgecolor="none"),
         )
         ax_kde.set_xlim(1, 5)
-        ax_kde.set_ylim(0, 1.9)
+        ax_kde.set_ylim(0, 1.75)
         ax_kde.set_xticks([1, 2, 3, 4, 5])
-        ax_kde.set_yticks([0.5, 1, 1.5])
+        ax_kde.set_yticks([1])
+        ax_kde.tick_params(axis="y", pad=8, length=0)
+        ax_kde.tick_params(axis="x", pad=8, length=0)
         ax_kde.set_xlabel("Score")
         ax_kde.set_ylabel("Density" if i == 0 else "")
-        ax_kde.grid(axis="x", linestyle="--", alpha=0.3)
+        ax_kde.grid(axis="x", linestyle="--", alpha=0.35)
 
-        ### QQ-plot
-        ax_qq = axes[2, i]
-        qq = probplot(data, dist="norm")
-        theoretical, ordered = qq[0]
-        ax_qq.scatter(theoretical, ordered, s=26, alpha=0.75, color=color, linewidth=0.5)
-        slope, intercept, _ = qq[1]
-        xline = np.linspace(theoretical.min(), theoretical.max(), 100)
-        ax_qq.plot(xline, slope * xline + intercept, color="#333333", linewidth=2, alpha=0.85)
-        ax_qq.set_ylabel("Q-Q Plot" if i == 0 else "")
-        ax_qq.set_title("")
-        ax_qq.grid(alpha=0.25)
+        # ### QQ-plot
+        # ax_qq = axes[2, i]
+        # qq = probplot(data, dist="norm")
+        # theoretical, ordered = qq[0]
+        # ax_qq.scatter(theoretical, ordered, s=26, alpha=0.75, color=color, linewidth=0.5)
+        # slope, intercept, _ = qq[1]
+        # xline = np.linspace(theoretical.min(), theoretical.max(), 100)
+        # ax_qq.plot(xline, slope * xline + intercept, color="#333333", linewidth=2, alpha=0.85)
+        # ax_qq.set_ylabel("Q-Q Plot" if i == 0 else "")
+        # # ax_qq.set_title("")
+        # ax_qq.set_ylim(1, 5)
+        # ax_qq.tick_params(axis="y", pad=8, length=0)
+        # ax_qq.tick_params(axis="x", pad=8, length=0)
+        # ax_qq.grid(alpha=0.35)
 
-    fig.suptitle(title, fontweight="bold", y=1.01)
+    # fig.suptitle(title, fontweight="bold", y=1.01, fontsize=16)
+    fig.suptitle(title, fontweight="bold", fontsize=19)
+    fig.tight_layout()
     plt.tight_layout()
     if save_path:
         plt.savefig(save_path, format="pdf", bbox_inches="tight", transparent=False)
@@ -807,6 +994,20 @@ def plot_binary_comparison(df, group_col, title, palette, order=None, display_la
     Two-row panel (boxplot + KDE) comparing exactly two groups per trait.
     Optionally annotates with t-test results from bonferroni_ttest().
     """
+    plt.rcParams.update({
+        "figure.figsize": (FIG_WIDTH, FIG_HEIGHT),
+        "font.size": 18,
+        "axes.titlesize": 18,
+        "axes.labelsize": 18,
+        "xtick.labelsize": 18,
+        "ytick.labelsize": 18,
+        "legend.fontsize": 18,
+        # "font.family":      "serif",
+        # "font.serif":       ["Times New Roman", "Times", "DejaVu Serif"],
+        "axes.titlepad": 10,
+        "axes.labelpad": 10,
+    })
+
     groups = [g for g in (order or sorted(df[group_col].dropna().unique()))
               if g in df[group_col].values]
     labels = [display_labels.get(g, str(g)) if display_labels else str(g)
@@ -817,8 +1018,8 @@ def plot_binary_comparison(df, group_col, title, palette, order=None, display_la
 
     fig, axes = plt.subplots(
         2, n,
-        figsize=(4 * n, 7),
-        gridspec_kw={"height_ratios": [1.2, 1]},
+        figsize=(4 * n, 6),
+        # gridspec_kw={"height_ratios": [1.2, 1]},
     )
     if n == 1:
         axes = axes.reshape(2, 1)
@@ -830,18 +1031,18 @@ def plot_binary_comparison(df, group_col, title, palette, order=None, display_la
             data=df, x=group_col, y=col, hue=group_col,
             order=groups, hue_order=groups, palette=pal, ax=ax,
             saturation=1, linewidth=1.0, fliersize=2, width=0.35,
-            boxprops=dict(alpha=0.75),
+            boxprops=dict(alpha=0.9),
             medianprops=dict(linewidth=2),
             whiskerprops=dict(linewidth=1),
             capprops=dict(linewidth=1),
         )
         ax.set_xticks(range(len(groups)))
-        ax.set_xticklabels(labels, rotation=25, ha="right")
+        ax.set_xticklabels(labels, rotation=25, ha="right", fontsize=13)
         ax.set_ylim(1, 5)
         ax.set_xlabel("")
         ax.set_ylabel("Score" if i == 0 else "")
         ax.grid(axis="y", linestyle="--", alpha=0.4)
-        ax.set_title(col, fontweight="bold")
+        ax.set_title(col, fontweight="bold", pad=20)
 
         if t_test:
             if stats_df is not None and not stats_df.empty:
@@ -857,7 +1058,7 @@ def plot_binary_comparison(df, group_col, title, palette, order=None, display_la
                         x_pos, y_pos,
                         f"t={row['t'].values[0]:.2f}\np={row['p_bonferroni'].values[0]:.3f}{sig_str}",
                         transform=ax.transAxes, ha="left", va=va, multialignment="left",
-                        fontsize=17,
+                        fontsize=13,
                         bbox=dict(boxstyle="round,pad=0.25", facecolor="white",
                                   alpha=0.65, edgecolor="none"),
                     )
@@ -867,24 +1068,25 @@ def plot_binary_comparison(df, group_col, title, palette, order=None, display_la
         for j, grp in enumerate(groups):
             d = df[df[group_col] == grp][col].dropna()
             sns.kdeplot(d, ax=ax2, label=labels[j], color=pal[j],
-                        fill=True, alpha=0.25, linewidth=1.5, warn_singular=False)
+                        fill=True, alpha=0.35, linewidth=1.5, warn_singular=False)
         if i == 0:
             # ax2.legend(loc="upper left",
             #            frameon=True, fontsize=17)
             ax2.legend(
                 loc="upper left",
                 frameon=False,
-                fontsize=17,
+                fontsize=13,
                 labelspacing=0.2,
                 borderpad=0.2,
                 handletextpad=0.4,
             )
         ax2.set_xlim(1, 5)
+        ax2.set_ylim(0, 1.6)
         ax2.set_xlabel("")
         ax2.set_ylabel("Density" if i == 0 else "")
         ax2.grid(axis="x", linestyle="--", alpha=0.3)
 
-    fig.suptitle(title, fontweight="bold", y=1.01)
+    fig.suptitle(title, fontweight="bold", fontsize=19)
     plt.tight_layout()
     if save_path:
         plt.savefig(save_path, format="pdf", bbox_inches="tight", transparent=False)
@@ -901,6 +1103,21 @@ def plot_multigroup_comparison(df, group_col, title, palette, order=None,
     kde=False → single-row boxplots only.
     test=False → suppress stat annotations.
     """
+
+    plt.rcParams.update({
+        "figure.figsize": (FIG_WIDTH, FIG_HEIGHT),
+        "font.size": 18,
+        "axes.titlesize": 18,
+        "axes.labelsize": 18,
+        "xtick.labelsize": 18,
+        "ytick.labelsize": 18,
+        "legend.fontsize": 18,
+        # "font.family":      "serif",
+        # "font.serif":       ["Times New Roman", "Times", "DejaVu Serif"],
+        "axes.titlepad": 10,
+        "axes.labelpad": 10,
+    })
+
     groups = [g for g in (order or sorted(df[group_col].dropna().unique()))
               if g in df[group_col].values]
     n = len(cols)
@@ -912,8 +1129,9 @@ def plot_multigroup_comparison(df, group_col, title, palette, order=None,
     if kde:
         fig, axes = plt.subplots(
             2, n,
-            figsize=figsize or (4 * n, 8),
-            gridspec_kw={"height_ratios": [1.4, 1]},
+            figsize=figsize or (4 * n, 7),
+            # gridspec_kw={"height_ratios": [1.4, 1]},
+            gridspec_kw={"height_ratios": [1.2, 1]},
         )
         if n == 1:
             axes = axes.reshape(2, 1)
@@ -950,7 +1168,7 @@ def plot_multigroup_comparison(df, group_col, title, palette, order=None,
             data=df, x=group_col, y=col, hue=group_col,
             order=groups, hue_order=groups, palette=pal, legend=False,
             linewidth=1.1, width=0.42, fliersize=2.5, saturation=1,
-            boxprops=dict(alpha=0.75),
+            boxprops=dict(alpha=0.9),
             medianprops=dict(linewidth=2),
             whiskerprops=dict(linewidth=1),
             capprops=dict(linewidth=1),
@@ -960,9 +1178,9 @@ def plot_multigroup_comparison(df, group_col, title, palette, order=None,
         ax.set_xlabel("")
         ax.set_ylabel("Score" if i == 0 else "")
         ax.set_xticks(range(len(groups)))
-        ax.set_xticklabels(groups, rotation=45, ha="right", fontsize=17)
+        ax.set_xticklabels(groups, rotation=45, ha="right", fontsize=13)
         ax.grid(axis="y", linestyle="--", alpha=0.25)
-        ax.set_title(col, fontweight="bold")
+        ax.set_title(col, fontweight="bold", pad=20)
 
         if test:
             stat_label = f"{g_row['stat_name']}={g_row['stat']:.2f}\n{p_txt} {stars}"
@@ -975,7 +1193,7 @@ def plot_multigroup_comparison(df, group_col, title, palette, order=None,
             ax.text(
                 x_pos, y_pos, stat_label,
                 transform=ax.transAxes, ha=ha, va=va, multialignment="left",
-                fontsize=17,
+                fontsize=13,
                 bbox=dict(boxstyle="round,pad=0.25", facecolor="white",
                           alpha=0.7, edgecolor="none"),
             )
@@ -993,17 +1211,18 @@ def plot_multigroup_comparison(df, group_col, title, palette, order=None,
                 ax2.legend(
                     loc="upper left",
                     frameon=False,
-                    fontsize=17,
+                    fontsize=13,
                     labelspacing=0.2,
                     borderpad=0.2,
                     handletextpad=0.4,
                 )
             ax2.set_xlim(1, 5)
+            ax2.set_ylim(0, 1.9)
             ax2.set_xlabel("")
             ax2.set_ylabel("Density" if i == 0 else "")
             ax2.grid(axis="x", linestyle="--", alpha=0.25)
 
-    fig.suptitle(title, fontweight="bold", y=1.01)
+    fig.suptitle(title, fontweight="bold", fontsize=19)
     plt.tight_layout()
     if save_path:
         plt.savefig(save_path, format="pdf", bbox_inches="tight", transparent=False)
@@ -1141,11 +1360,26 @@ def plot_family_heatmap_percentile(df, group_col, order, cols=OCEAN_COLS,
 
     fig, ax = plt.subplots(figsize=figsize)
 
+    impact_six = ["#008CBB", "#9569D1", "#A3D900", "#E30053", "#FFB000", "#3092FF"]
+
+    cmap = LinearSegmentedColormap.from_list(
+        "impact_custom",
+        [
+            (0.00, "#BD0045"),
+            (0.05, impact_six[3]),
+            (0.50, "#FFFFFF"),
+            # (0.75, "#73C2DC"),
+            (0.95, impact_six[0]),
+            (1.00, "#007096"),
+        ],
+        N=256,
+    )
+
     sns.heatmap(
         heat_pct,
         annot=True,
         fmt=".0f",
-        cmap=DIVERGING_CMAP,
+        cmap=cmap,
         linewidths=0.5,
         cbar_kws={"label": "Percentile rank"},
         ax=ax,
@@ -1154,9 +1388,28 @@ def plot_family_heatmap_percentile(df, group_col, order, cols=OCEAN_COLS,
         center=50,
     )
 
-    ax.set_title(title, fontweight="bold")
+    ax.set_title(title, fontweight="bold", pad=25)
     ax.set_xlabel("")
     ax.set_ylabel("")
+
+    ax.set_xticklabels(
+        ax.get_xticklabels(),
+        rotation=0,
+        ha="center",
+        fontweight="bold",
+    )
+
+    ax.tick_params(
+        axis="x",
+        top=True,
+        bottom=False,
+        labeltop=True,
+        labelbottom=False,
+        pad=8,
+        length=0
+    )
+    # ax.tick_params(axis="x", pad=8, length=0)
+    ax.tick_params(axis="y", pad=8, length=0)
 
     plt.tight_layout()
 
@@ -1174,6 +1427,20 @@ def plot_release_date_regression(df, date_col, release_months_col, palette, figs
     """
     import matplotlib.dates as mdates
     import scipy.stats as scipy_stats
+
+    plt.rcParams.update({
+        "figure.figsize": (FIG_WIDTH, FIG_HEIGHT),
+        "font.size": 18,
+        "axes.titlesize": 18,
+        "axes.labelsize": 18,
+        "xtick.labelsize": 18,
+        "ytick.labelsize": 18,
+        "legend.fontsize": 18,
+        # "font.family":      "serif",
+        # "font.serif":       ["Times New Roman", "Times", "DejaVu Serif"],
+        "axes.titlepad": 10,
+        "axes.labelpad": 10,
+    })
 
     ref = pd.Timestamp("2026-05-12")
 
@@ -1217,28 +1484,30 @@ def plot_release_date_regression(df, date_col, release_months_col, palette, figs
         if test:
             label = f"β={slope:.2f}, p={p:.3f}{star}"
 
-        ax.scatter(tmp[date_col], y, color=palette[0], alpha=0.25, s=85, zorder=3)
+        ax.scatter(tmp[date_col], y, color=palette[0], alpha=0.3, s=85, zorder=3)
         ax.plot(dates_line, y_line, color=palette[1], linewidth=3,
                 label=label)
         ax.fill_between(dates_line, y_line - ci, y_line + ci,
                         color=palette[1], alpha=0.08)
         ax.set_ylim(1, 5)
-        ax.set_title(col, fontweight="bold")
-        ax.set_xlabel("Release date")
+        ax.set_title(col, fontweight="bold", pad=15)
+        # ax.set_xlabel("Release date")
+        ax.set_xlabel("")
         ax.set_ylabel("Score" if i % 3 == 0 else "")
-        ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %Y"))
+        ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %y"))
+        ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %y"))
         ax.xaxis.set_major_locator(mdates.MonthLocator(interval=3))
         plt.setp(ax.xaxis.get_majorticklabels(), rotation=35, ha="right", fontsize=18)
         ax.grid(linestyle="--", alpha=0.3)
-        ax.legend()
+        # ax.legend()
 
     for j in range(len(cols), len(axes)):
         fig.delaxes(axes[j])
 
-    fig.suptitle(title, fontweight="bold")
+    fig.suptitle(title, fontweight="bold", fontsize=19)
     plt.tight_layout()
     if save_path:
-        plt.savefig(save_path, format="png", bbox_inches="tight", transparent=False)
+        plt.savefig(save_path, format="pdf", bbox_inches="tight", transparent=False)
     return fig
 
 
@@ -1249,6 +1518,20 @@ def plot_param_scale_regression(df, params_col, palette, figsize, title,
     Scatter + OLS regression (± 95% CI) on log10(params) scale per trait.
     """
     import scipy.stats as scipy_stats
+
+    plt.rcParams.update({
+        "figure.figsize": (FIG_WIDTH, FIG_HEIGHT),
+        "font.size": 18,
+        "axes.titlesize": 18,
+        "axes.labelsize": 18,
+        "xtick.labelsize": 18,
+        "ytick.labelsize": 18,
+        "legend.fontsize": 18,
+        # "font.family":      "serif",
+        # "font.serif":       ["Times New Roman", "Times", "DejaVu Serif"],
+        "axes.titlepad": 10,
+        "axes.labelpad": 10,
+    })
 
     n_cols = 3
     n_rows = int(np.ceil(len(cols) / n_cols))
@@ -1289,24 +1572,24 @@ def plot_param_scale_regression(df, params_col, palette, figsize, title,
         if test:
             label = f"β={slope:.2f}, p={p:.3f}{star}"
 
-        ax.scatter(tmp[params_col], y, color=palette[0], alpha=0.45, s=85, zorder=3)
+        ax.scatter(tmp[params_col], y, color=palette[0], alpha=0.4, s=85, zorder=3)
         ax.plot(10 ** x_line, y_line, color=palette[1], linewidth=3,
                 label=label)
         ax.fill_between(10 ** x_line, y_line - ci, y_line + ci,
-                        color=palette[1], alpha=0.12)
+                        color=palette[1], alpha=0.15)
         ax.set_xscale("log")
         ax.set_ylim(1, 5)
-        ax.set_title(col, fontweight="bold")
+        ax.set_title(col, fontweight="bold", pad=15)
         ax.set_xlabel("Parameters (B, log scale)")
         ax.set_ylabel("Score" if i % 3 == 0 else "")
         ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f"{x:g}"))
         ax.grid(linestyle="--", alpha=0.3)
-        ax.legend()
+        # ax.legend()
 
     for j in range(len(cols), len(axes)):
         fig.delaxes(axes[j])
 
-    fig.suptitle(title, fontweight="bold")
+    fig.suptitle(title, fontweight="bold", fontsize=19)
     plt.tight_layout()
     if save_path:
         plt.savefig(save_path, format="pdf", bbox_inches="tight", transparent=False)
@@ -1362,19 +1645,35 @@ def plot_trait_covariances(
     # -----------------------------
     # colormap (your paper style)
     # -----------------------------
-    # impact_six = ["#008CBB", "#9569D1", "#A3D900", "#E30053", "#FFB000", "#3092FF"]
-    impact_six = ["#df2835", "#80bae1", "#f79740", "#8ac441", "#22668e", "#5db29c"]
+    impact_six = ["#008CBB", "#9569D1", "#A3D900", "#E30053", "#FFB000", "#3092FF"]
+    # impact_six = ["#df2835", "#80bae1", "#f79740", "#8ac441", "#22668e", "#5db29c"]
 
     cmap = LinearSegmentedColormap.from_list(
         "impact_custom",
-        [impact_six[0], "#FFFFFF", impact_six[4]],
-        N=256
+        # [impact_six[0], "#FFFFFF", impact_six[4]],
+        # [impact_six[3], "#FFFFFF", impact_six[0]],
+        [
+            (0.00, "#BD0045"),
+            (0.05, impact_six[3]),
+            # (0.15, "#F5A5C2"),
+            (0.49, "#FFFFFF"),
+            (0.51, "#FFFFFF"),
+            # (0.50, "#FFFFFF"),
+            # (0.93, "#8DC7DA"),
+            # (0.75, "#BDE5F3"),
+            # (0.75, "#73C2DC"),
+            (0.98, impact_six[0]),
+            (1.00, "#007096"),
+            # (1.00, impact_six[0]),
+        ],
+        N=256,
     )
 
     # -----------------------------
     # plot
     # -----------------------------
-    fig, ax = plt.subplots(figsize=(12, 5), constrained_layout=False)
+    # fig, ax = plt.subplots(figsize=(12, 5), constrained_layout=False)
+    fig, ax = plt.subplots(figsize=(10, 5), constrained_layout=False)
 
     sns.heatmap(
         corr_plot,
@@ -1397,9 +1696,12 @@ def plot_trait_covariances(
         }
     )
 
-    ax.set_title(title, fontweight="bold")
-    ax.set_xticklabels(ax.get_xticklabels(), rotation=0, ha="right")
+    ax.set_title(title, fontweight="bold", pad=20)
+    ax.set_xticklabels(ax.get_xticklabels(), rotation=0, ha="center")
     ax.set_yticklabels(ax.get_yticklabels(), rotation=0)
+
+    ax.tick_params(axis="x", pad=8, length=0)
+    ax.tick_params(axis="y", pad=8, length=0)
 
     plt.tight_layout()
 
@@ -1723,27 +2025,13 @@ def make_all_plots(df_family, family_order, trait_order,
                    family_labels=None,
                    out_dir="ocean_frames",
                    gif_path="ocean_families.gif",
-                   overview_path="ocean_overview.png",
                    gif_duration_ms=1400,
                    dpi_individual=300,
                    dpi_overview=150):
-    """
-    Main entry point.
 
-    Parameters
-    ----------
-    df_family       : your raw long dataframe with a 'FamilyGrouped' column
-    family_order    : list of FamilyGrouped values in desired order
-    trait_order     : list of trait column names (your TRAIT_ORDER / OCEAN_COLS)
-    family_labels   : dict mapping FamilyGrouped → display name  (your FAMILY_LABELS)
-    out_dir         : folder for individual PNGs
-    gif_path        : output GIF path
-    overview_path   : output overview PNG path
-    gif_duration_ms : ms per frame in the GIF
-    """
     os.makedirs(out_dir, exist_ok=True)
 
-    # ── Aggregate ─────────────────────────────────────────────────────────
+    # Aggregate
     heat = (df_family.groupby("FamilyGrouped")[trait_order]
             .mean()
             .loc[family_order])
@@ -1782,7 +2070,6 @@ def make_all_plots(df_family, family_order, trait_order,
                     bbox_inches="tight", facecolor="white")
         plt.close(fig)
         png_paths.append(png_path)
-        print(f"  ✓  {png_path}")
 
         # GIF frame at lower res
         buf = io.BytesIO()
@@ -1798,25 +2085,7 @@ def make_all_plots(df_family, family_order, trait_order,
         buf.seek(0)
         gif_frames.append(Image.open(buf).copy())
 
-    # # ── Overview PNG ──────────────────────────────────────────────────────
-    # colors = [ACCENT_COLORS[i % len(ACCENT_COLORS)] for i in range(len(family_order))]
-    # fig_ov = make_overview_figure(
-    #     families=family_order,
-    #     means_dict=means_dict,
-    #     global_means=global_means,
-    #     sds_dict=sds_dict,
-    #     colors=colors,
-    #     trait_names=trait_order,
-    #     display_names=display_names,
-    #     ncols=4,
-    #     dpi=dpi_overview,
-    # )
-    # fig_ov.savefig(overview_path, dpi=dpi_overview,
-    #                bbox_inches="tight", facecolor="white")
-    # plt.close(fig_ov)
-    # print(f"  ✓  Overview → {overview_path}")
-
-    # ── GIF ───────────────────────────────────────────────────────────────
+    # GIF
     gif_frames[0].save(
         gif_path,
         save_all=True,
@@ -1825,6 +2094,5 @@ def make_all_plots(df_family, family_order, trait_order,
         loop=0,
         optimize=False,
     )
-    # print(f"  ✓  GIF      → {gif_path}")
+
     print(f"\nDone — {len(family_order)} PNGs + overview + GIF")
-    return png_paths, overview_path, gif_path
