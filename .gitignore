@@ -29,6 +29,12 @@ build/
 
 # cache.csv
 exp/03_large_scale_administration/cache
+exp/03_large_scale_administration/cache_local
 exp/02_pilot_study/cache
-dat/03_large_scale_administration/final_df
-dat/03_large_scale_administration/final_dfs
+#dat/03_large_scale_administration/final_dfs
+dat/03_large_scale_administration/final_dfs/df_all_raw.csv
+dat/03_large_scale_administration/final_dfs/df_all.csv
+
+# tsne analyses (not included in paper)
+exp/03_large_scale_administration/eval_tsne.ipynb
+src/clustering.py
