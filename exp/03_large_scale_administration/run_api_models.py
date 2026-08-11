@@ -6,15 +6,12 @@ import litellm
 from datetime import datetime
 from src.API_prompting import *
 
-# Deactivate warnings
 litellm.set_verbose = False
 litellm.suppress_debug_info = True
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 
-
 async def main():
-
 
     ### 1) INITIALIZATION
 
@@ -39,7 +36,6 @@ async def main():
     # Get models for experiments from meta info
     meta = pd.read_csv("../../dat/03_large_scale_administration/meta_info_models.csv")
     models = meta["Model_ID"].dropna().tolist()
-
 
 
     ### 2) PROMPT GENERATION
@@ -82,7 +78,6 @@ async def main():
                     prompt_class_list.append(PromptClass(prompt_b, model, inventory, situation, rep, item, item_preamble, item_postamble, options_b, timestamp, None, None, None))
 
 
-
     ### 3) SANITY CHECK & INFO
     # Check if length of prompt_class_list is correct
     tot_n_requests = number_items * n_reps * prompt_variations
@@ -92,7 +87,6 @@ async def main():
     print(f"Prompt variations: {str(prompt_variations == len(set(pc.options for pc in prompt_class_list))).upper()} ({prompt_variations} vs. {len(set(pc.options for pc in prompt_class_list))})")
     print(f"Total number of requests: {str(tot_n_requests  == 590).upper()} ({tot_n_requests} vs. 590)")
     print(f"Length prompt_class_list: {str(len(prompt_class_list) == tot_n_requests * len(models)).upper()} ({len(prompt_class_list)} vs. {tot_n_requests * len(models)})\n")
-
 
 
     ### 4) DATA COLLECTION
