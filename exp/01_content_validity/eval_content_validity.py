@@ -1,14 +1,11 @@
-
 ### 0) IMPORTS
 from src.content_validity_metrics import *
 pd.set_option('display.max_columns', None)
 
 
-
 ### 1) READ DATA
 # Ratings from 3 experts
 ratings = pd.read_csv("../../dat/01_content_validity/expert_ratings.csv")
-
 
 
 ### 2) CONTENT VALIDITY
