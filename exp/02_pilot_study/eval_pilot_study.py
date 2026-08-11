@@ -1,10 +1,6 @@
-
-
-
 ### 0) IMPORTS
 from src.preprocessing import *
-
-
+from visualizations import OCEAN_COLS
 
 ### 1) LOAD DATA
 files = [
@@ -52,7 +48,6 @@ df_avg = (
 )
 
 
-
 ### 2) RESULTS: PROMPT TEMPLATES
 template_summary = pd.DataFrame({
     "Template": sorted(df["prompt_design"].unique())
@@ -83,6 +78,14 @@ template_summary[r"$\alpha$"] = (
     .map(cronbach_alpha(df_avg, "prompt_design"))
 )
 
+
+ocean_summary = (
+    df_avg.groupby(["prompt_design", "dimension"])["score"]
+    .mean()
+    .unstack("dimension")
+    .reset_index()
+)
+ocean_summary = ocean_summary[["prompt_design"] + OCEAN_COLS]
 
 
 ### 3) RESULTS: MODELS
@@ -124,7 +127,6 @@ inventory_summary[r"$\alpha$"] = (
 )
 
 
-
 ### 5) PRINT FINAL RESULTS
 print("\n=== PROMPT TEMPLATE SUMMARY ===")
 print(template_summary.to_string(index=False))
@@ -134,3 +136,6 @@ print(model_summary.to_string(index=False))
 
 print("\n=== INVENTORY SUMMARY ===")
 print(inventory_summary.to_string(index=False))
+
+print("\n=== OCEAN MEAN PER PROMPT TEMPLATE ===")
+print(ocean_summary.to_string(index=False))
