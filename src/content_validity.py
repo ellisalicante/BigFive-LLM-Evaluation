@@ -1,10 +1,9 @@
+# IMPORTS
 import numpy as np
 import pandas as pd
-import pingouin as pg
-import krippendorff
-from statsmodels.stats.inter_rater import fleiss_kappa as statsmodels_fleiss, aggregate_raters
 
 
+# HELPERS
 def mean(data: pd.DataFrame):
     """Returns mean."""
     mean = round(data.mean(), 2)
@@ -73,6 +72,7 @@ def gwet_ac2(data: pd.DataFrame, facet: str):
     p_e = sum(W[k, l] * pi[k] * (1 - pi[l]) for k in range(K) for l in range(K)) / K
 
     return round((p_o - p_e) / (1 - p_e), 2)
+
 
 def list_to_df(lst, col):
     """Returns df from list."""
