@@ -1,5 +1,5 @@
 ### 0) IMPORTS
-from src.content_validity_metrics import *
+from src.content_validity import *
 pd.set_option('display.max_columns', None)
 
 
