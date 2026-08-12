@@ -90,7 +90,6 @@ SCALE_MAX = 5.0
 
 
 # HELPERS
-
 def apply_paper_style():
     plt.rcParams.update({
         "figure.figsize": (FIG_WIDTH, FIG_HEIGHT),
