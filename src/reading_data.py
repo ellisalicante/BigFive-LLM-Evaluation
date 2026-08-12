@@ -284,7 +284,7 @@ def create_final_dfs():
 
         df = process_df(df)
         df = add_dimension_key(df, inventory_json)
-        df = clean_NA_recode(df, 1, 5)
+        df = clean_na_recode(df, 1, 5)
 
         dfs.append(df)
 

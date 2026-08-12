@@ -30,7 +30,7 @@ short_name_to_preamble, _ = get_short_name_dict()
 # Add prompt template, dimension, key and recode
 df = add_prompt_design(df, short_name_to_preamble)
 df = add_dimension_key(df, inventory_json)
-df = clean_NA_recode(df, 1, 5)
+df = clean_na_recode(df, 1, 5)
 
 # Average over repetitions
 df_avg = (

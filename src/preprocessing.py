@@ -106,7 +106,7 @@ def get_df_out_of_range(df, scale_min, scale_max):
     return numeric, non_numeric, in_range, out_of_range
 
 
-def clean_NA_recode(df, scale_min, scale_max):
+def clean_na_recode(df, scale_min, scale_max):
     """Replace all responses that are not numeric or not between scale_min and scale_max with NA"""
     df["response"] = pd.to_numeric(df["response"], errors="coerce")
     df["response"] = df["response"].where(df["response"].between(scale_min, scale_max))
@@ -137,7 +137,6 @@ def calculate_score_recode(df_numeric, df_in_range, scale_min, scale_max):
     )
 
     return df_numeric, df_in_range
-
 
 
 def refusal_rate(df, group):
