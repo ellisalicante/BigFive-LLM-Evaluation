@@ -1,10 +1,10 @@
-### 0) IMPORTS
+# IMPORTS
 import os
 import re
 from src.preprocessing import *
 
 
-### 1) CONFIG
+# CONFIG
 response_dir = "responses"
 
 save_dir = "../../dat/03_large_scale_administration/final_dfs"
@@ -31,7 +31,7 @@ OCEAN = [
 ]
 
 
-# 2) MODEL GROUPS
+# MODEL GROUPS
 # -> patterns in how different models responded
 think_response_models = {
     "deepinfra/deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
@@ -141,7 +141,7 @@ json_response_models = {
 }
 
 
-# 3) HELPERS
+# HELPERS
 # For cleaning responses and reasoning
 
 def extract_json_objects(text):
@@ -252,7 +252,7 @@ def parse_params(val):
         return np.nan
 
 
-# 4) CREATE FINAL DFs
+# CREATE FINAL DFs
 def create_final_dfs():
 
     # Read all response files and keep only valid, complete runs
