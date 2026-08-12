@@ -1,3 +1,4 @@
+# IMPORTS
 import json
 import pandas as pd
 import numpy as np
@@ -6,6 +7,7 @@ from scipy.stats import spearmanr
 import pingouin as pg
 
 
+# HELPERS
 def load_inventory(inventory_json: str):
     """Load inventory from .JSON file."""
     path = "../../dat/00_inventories/" + inventory_json
@@ -299,4 +301,3 @@ def cronbach_alpha(df_avg, group):
         })
 
     return pd.DataFrame(rows).set_index(group)[r'$\alpha$']
-
