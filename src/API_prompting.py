@@ -1,9 +1,9 @@
+# IMPORTS
 import pandas as pd
 import os
 import asyncio
 import time
 import regex as re
-import json
 import random
 
 from asyncio import Queue
@@ -13,6 +13,7 @@ from litellm import acompletion
 from dataclasses import dataclass, asdict
 
 
+# HELPERS
 @dataclass
 class PromptClass:
     prompt:    str
