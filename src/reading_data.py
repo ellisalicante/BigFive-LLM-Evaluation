@@ -12,9 +12,7 @@ os.makedirs(save_dir, exist_ok=True)
 
 target_prefix = "Here is a characteristic that may or may not apply to you"
 
-meta = pd.read_csv(
-    "../../dat/03_large_scale_administration/meta_info_models.csv"
-).rename(columns={"Model_ID": "model"})
+meta = pd.read_csv("../../dat/03_large_scale_administration/meta_info_models.csv").rename(columns={"Model_ID": "model"}) # type: ignore[call-overload]
 
 inventory_json = create_inventory_dict(
     "lmlpa.json",
@@ -145,6 +143,7 @@ json_response_models = {
 # For cleaning responses and reasoning
 
 def extract_json_objects(text):
+    """Get JSON objects from model response."""
     objs = []
     depth = 0
     start = None
@@ -163,6 +162,7 @@ def extract_json_objects(text):
 
 
 def parse_valid_score_jsons(text, strict_schema=True):
+    """Scan text for valid JSON scores."""
     valid = []
     for candidate in extract_json_objects(text):
         try:
@@ -185,14 +185,18 @@ def parse_valid_score_jsons(text, strict_schema=True):
     return valid
 
 
+def extract_1to5(text):
+    """Find score 1 to 5."""
+    m = re.search(r"\b([1-5])\b", text)
+    return m.group(1) if m else ""
+
+
 def resolve_response_reasoning(resp_raw, reas_raw, model):
+    """Get the response and reasoning for all different kinds of models groups with their individual response pattern."""
     resp_raw = "" if pd.isna(resp_raw) else str(resp_raw)
     reas_raw = "" if pd.isna(reas_raw) else str(reas_raw)
 
-    def extract_1to5(text):
-        m = re.search(r"\b([1-5])\b", text)
-        return m.group(1) if m else ""
-
+    # Model response: JSON
     if model in json_response_models:
         combined = resp_raw + "\n" + reas_raw
         valid_jsons = parse_valid_score_jsons(combined)
@@ -204,9 +208,11 @@ def resolve_response_reasoning(resp_raw, reas_raw, model):
             response = "NA"
         return response, combined.strip()
 
+    # Model response: *score* then thinking
     if model in response_explanation_models or model in response_other:
         return extract_1to5(resp_raw + " " + reas_raw), ""
 
+    # Model response: <think> ... <think> then score
     if model in think_response_models:
         response = extract_1to5(resp_raw)
         if not response:
@@ -214,9 +220,11 @@ def resolve_response_reasoning(resp_raw, reas_raw, model):
         reasoning = reas_raw.strip() if reas_raw else resp_raw.strip()
         return response, reasoning
 
+    # Model response: inside "reasoning" column
     if model in response_in_reas_models:
         return extract_1to5(resp_raw + " " + reas_raw), resp_raw or reas_raw
 
+    # Model response: thinking then response inside "reasoning" column
     if model in reasoning_with_response:
         response = extract_1to5(reas_raw)
         lines = [l.strip() for l in reas_raw.splitlines() if l.strip()]
@@ -230,7 +238,7 @@ def resolve_response_reasoning(resp_raw, reas_raw, model):
 
 
 def process_df(df):
-
+    """Apply response-reasoning problem function."""
     parsed = df.apply(
         lambda row: resolve_response_reasoning(
             row.get("response", ""),
@@ -246,14 +254,26 @@ def process_df(df):
 
 
 def parse_params(val):
+    """Parse params from a string into a float."""
     try:
         return float(str(val).replace("B", "").strip())
-    except:
+    except ValueError:
         return np.nan
 
 
 # CREATE FINAL DFs
 def create_final_dfs():
+    """
+    Create seven dataframes.
+
+    df_all_raw: all responses from all models
+    df_all: all responses from all models after excluding models with less than 200 valid responses
+    df_A: responses averaged across all repetitions -> one response per item from all models (items are rows)
+    df_B: responses averaged across all items -> final OCEAN scores (columns) from all models
+    df_cfa: responses averaged across all repetitions -> one response per item from all models (items are columns)
+    df_metadata: df_B with metadata from all models
+    df_lmm: responses averaged across two option-orders -> all responses from all models across 5 repetitions and including predictors for linear mixed model
+    """
 
     # Read all response files and keep only valid, complete runs
     dfs = []
@@ -264,8 +284,8 @@ def create_final_dfs():
 
         df = pd.read_csv(
             os.path.join(response_dir, fname),
-            low_memory=False
-        )
+            low_memory=False,
+        ) # type: ignore[call-overload]
 
         df = df[
             df["preamble"]
@@ -325,7 +345,7 @@ def create_final_dfs():
     print(f"Models remaining after exclusion: {df_all['model'].nunique()}")
 
 
-    # DF_A
+    ### DF_A ###
     # Item-level averaged scores
     df_A = (
         df_all
@@ -364,7 +384,7 @@ def create_final_dfs():
     )
 
 
-    # DF_B
+    ### DF_B ###
     # Trait-level scores
     df_B = (
         df_all
@@ -377,7 +397,7 @@ def create_final_dfs():
     df_B = df_B[["model"] + OCEAN]
 
 
-    # DF_CFA
+    ### DF_CFA ###
     # Wide item matrix for CFA in R
     df_cfa = (
         df_A
@@ -386,7 +406,7 @@ def create_final_dfs():
     )
 
 
-    # DF_METADATA
+    ### DF_METADATA ###
     # Trait scores + model metadata
     df_metadata = df_B.merge(
         meta,
@@ -403,7 +423,7 @@ def create_final_dfs():
     )
 
 
-    # DF_LMM
+    ### DF_LMM ###
     # Dataframe for linear mixed model
     df_lmm = df_all.copy()
     df_lmm["y"] = pd.to_numeric(df_lmm["score"], errors="coerce")
@@ -412,13 +432,11 @@ def create_final_dfs():
     # Merge model metadata
     df_metadata["params_numeric"] = df_metadata["Parameters_B"].apply(parse_params)
     meta_model = df_metadata[
-        [
-            "model",
-            "params_numeric",
-            "Release_date",
-            "Reasoning",
-            "license_group"
-        ]
+        ["model",
+         "params_numeric",
+         "Release_date",
+         "Reasoning",
+         "license_group"]
     ].drop_duplicates()
     df_lmm = df_lmm.merge(meta_model, on="model", how="left")
 
@@ -470,18 +488,16 @@ def create_final_dfs():
     # Final df_lmm
     df_lmm = (
         df_lmm[
-            [
-                "model",
-                "item_id",
-                "rep",
-                "dimension",
-                "y",
-                "Size",
-                "SizeGroup",
-                "ReleaseDate",
-                "Reasoning",
-                "OpenWeight"
-            ]
+            ["model",
+             "item_id",
+             "rep",
+             "dimension",
+             "y",
+             "Size",
+             "SizeGroup",
+             "ReleaseDate",
+             "Reasoning",
+             "OpenWeight"]
         ]
         .rename(columns={"model": "model_id"})
         .dropna(subset=["y"])
@@ -501,7 +517,7 @@ def create_final_dfs():
 
     # Print
     print("\nCreated dataframes:")
-    print(f"df_all_raw:      {df_all_raw.shape}")
+    print(f"df_all_raw:  {df_all_raw.shape}")
     print(f"df_all:      {df_all.shape}")
     print(f"df_A:        {df_A.shape}")
     print(f"df_B:        {df_B.shape}")
