@@ -51,7 +51,7 @@ def build_filename(prompt_class) -> str:
     return filename.lower()
 
 
-def cache_directory(prompt_class: PromptClass):
+def cache_directory():
     """Check if cache directory exists and if not, create it."""
 
     cache_dir = Path("./cache")
@@ -60,9 +60,21 @@ def cache_directory(prompt_class: PromptClass):
 
     cache_file = cache_dir / "cache.csv"
     if cache_file.exists():
-        cache = pd.read_csv(cache_file, low_memory=False)
+        cache = pd.read_csv(cache_file, low_memory=False) # type: ignore[call-overload]
     else:
-        cache = pd.DataFrame(columns = ['prompt', 'model', 'inventory', 'situation', 'rep', 'item', 'preamble', 'postamble', 'options', 'timestamp', 'response', 'usage', 'reasoning'])
+        cache = pd.DataFrame(columns=['prompt',
+                                      'model',
+                                      'inventory',
+                                      'situation',
+                                      'rep',
+                                      'item',
+                                      'preamble',
+                                      'postamble',
+                                      'options',
+                                      'timestamp',
+                                      'response',
+                                      'usage',
+                                      'reasoning'])
 
     return cache
 
@@ -74,9 +86,21 @@ def save_cache(response_queue: Queue, prompt_class: PromptClass, path: str, fina
 
     # Check if cache already exists, if not: create cache
     if cache_file.exists():
-        cache = pd.read_csv(cache_file, low_memory=False)
+        cache = pd.read_csv(cache_file, low_memory=False) # type: ignore[call-overload]
     else:
-        cache = pd.DataFrame(columns=['prompt', 'model', 'inventory', 'situation', 'rep', 'item', 'preamble', 'postamble', 'options', 'timestamp', 'response', 'usage', 'reasoning'])
+        cache = pd.DataFrame(columns=['prompt',
+                                      'model',
+                                      'inventory',
+                                      'situation',
+                                      'rep',
+                                      'item',
+                                      'preamble',
+                                      'postamble',
+                                      'options',
+                                      'timestamp',
+                                      'response',
+                                      'usage',
+                                      'reasoning'])
 
     # Get new responses and add to cache
     new_rows = []
@@ -84,11 +108,20 @@ def save_cache(response_queue: Queue, prompt_class: PromptClass, path: str, fina
         response = response_queue.get_nowait()
         new_rows.append(response.asdict())
 
-    cache = pd.concat([cache, pd.DataFrame(new_rows)], ignore_index=True)
+    cache = pd.concat([cache, pd.DataFrame(new_rows)], ignore_index=True) # type: ignore[call-overload]
 
     # Drop duplicates, sort, and save cache
     cache = (cache
-             .drop_duplicates(subset=["prompt", "model", "inventory", "situation", "rep", "item", "preamble", "postamble", "options", "timestamp"], keep="last")
+             .drop_duplicates(subset=["prompt",
+                                      "model",
+                                      "inventory",
+                                      "situation",
+                                      "rep",
+                                      "item",
+                                      "preamble",
+                                      "postamble",
+                                      "options",
+                                      "timestamp"], keep="last")
              .sort_values(by=["model", "inventory", "situation", "prompt", "rep"])
              .reset_index(drop=True))
 
@@ -116,7 +149,7 @@ def prompt_generator(preamble, item, postamble, inventory) -> str:
     return prompt
 
 
-def prompt_generator_options(preamble, item, options_a, options_b, postamble) -> str:
+def prompt_generator_options(preamble, item, options_a, options_b, postamble) -> tuple[str, str]:
     """Generate prompt from preamble, item, and postamble."""
     prompt_a = f"{preamble} {options_a} {postamble} 'I see myself as a chatbot who {item}'."
     prompt_b = f"{preamble} {options_b} {postamble} 'I see myself as a chatbot who {item}'."
@@ -187,7 +220,7 @@ async def reponse_generator(prompt, model):
     return output_text, usage, reasoning
 
 
-def calculate_num_workers(tpm_limit: int, rpm_limit: int, total: int, n_reps: int, situation: str):
+def calculate_num_workers(tpm_limit: int, rpm_limit: int, total: int):
     """Calculate optimal number of workers based on (average) rate limits."""
 
     # Conservative estimates of average number of tokens
@@ -202,7 +235,7 @@ def calculate_num_workers(tpm_limit: int, rpm_limit: int, total: int, n_reps: in
 
 
 async def worker(name: str, prompt_queue: Queue, response_queue: Queue, cache: pd.DataFrame, pbar: tqdm,
-                 rate_dict: dict, total_requests: int, path: str, tpm_limit: int = None, rpm_limit: int = None):
+                 rate_dict: dict, path: str, tpm_limit: int, rpm_limit: int):
     """Generating workers prompting to model in parallel."""
 
     while True:
@@ -336,13 +369,13 @@ async def parallel_prompting(prompt_queue: Queue, response_queue: Queue, cache: 
         print("All prompts already cached. Skipping.")
     else:
         # Calculate optimal number of workers
-        num_workers = calculate_num_workers(tpm_limit, rpm_limit, remaining, n_reps, situation)
+        num_workers = calculate_num_workers(tpm_limit, rpm_limit, remaining)
         print(f"Using {num_workers} workers (TPM limit: {tpm_limit}, RPM limit: {rpm_limit})")
 
         # Spawn workers and process prompts
         with tqdm(total=remaining, desc="Processing prompts", unit="prompt") as pbar:
             workers = [
-                asyncio.create_task(worker(f"{i}", prompt_queue, response_queue, cache, pbar, rate_dict, total, path, tpm_limit, rpm_limit))
+                asyncio.create_task(worker(f"{i}", prompt_queue, response_queue, cache, pbar, rate_dict, path, tpm_limit, rpm_limit))
                 for i in range(num_workers)
             ]
 
