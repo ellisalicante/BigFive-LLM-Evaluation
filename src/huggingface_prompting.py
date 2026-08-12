@@ -1,12 +1,14 @@
+# IMPORTS
 import torch
 import os
 import pandas as pd
 from pathlib import Path
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 from src.API_prompting import PromptClass, build_filename
-from huggingface_hub import login, HfApi, scan_cache_info
+from huggingface_hub import HfApi, scan_cache_info
 
 
+# HELPERS
 class HFModelRunner:
     def __init__(self, model_name):
         self.model_name = model_name
@@ -122,7 +124,6 @@ def save_cache_local(response_queue, prompt_class: PromptClass, path: str, final
             cache_model.to_csv(f"./responses/{filename}.csv", index=False)
 
 
-
 def is_cached(pc, cache):
     if cache.empty:
         return False
@@ -134,7 +135,6 @@ def is_cached(pc, cache):
             (cache["situation"] == pc.situation) &
             (cache["rep"] == pc.rep)
     ).any()
-
 
 
 def estimate_model_size_billion(model_name):
