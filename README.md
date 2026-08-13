@@ -4,13 +4,11 @@
 
 This repository contains the paper, appendix, code, data, and figures for the paper "Personality Without Persons?".
 
-<br>
 
 <p>
   <img src = "doc/figs/readme/line-1.png" height = "40">
 </p>
 
-<br>
 
 ## Paper aim
 
@@ -22,13 +20,11 @@ It examines three RQs:
 
 We assess the content validity of five candidate Big Five inventories and administer the best-performing inventory to $N = 264$ LLMs spanning 50 model families.
 
-<br>
 
 <p>
   <img src = "doc/figs/readme/line-1.png" height = "40">
 </p>
 
-<br>
 
 ## Repository structure
 
@@ -131,13 +127,9 @@ This includes
 - files for **reading** and **preprocessing** all models responses (`reading_data.py`, `preprocessing.py`), 
 - and helpers for **visualizing** the results (`visualizations.py`).
 
-<br>
-
 <p>
   <img src = "doc/figs/readme/line-1.png" height = "40">
 </p>
-
-<br>
 
 ## Links
 
