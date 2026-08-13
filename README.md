@@ -18,6 +18,8 @@ It examines three RQs:
 - **RQ2** Do personality scores capture meaningful **inter-model differences** across LLMs?
 - **RQ3** Do LLMs' Big Five responses reflect **internal factors** consistent with the Big Five structure?
 
+We assess the content validity of five candidate Big Five inventories and administer the best-performing inventory to $N = 264$ LLMs spanning 50 model families.
+
 <br>
 
 [//]: # (---)
@@ -40,7 +42,7 @@ contains the Big Five inventories (`00_inventories/`), expert rating data (`01_c
   Models responses to individual items: mean scores and standard deviations across repetitions, contains item metadata.  
   *Format:* One row per item x model.
 - **`df_B` Trait Scores**  
-  Overall Big Five scores for all models, averaged across all items.  
+  Overall Big Five scores for all 247 models, averaged across all items and repetitions.  
   *Format:* One row per model, OCEAN dimensions as columns.
 - **`df_metadata` Trait Scores + Metadata**  
   OCEAN scores from `df_B` with additional model metadata (e.g., parameter counts, release dates, reasoning support, and license type).
@@ -159,6 +161,9 @@ This includes
 <br>
 
 [//]: # (---)
+<p>
+  <img src = "doc/figs/line.png" height = "50">
+</p>
 
 <br>
 
