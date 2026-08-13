@@ -91,7 +91,12 @@ contains the final **paper** pdf (`Personality-Without-Persons.pdf`), the additi
 contains all experiments that were run for this study. 
 **RQ1** is tackled in `01_content_validity/`, and **RQ2** and **RQ3** in `03_large_scale_administration/`.
 
-<br>
+[//]: # (<br>)
+
+<p>
+  <img src = "doc/figs/readme/line-2.png" height = "40">
+</p>
+
 
 **1) Expert evaluation** `01_content_validity/`   
 contains the script to evaluate content validity metrics of expert ratings for Big Five items.
@@ -99,7 +104,12 @@ contains the script to evaluate content validity metrics of expert ratings for B
 - **RQ1** 
   - `eval_content_validity.py`
 
-<br>
+[//]: # (<br>)
+
+<p>
+  <img src = "doc/figs/readme/line-2.png" height = "40">
+</p>
+
 
 **2) Pilot study** `02_pilot_study/`   
 contains the scripts to run and evaluate the pilot study, and the model responses.
@@ -111,7 +121,12 @@ contains the scripts to run and evaluate the pilot study, and the model response
 - **Evaluation**
   - `eval_pilot_study.py` 
 
-<br>
+[//]: # (<br>)
+
+<p>
+  <img src = "doc/figs/readme/line-2.png" height = "40">
+</p>
+
 
 **3) Large-scale administration** `03_large_scale_administration/`   
 contains the scripts for running and evaluating the large-scale administration of $N = 264$ models, spanning 50 model families, and the model responses.   
