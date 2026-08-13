@@ -28,7 +28,7 @@ We assess the content validity of five candidate Big Five inventories and admini
 <p align="center">
   <img src="doc/figs/gif/all.gif" width="500" alt="Animation Demo">
   <br>
-  <sub>Differences between models are minimal. <br> Models' Big Five profiles should be interpreted with caution, since they do <b>not</b> capture true "personality traits" of LLMs and the Big Five structure was <b>not</b> confirmed. </sub>
+  <sub>Differences between models are minimal. Dotted line indicates the mean across all models. <br> Models' Big Five profiles should be interpreted with caution, since they do <b>not</b> capture true "personality traits" of LLMs and the Big Five structure was <b>not</b> confirmed. </sub>
 </p>
 
 <br>
