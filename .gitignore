@@ -39,3 +39,6 @@ dat/03_large_scale_administration/final_dfs/df_all.csv
 # tsne analyses (not included in paper)
 exp/03_large_scale_administration/eval_tsne.ipynb
 src/clustering.py
+
+# other not used files
+dat/03_large_scale_administration/BFI228.csv
