@@ -1,112 +1,235 @@
 # Personality Without Persons?
-### A Psychometric Critique of Big Five Testing in Large Language Models
+**A Psychometric Critique of Big Five Testing in Large Language Models**
 
 
-This repository contains the code, data, and figures for the AIES 2026 submission "Personality Without Persons?"
+This repository contains the paper, appendix, code, data, and figures for the paper "Personality Without Persons?".
 
+---
 
-The project is organized around three stages of analysis:
+## Paper aim
 
-1. **Content validity** of candidate personality inventories.
-2. **Pilot study** to test prompts and response behavior.
-3. **Large-scale administration** and statistical analysis across a broad model set.
-
-## Repository structure
-
-```text
-dat/
-├── 00_inventories/
-│   ├── bfi-llm.json
-│   ├── lmlpa.json
-├── 01_content_validity/
-│   └── expert_ratings.csv
-├── 02_pilot_study/
-│   └── prompt-templates.json
-└── 03_large_scale_administration/
-    └── meta_info_models.csv
-
-exp/
-├── 01_content_validity/
-│   └── eval_content_validity.py
-├── 02_pilot_study/
-│   ├── responses_pilot/
-│   ├── eval_pilot_study.py
-│   └── run_pilot_study.py
-├── 03_large_scale_administration/
-    ├── responses/
-    ├── eval_CFA.R
-    ├── eval_LMM.R
-    ├── eval_norms.ipynb
-    ├── eval_subgroups.ipynb
-    ├── run_api_models.py
-    └── run_local_models.py
-
-src/
-├── API_prompting.py
-├── content_validity_metrics.py
-├── huggingface_prompting.py
-├── preprocessing.py
-├── reading_data.py
-└── visualizations.py
-
-doc/
-├── figs/
-└── tables/
-    └── descriptives_table.txt
-
-```
-
-## Project aim
-
-The paper evaluates whether standard Big Five questionnaires, originally designed for humans, can be applied to LLMs without losing psychometric meaning.
+The paper evaluates whether Big Five questionnaires, originally designed for humans, can be applied to LLMs. It tests whether three defining characteristics of a personality trait are met.
 It examines three RQs:
-- **RQ1** Are human personality inventory items (Big Five) appropriate **descriptive summaries** of LLMs?
+- **RQ1** Are human personality inventory (Big Five) items appropriate **descriptive summaries** of LLMs?
 - **RQ2** Do personality scores capture meaningful **inter-model differences** across LLMs?
 - **RQ3** Do LLMs' Big Five responses reflect **internal factors** consistent with the Big Five structure?
 
+---
 
-## Data files
+## Repository structure
 
-### `dat/00_inventories/`
-Contains the candidate inventories used in the study.
+The repo is organized into the data (`dat`), the experiments (`exp`), the helper functions and source (`src`), and everything regarding the paper (document; `doc`).
 
-- `bfi-llm.json`: Winning Big Five inventory.
-- `lmlpa.json`: Alternative inventory used pilot.
+---
 
-### `dat/01_content_validity/`
-- `expert_ratings.csv`: Expert ratings of items.
+### Data ─ `dat`
+contains the Big Five inventories (`00_inventories/`), expert rating data (`01_content_validity/`), prompt/instruction templates (`02_pilot_study/`), and final dataframes with all model information (`03_large_scale_administration/`):
+- **`df_A` Item-Level Averages**  
+  Models responses to individual items: mean scores and standard deviations across repetitions, contains item metadata.  
+  *Format:* One row per item x model.
+- **`df_B` Trait Scores**  
+  Overall Big Five scores for all models, averaged across all items.  
+  *Format:* One row per model, OCEAN dimensions as columns.
+- **`df_metadata` Trait Scores + Metadata**  
+  OCEAN scores from `df_B` with additional model metadata (e.g., parameter counts, release dates, reasoning support, and license type).
+- **`df_cfa` Factor Analysis Matrix**  
+  Models responses to individual items in wide-format, formatted for CFA in R.
+  *Format:* Models as rows, item IDs as columns.
+- **`df_lmm` Linear Mixed Model Data**  
+  Model responses for all items and 5 repetitions and predictors for LMM (e.g., parameter size group, days since release, reasoning capability, license).  
+  *Format:* One row per response (item x rep), indexed by model and item ID. Response ($y$) and predictors as columns.
 
-### `dat/02_pilot_study/`
-- `prompt-templates.json`: Prompt formats tested in the pilot.
+---
 
-### `dat/03_large_scale_administration/`
-- `meta_info_models.csv`: Metadata for the model sample.
-
-## Analysis code
-
-### `exp/01_content_validity/`
-- `eval_content_validity.py`: Evaluating content validity of items with expert ratings.
-
-### `exp/02_pilot_study/`
-- `run_pilot_study.py`: Data collection: Runs pilot using seven different prompt templates.
-- `eval_pilot_study.py`: Evaluates pilot outputs to identify best prompt template.
-
-### `exp/03_large_scale_administration/`
-- `run_api_models.py`: Data collection: API models.
-- `run_local_models.py`: Data collection: local/open-weight models.
-- `eval_CFA.R`: Runs CFA and EFA.
-- `eval_LMM.R`: Runs linear mixed-effects models for variance decomposition and subgroup analyses.
-- `eval_norms.ipynb`: Descriptive analyses and norms.
-- `eval_subgroups.ipynb`: Subgroup comparisons.
+### Document ─ `doc`
+contains the final paper pdf (`...`), the additional appendix (`...`), and all figures created for the paper (`figs/`).
 
 
-## Helper functions
+---
 
-### `src/`
+### Experiments ─ `exp`
+contains all experiments that were run for this study. 
+**RQ1** is tackled in `01_content_validity/`, **RQ2** in `02_pilot_study/`, and **RQ3** in `03_large_scale_administration/`.
+- **RQ1** `01_content_validity/`   
+contains the evaluation script of the expert ratings of items.
+- **RQ2** `02_pilot_study/`   
+contains the scripts for running and evaluating the pilot study, as well as the models responses.
+- **RQ3** `03_large_scale_administration/`   
+contains the scripts for running and evaluating the large-scale administration, as well as the models responses.   
+This includes two `.py`-files for running API models and local models, two `.ipynb`-files for evaluating the norms and group comparisons, and two `.R`-files for running the CFA and LMM analyses.
+
+---
+
+### Helpers and source code ─ `src`
+contains the helper functions and source code for the experiments.   
+This includes 
+- functions for calculating the **content validity metrics** for the expert study (`content_validity.py`), 
+- helpers for the **data collection** using APIs and huggingface (`API_prompting.py`, `huggingface_prompting.py`), 
+- files for **reading** and **preprocessing** all models responses (`reading_data.py`, `preprocessing.py`), 
+- and helpers for **visualizing** the results (`visualizations.py`).
+
+---
+
+## Links
+
+Our paper was accepted to _AIES 2026_.   
+Read our paper on arXiv: https://arxiv.org/abs/2607.02325
 
 
-## Figures and tables
 
-### `doc/figs/`
-### `doc/tables/`
-- `descriptives_table.txt`: Per-model descriptive statistics.
+[//]: # (```text)
+
+[//]: # (dat/)
+
+[//]: # (├── 00_inventories/)
+
+[//]: # (│   ├── bfi-llm.json)
+
+[//]: # (│   ├── lmlpa.json)
+
+[//]: # (├── 01_content_validity/)
+
+[//]: # (│   └── expert_ratings.csv)
+
+[//]: # (├── 02_pilot_study/)
+
+[//]: # (│   └── prompt-templates.json)
+
+[//]: # (└── 03_large_scale_administration/)
+
+[//]: # (    └── meta_info_models.csv)
+
+[//]: # ()
+[//]: # (exp/)
+
+[//]: # (├── 01_content_validity/)
+
+[//]: # (│   └── eval_content_validity.py)
+
+[//]: # (├── 02_pilot_study/)
+
+[//]: # (│   ├── responses_pilot/)
+
+[//]: # (│   ├── eval_pilot_study.py)
+
+[//]: # (│   └── run_pilot_study.py)
+
+[//]: # (├── 03_large_scale_administration/)
+
+[//]: # (    ├── responses/)
+
+[//]: # (    ├── eval_CFA.R)
+
+[//]: # (    ├── eval_LMM.R)
+
+[//]: # (    ├── eval_norms.ipynb)
+
+[//]: # (    ├── eval_subgroups.ipynb)
+
+[//]: # (    ├── run_api_models.py)
+
+[//]: # (    └── run_local_models.py)
+
+[//]: # ()
+[//]: # (src/)
+
+[//]: # (├── API_prompting.py)
+
+[//]: # (├── content_validity_metrics.py)
+
+[//]: # (├── huggingface_prompting.py)
+
+[//]: # (├── preprocessing.py)
+
+[//]: # (├── reading_data.py)
+
+[//]: # (└── visualizations.py)
+
+[//]: # ()
+[//]: # (doc/)
+
+[//]: # (├── figs/)
+
+[//]: # (└── tables/)
+
+[//]: # (    └── descriptives_table.txt)
+
+[//]: # ()
+[//]: # (```)
+
+
+
+[//]: # (## Data files)
+
+[//]: # ()
+[//]: # (### `dat/00_inventories/`)
+
+[//]: # (Contains the candidate inventories used in the study.)
+
+[//]: # ()
+[//]: # (- `bfi-llm.json`: Winning Big Five inventory.)
+
+[//]: # (- `lmlpa.json`: Alternative inventory used pilot.)
+
+[//]: # ()
+[//]: # (### `dat/01_content_validity/`)
+
+[//]: # (- `expert_ratings.csv`: Expert ratings of items.)
+
+[//]: # ()
+[//]: # (### `dat/02_pilot_study/`)
+
+[//]: # (- `prompt-templates.json`: Prompt formats tested in the pilot.)
+
+[//]: # ()
+[//]: # (### `dat/03_large_scale_administration/`)
+
+[//]: # (- `meta_info_models.csv`: Metadata for the model sample.)
+
+[//]: # ()
+[//]: # (## Analysis code)
+
+[//]: # ()
+[//]: # (### `exp/01_content_validity/`)
+
+[//]: # (- `eval_content_validity.py`: Evaluating content validity of items with expert ratings.)
+
+[//]: # ()
+[//]: # (### `exp/02_pilot_study/`)
+
+[//]: # (- `run_pilot_study.py`: Data collection: Runs pilot using seven different prompt templates.)
+
+[//]: # (- `eval_pilot_study.py`: Evaluates pilot outputs to identify best prompt template.)
+
+[//]: # ()
+[//]: # (### `exp/03_large_scale_administration/`)
+
+[//]: # (- `run_api_models.py`: Data collection: API models.)
+
+[//]: # (- `run_local_models.py`: Data collection: local/open-weight models.)
+
+[//]: # (- `eval_CFA.R`: Runs CFA and EFA.)
+
+[//]: # (- `eval_LMM.R`: Runs linear mixed-effects models for variance decomposition and subgroup analyses.)
+
+[//]: # (- `eval_norms.ipynb`: Descriptive analyses and norms.)
+
+[//]: # (- `eval_subgroups.ipynb`: Subgroup comparisons.)
+
+[//]: # ()
+[//]: # ()
+[//]: # (## Helper functions)
+
+[//]: # ()
+[//]: # (### `src/`)
+
+[//]: # ()
+[//]: # ()
+[//]: # (## Figures and tables)
+
+[//]: # ()
+[//]: # (### `doc/figs/`)
+
+[//]: # (### `doc/tables/`)
+
+[//]: # (- `descriptives_table.txt`: Per-model descriptive statistics.)
