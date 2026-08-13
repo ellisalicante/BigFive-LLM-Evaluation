@@ -86,26 +86,6 @@ def add_dimension_key(df, inventory_json):
     return df
 
 
-def get_df_out_of_range(df, scale_min, scale_max):
-    """Get out of range values."""
-    non_numeric_mask = pd.to_numeric(df["response"], errors="coerce").isna()
-    non_numeric = df[non_numeric_mask]
-    numeric = df[~non_numeric_mask]
-
-    df_non_num = df[~non_numeric_mask].copy()
-    df_non_num["response"] = df_non_num["response"].astype(float)
-
-    out_of_range_mask = ~df_non_num["response"].between(scale_min, scale_max)
-    out_of_range = df_non_num[out_of_range_mask]
-    in_range = df_non_num[~out_of_range_mask]
-
-    print(len(df))
-    print("Number of responses that are non-numeric:", len(non_numeric), f"({len(non_numeric)/len(df)*100:.2f}%)")
-    print(f"Number of responses that are out of range (min {scale_min}, max {scale_max}):", len(out_of_range), f"({len(out_of_range)/len(df)*100:.2f}%)")
-
-    return numeric, non_numeric, in_range, out_of_range
-
-
 def clean_na_recode(df, scale_min, scale_max):
     """Replace all responses that are not numeric or not between scale_min and scale_max with NA"""
     df["response"] = pd.to_numeric(df["response"], errors="coerce")
@@ -118,25 +98,6 @@ def clean_na_recode(df, scale_min, scale_max):
     )
 
     return df
-
-
-def calculate_score_recode(df_numeric, df_in_range, scale_min, scale_max):
-    """Calculate the score based on whether responses need to be recoded (for reverse-keyed items)."""
-    df_numeric["response"] = df_numeric["response"].astype(float)
-    df_in_range["response"] = df_in_range["response"].astype(float)
-
-    df_numeric["score"] = np.where(
-        df_numeric["key"] == "-",
-        scale_min + scale_max - df_numeric["response"],
-        df_numeric["response"]
-    )
-    df_in_range["score"] = np.where(
-        df_in_range["key"] == "-",
-        scale_min + scale_max - df_in_range["response"],
-        df_in_range["response"]
-    )
-
-    return df_numeric, df_in_range
 
 
 def refusal_rate(df, group):
