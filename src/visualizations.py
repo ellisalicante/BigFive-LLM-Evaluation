@@ -1218,7 +1218,7 @@ def make_individual_png(df_family, family_name, means, global_means, color, trai
              fontfamily="monospace")
     fig.text(0.5,
              0.92,
-             "Big Five Personality Profile",
+             "Big Five Profile",
              ha="center",
              va="top",
              fontsize=8.5,
