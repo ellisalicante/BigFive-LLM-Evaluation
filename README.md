@@ -5,9 +5,13 @@
 This repository contains the paper, appendix, code, data, and figures for the paper "Personality Without Persons?".
 
 
-<p>
-  <img src = "doc/figs/readme/line-1.png" height = "40">
-</p>
+[//]: # (<p>)
+
+[//]: # (  <img src = "doc/figs/readme/line-1.png" height = "40">)
+
+[//]: # (</p>)
+
+---
 
 
 ## Paper aim
