@@ -42,7 +42,6 @@ We assess the content validity of five candidate Big Five inventories and admini
 
 **RQ3** Big Five scores failed to reproduce the human five-factor structure. All OCEAN dimensions, except for Neuroticism, were highly correlated and collapsed into one ($r ≥ .90$).
 
-[//]: # (<img src="doc/figs/gif/all.gif" width="500" alt="Animation Demo">)
 <p align="center">
   <img src="doc/figs/gif/all.gif" width="500" alt="Animation Demo"><br>
   <sub>Differences between models are minimal.</sub>
