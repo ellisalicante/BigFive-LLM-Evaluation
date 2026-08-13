@@ -6,7 +6,9 @@ This repository contains the paper, appendix, code, data, and figures for the pa
 
 <br>
 
-[//]: # (---)
+<p>
+  <img src = "doc/figs/readme/line-1.png" height = "40">
+</p>
 
 <br>
 
@@ -22,7 +24,9 @@ We assess the content validity of five candidate Big Five inventories and admini
 
 <br>
 
-[//]: # (---)
+<p>
+  <img src = "doc/figs/readme/line-1.png" height = "40">
+</p>
 
 <br>
 
@@ -30,9 +34,11 @@ We assess the content validity of five candidate Big Five inventories and admini
 
 The repo is organized into the data (`dat`), the experiments (`exp`), the helper functions and source (`src`), and everything regarding the paper (document; `doc`).
 
-<br>
 
-[//]: # (---)
+<p>
+  <img src = "doc/figs/readme/line-2.png" height = "40">
+</p>
+
 
 ### Data ─ `dat`
 contains the Big Five inventories (`00_inventories/`), expert rating data (`01_content_validity/`), prompt/instruction templates (`02_pilot_study/`), and final dataframes with all model information (`03_large_scale_administration/`):   
@@ -54,15 +60,19 @@ contains the Big Five inventories (`00_inventories/`), expert rating data (`01_c
   *Format:* One row per response (item x rep), indexed by model and item ID. Response ($y$) and predictors as columns.
 
 
-<br>
+<p>
+  <img src = "doc/figs/readme/line-2.png" height = "40">
+</p>
+
 
 ### Document ─ `doc`
 contains the final paper pdf (`...`), the additional appendix (`...`), and all figures created for the paper (`figs/`).
 
 
-[//]: # (---)
+<p>
+  <img src = "doc/figs/readme/line-2.png" height = "40">
+</p>
 
-<br>
 
 ### Experiments ─ `exp`
 contains all experiments that were run for this study. 
@@ -108,47 +118,10 @@ contains the scripts for running and evaluating the large-scale administration o
 - **Secondary analyses**
   - `eval_subgroups.ipynb` additional subgroup analyses and visualizations
 
+<p>
+  <img src = "doc/figs/readme/line-2.png" height = "40">
+</p>
 
-[//]: # (- `run_api_models.py`: Data collection: API models.)
-
-[//]: # (- `run_local_models.py`: Data collection: local/open-weight models.)
-
-[//]: # (- `eval_CFA.R`: Runs CFA and EFA.)
-
-[//]: # (- `eval_LMM.R`: Runs linear mixed-effects models for variance decomposition and subgroup analyses.)
-
-[//]: # (- `eval_norms.ipynb`: Descriptive analyses and norms.)
-
-[//]: # (- `eval_subgroups.ipynb`: Subgroup comparisons.)
-
-[//]: # (for **collecting the data** of .)
-
-[//]: # (- `eval_norms.ipynb`   )
-
-[//]: # (for **sample descriptives** and evaluating the **norms** of all models &#40;**RQ2**&#41;.)
-
-[//]: # (- `eval_LMM.R`   )
-
-[//]: # (for running a **linear mixed model** and computing the **variance decomposition** &#40;**RQ2**&#41;.)
-
-[//]: # (- `eval_CFA.R`   )
-
-[//]: # (for running a **confirmatory factor analysis** &#40;CFA&#41; and **exploratory factor analysis** &#40;EFA&#41; &#40;**RQ3**&#41;.)
-
-[//]: # (- `eval_subgroups.ipynb`   )
-
-[//]: # (for additional **subgroup analyses** and **visualizations** used in the paper.)
-
-
-[//]: # (  * two `.py`-files for running API models and local models)
-
-[//]: # (  * two `.ipynb`-files for evaluating the norms and group comparisons)
-
-[//]: # (  * two `.R`-files for running the CFA and LMM analyses.)
-
-[//]: # (---)
-
-<br>
 
 ### Helpers and source code ─ `src`
 contains the helper functions and source code for the experiments.   
@@ -160,7 +133,6 @@ This includes
 
 <br>
 
-[//]: # (---)
 <p>
   <img src = "doc/figs/readme/line-1.png" height = "40">
 </p>
@@ -172,161 +144,3 @@ This includes
 Our paper was accepted to _AIES 2026_.   
 Read our paper on arXiv: https://arxiv.org/abs/2607.02325
 
-
-
-[//]: # (```text)
-
-[//]: # (dat/)
-
-[//]: # (├── 00_inventories/)
-
-[//]: # (│   ├── bfi-llm.json)
-
-[//]: # (│   ├── lmlpa.json)
-
-[//]: # (├── 01_content_validity/)
-
-[//]: # (│   └── expert_ratings.csv)
-
-[//]: # (├── 02_pilot_study/)
-
-[//]: # (│   └── prompt-templates.json)
-
-[//]: # (└── 03_large_scale_administration/)
-
-[//]: # (    └── meta_info_models.csv)
-
-[//]: # ()
-[//]: # (exp/)
-
-[//]: # (├── 01_content_validity/)
-
-[//]: # (│   └── eval_content_validity.py)
-
-[//]: # (├── 02_pilot_study/)
-
-[//]: # (│   ├── responses_pilot/)
-
-[//]: # (│   ├── eval_pilot_study.py)
-
-[//]: # (│   └── run_pilot_study.py)
-
-[//]: # (├── 03_large_scale_administration/)
-
-[//]: # (    ├── responses/)
-
-[//]: # (    ├── eval_CFA.R)
-
-[//]: # (    ├── eval_LMM.R)
-
-[//]: # (    ├── eval_norms.ipynb)
-
-[//]: # (    ├── eval_subgroups.ipynb)
-
-[//]: # (    ├── run_api_models.py)
-
-[//]: # (    └── run_local_models.py)
-
-[//]: # ()
-[//]: # (src/)
-
-[//]: # (├── API_prompting.py)
-
-[//]: # (├── content_validity_metrics.py)
-
-[//]: # (├── huggingface_prompting.py)
-
-[//]: # (├── preprocessing.py)
-
-[//]: # (├── reading_data.py)
-
-[//]: # (└── visualizations.py)
-
-[//]: # ()
-[//]: # (doc/)
-
-[//]: # (├── figs/)
-
-[//]: # (└── tables/)
-
-[//]: # (    └── descriptives_table.txt)
-
-[//]: # ()
-[//]: # (```)
-
-
-
-[//]: # (## Data files)
-
-[//]: # ()
-[//]: # (### `dat/00_inventories/`)
-
-[//]: # (Contains the candidate inventories used in the study.)
-
-[//]: # ()
-[//]: # (- `bfi-llm.json`: Winning Big Five inventory.)
-
-[//]: # (- `lmlpa.json`: Alternative inventory used pilot.)
-
-[//]: # ()
-[//]: # (### `dat/01_content_validity/`)
-
-[//]: # (- `expert_ratings.csv`: Expert ratings of items.)
-
-[//]: # ()
-[//]: # (### `dat/02_pilot_study/`)
-
-[//]: # (- `prompt-templates.json`: Prompt formats tested in the pilot.)
-
-[//]: # ()
-[//]: # (### `dat/03_large_scale_administration/`)
-
-[//]: # (- `meta_info_models.csv`: Metadata for the model sample.)
-
-[//]: # ()
-[//]: # (## Analysis code)
-
-[//]: # ()
-[//]: # (### `exp/01_content_validity/`)
-
-[//]: # (- `eval_content_validity.py`: Evaluating content validity of items with expert ratings.)
-
-[//]: # ()
-[//]: # (### `exp/02_pilot_study/`)
-
-[//]: # (- `run_pilot_study.py`: Data collection: Runs pilot using seven different prompt templates.)
-
-[//]: # (- `eval_pilot_study.py`: Evaluates pilot outputs to identify best prompt template.)
-
-[//]: # ()
-[//]: # (### `exp/03_large_scale_administration/`)
-
-[//]: # (- `run_api_models.py`: Data collection: API models.)
-
-[//]: # (- `run_local_models.py`: Data collection: local/open-weight models.)
-
-[//]: # (- `eval_CFA.R`: Runs CFA and EFA.)
-
-[//]: # (- `eval_LMM.R`: Runs linear mixed-effects models for variance decomposition and subgroup analyses.)
-
-[//]: # (- `eval_norms.ipynb`: Descriptive analyses and norms.)
-
-[//]: # (- `eval_subgroups.ipynb`: Subgroup comparisons.)
-
-[//]: # ()
-[//]: # ()
-[//]: # (## Helper functions)
-
-[//]: # ()
-[//]: # (### `src/`)
-
-[//]: # ()
-[//]: # ()
-[//]: # (## Figures and tables)
-
-[//]: # ()
-[//]: # (### `doc/figs/`)
-
-[//]: # (### `doc/tables/`)
-
-[//]: # (- `descriptives_table.txt`: Per-model descriptive statistics.)
