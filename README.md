@@ -58,7 +58,7 @@ contains the Big Five inventories (`00_inventories/`), expert rating data (`01_c
 
 
 ### Document ─ `doc`
-contains the final paper pdf (`...`), the additional appendix (`...`), and all figures created for the paper (`figs/`).
+contains the final **paper** pdf (`Personality-Without-Persons.pdf`), the additional **appendix** (`Appendix-Personality-Without-Persons.pdf`), and all **figures** created for the paper (`figs/`).
 
 
 <p>
