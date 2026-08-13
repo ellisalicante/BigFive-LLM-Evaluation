@@ -28,7 +28,7 @@ The repo is organized into the data (`dat`), the experiments (`exp`), the helper
 
 
 <p>
-  <img src = "doc/figs/readme/line-2.png" height = "40">
+  <img src = "doc/figs/readme/line-1.png" height = "40">
 </p>
 
 
@@ -53,7 +53,7 @@ contains the Big Five inventories (`00_inventories/`), expert rating data (`01_c
 
 
 <p>
-  <img src = "doc/figs/readme/line-2.png" height = "40">
+  <img src = "doc/figs/readme/line-1.png" height = "40">
 </p>
 
 
@@ -62,7 +62,7 @@ contains the final paper pdf (`...`), the additional appendix (`...`), and all f
 
 
 <p>
-  <img src = "doc/figs/readme/line-2.png" height = "40">
+  <img src = "doc/figs/readme/line-1.png" height = "40">
 </p>
 
 
@@ -111,7 +111,7 @@ contains the scripts for running and evaluating the large-scale administration o
   - `eval_subgroups.ipynb` additional subgroup analyses and visualizations
 
 <p>
-  <img src = "doc/figs/readme/line-2.png" height = "40">
+  <img src = "doc/figs/readme/line-1.png" height = "40">
 </p>
 
 
