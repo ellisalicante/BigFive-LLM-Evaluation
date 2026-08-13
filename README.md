@@ -30,6 +30,8 @@ We assess the content validity of five candidate Big Five inventories and admini
   <sub>Differences between models are minimal.</sub>
 </p>
 
+<br>
+
 **RQ1** Big Five items cannot be assumed to appropriately describe LLMs. Only two out of five inventories showed sufficient content validity metrics.
 
 **RQ2** Big Five inventories did **not** capture meaningful differences between models (see _gif_ below). Differences between models were minimal and accounted for only a small portion (7% - 17%) of the total score variance. This means, most models showed very similar Big Five profiles.
