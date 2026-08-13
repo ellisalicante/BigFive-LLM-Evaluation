@@ -23,6 +23,30 @@ We assess the content validity of five candidate Big Five inventories and admini
 ---
 
 
+## Conclusion
+
+[//]: # (**RQ1** LLM-adapted Big Five items achieved acceptable content validity, whereas the original human-developed items did not.   )
+
+[//]: # ()
+[//]: # (**RQ2** Big Five inventories fail to capture meaningful differences across LLMs: between-model variance accounts for only 7% - 17% of the total score variance. )
+
+[//]: # ()
+[//]: # (**RQ3** LLMs responses do not reproduce the canonical Big Five five-factor structure of human personality, with four of the five personality facets collapsing into one &#40;r ≥ .90&#41;. )
+
+[//]: # ()
+[//]: # (Comparisons between base and instruction-tuned variants suggest that alignment training shifts Big Five scores toward socially desirable profiles.)
+
+**RQ1** Big Five items cannot be assumed to appropriately describe LLMs. Only two out of five inventories showed sufficient content validity metrics.
+
+**RQ2** Big Five inventories did **not** capture meaningful differences between models (see _gif_ below). Differences between models were minimal and accounted for only a small portion (7% - 17%) of the total score variance. This means, most models showed very similar Big Five profiles.
+
+**RQ3** Big Five scores failed to reproduce the human five-factor structure. All OCEAN dimensions, except for Neuroticism, were highly correlated and collapsed into one ($r ≥ .90$).
+
+<img src="doc/figs/gif/all.gif" width="500" alt="Animation Demo">
+
+---
+
+
 ## Repository structure
 
 The repo is organized into the data (`dat`), the experiments (`exp`), the helper functions and source (`src`), and everything regarding the paper (document; `doc`).
