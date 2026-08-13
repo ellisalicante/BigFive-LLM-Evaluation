@@ -2,8 +2,9 @@
 **A Psychometric Critique of Big Five Testing in Large Language Models**
 
 
-This repository contains the paper, appendix, code, data, and figures for the paper "Personality Without Persons?".
+This repository contains the paper, appendix, code, data, and figures for the paper "**[Personality Without Persons? A Psychometric Critique of Big Five Testing in Large Language Models](https://arxiv.org/abs/2607.02325)**" by Kim Zierahn, Cristina Cachero, Anna Korhonen, and Nuria Oliver.
 
+[![arXiv](https://img.shields.io/badge/arXiv-2607.02325-b31b1b.svg?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2607.02325)
 
 ---
 
@@ -132,3 +133,16 @@ This includes
 Our paper was accepted to _AIES 2026_.   
 Read our paper on arXiv: https://arxiv.org/abs/2607.02325
 
+Please cite our paper if you use our code or dataset:
+
+```bibtex
+@misc{zierahn2026personality,
+      title={Personality Without Persons? A Psychometric Critique of Big Five Testing in Large Language Models}, 
+      author={Kim Zierahn and Cristina Cachero and Anna Korhonen and Nuria Oliver},
+      year={2026},
+      eprint={2607.02325},
+      archivePrefix={arXiv},
+      primaryClass={cs.HC},
+      url={https://arxiv.org/abs/2607.02325}
+}
+```
