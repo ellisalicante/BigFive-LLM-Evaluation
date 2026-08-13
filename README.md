@@ -6,7 +6,7 @@ This repository contains the paper, appendix, code, data, and figures for the pa
 
 <br>
 
----
+[//]: # (---)
 
 <br>
 
@@ -20,7 +20,7 @@ It examines three RQs:
 
 <br>
 
----
+[//]: # (---)
 
 <br>
 
@@ -148,8 +148,6 @@ contains the scripts for running and evaluating the large-scale administration o
 
 <br>
 
-***
-
 ### Helpers and source code ─ `src`
 contains the helper functions and source code for the experiments.   
 This includes 
@@ -158,7 +156,9 @@ This includes
 - files for **reading** and **preprocessing** all models responses (`reading_data.py`, `preprocessing.py`), 
 - and helpers for **visualizing** the results (`visualizations.py`).
 
----
+<br>
+
+[//]: # (---)
 
 <br>
 
