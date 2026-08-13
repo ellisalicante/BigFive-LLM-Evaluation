@@ -162,7 +162,7 @@ This includes
 
 [//]: # (---)
 <p>
-  <img src = "doc/figs/line.png" height = "50">
+  <img src = "doc/figs/readme/line-1.png" height = "30">
 </p>
 
 <br>
