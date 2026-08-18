@@ -2,7 +2,7 @@
 **A Psychometric Critique of Big Five Testing in Large Language Models**
 
 
-This repository contains the paper, appendix, code, data, and figures for the paper "**[Personality Without Persons? A Psychometric Critique of Big Five Testing in Large Language Models](https://arxiv.org/abs/2607.02325)**" by Kim Zierahn, Cristina Cachero, Anna Korhonen, and Nuria Oliver.
+This repository contains the paper, supplementary material, code, data, and figures for the paper "**[Personality Without Persons? A Psychometric Critique of Big Five Testing in Large Language Models](https://arxiv.org/abs/2607.02325)**" by Kim Zierahn, Cristina Cachero, Anna Korhonen, and Nuria Oliver.
 
 [![arXiv](https://img.shields.io/badge/arXiv-2607.02325-b31b1b.svg?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2607.02325)
 
@@ -79,7 +79,7 @@ contains the Big Five inventories (`00_inventories/`), expert rating data (`01_c
 
 
 ### Document ─ `doc`
-contains the final **paper** pdf (`Personality-Without-Persons.pdf`), the additional **appendix** (`Appendix-Personality-Without-Persons.pdf`), and all **figures** created for the paper (`figs/`).
+contains the final **paper** pdf (`Personality-Without-Persons.pdf`), the additional **supplementary material** (`Supplementary-Material-Personality-Without-Persons.pdf`), and all **figures** created for the paper (`figs/`).
 
 
 <p>
