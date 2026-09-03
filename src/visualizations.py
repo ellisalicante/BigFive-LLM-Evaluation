@@ -1053,6 +1053,7 @@ def close(arr):
 
 def _draw_radar(ax,
                 means,
+                sds,
                 global_means,
                 color,
                 trait_names,
@@ -1198,12 +1199,12 @@ def _draw_radar(ax,
         ax.set_title(title, fontsize=11, fontweight="bold", color=color, fontfamily="monospace", pad=28)
 
 
-def make_individual_png(df_family, family_name, means, global_means, color, trait_names,
+def make_individual_png(df_family, family_name, means, sds, global_means, color, trait_names,
                         display_name=None, dpi=150):
     fig = plt.figure(figsize=(5.6, 5.6), dpi=dpi, facecolor="white")
     ax = fig.add_subplot(111, projection="polar", facecolor="white")
 
-    _draw_radar(ax, means, global_means, color, trait_names,
+    _draw_radar(ax, means, sds, global_means, color, trait_names,
                 show_labels=True, show_scores=True)
 
     label = display_name or family_name
@@ -1251,7 +1252,11 @@ def make_all_plots(df_family,
     heat = (df_family.groupby("FamilyGrouped")[trait_order]
             .mean()
             .loc[family_order])
+    heat_sd = (df_family.groupby("FamilyGrouped")[trait_order]
+               .std()
+               .loc[family_order])
     means_dict = {fam: heat.loc[fam].values for fam in family_order}
+    sds_dict = {fam: heat_sd.loc[fam].values for fam in family_order}
     display_names = family_labels or {}
 
     gif_frames = []
@@ -1267,6 +1272,7 @@ def make_all_plots(df_family,
             df_family=df_family,
             family_name=fam,
             means=means_dict[fam],
+            sds=sds_dict[fam],
             global_means=global_means,
             color=color,
             trait_names=trait_order,
@@ -1287,6 +1293,7 @@ def make_all_plots(df_family,
             df_family=df_family,
             family_name=fam,
             means=means_dict[fam],
+            sds=sds_dict[fam],
             global_means=global_means,
             color=color,
             trait_names=trait_order,
