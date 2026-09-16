@@ -35,9 +35,12 @@ exp/02_pilot_study/cache
 # files too large
 dat/03_large_scale_administration/final_dfs/df_all_raw.csv
 dat/03_large_scale_administration/final_dfs/df_all.csv
+dat/03_large_scale_administration/budget.xlsx
+dat/03_large_scale_administration/cost_by_model.csv
 
 # tsne analyses (not included in paper)
 exp/03_large_scale_administration/eval_tsne.ipynb
+exp/03_large_scale_administration/eval_reasoning.ipynb
 src/clustering.py
 
 # other not used files
