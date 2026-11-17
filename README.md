@@ -166,7 +166,7 @@ This includes
 
 ## Links
 
-Our paper was accepted to _AIES 2026_.   
+Our paper was accepted for publication in the Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society (AIES 2026).
 Read our paper: https://doi.org/10.1609/aies.v9i4.43359
 
 Please cite our paper if you use our code or dataset:
