@@ -167,7 +167,7 @@ This includes
 ## Links
 
 Our paper was accepted to _AIES 2026_.   
-Read our paper on arXiv: https://arxiv.org/abs/2607.02325
+Read our paper: https://doi.org/10.1609/aies.v9i4.43359
 
 Please cite our paper if you use our code or dataset:
 
